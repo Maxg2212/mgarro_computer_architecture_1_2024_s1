@@ -90,22 +90,12 @@ def iniciar():
     iniciar_reproduccion()
 
 # Función para retroceder a la canción anterior
-def retroceder():
-    global pos, n
-    if pos > 0:
-        pos = pos - 1
-    else:
-        pos = 0
-    cantidad['text'] = str(pos) + '/' + str(n)
+def Reverberacion():
+    print('Reverberacion')
 
 # Función para avanzar a la siguiente canción
-def adelantar():
-    global pos, n
-    if pos == n - 1:
-        pos = 0
-    else:
-        pos = pos + 1
-    cantidad['text'] = str(pos) + '/' + str(n)
+def SinReverberacion():
+    print('SinReverberacion')
 
 # Función para detener los efectos visuales en las barras de progreso
 def detener_efecto():
@@ -209,8 +199,8 @@ imagen2  = PhotoImage(file ='play.png')
 imagen3  = PhotoImage(file ='pausa.png')
 imagen4 = PhotoImage(file ='repetir.png')
 imagen5 = PhotoImage(file ='stop.png')
-imagen6 = PhotoImage(file ='anterior.png')
-imagen7 = PhotoImage(file ='adelante.png')
+imagen6 = PhotoImage(file ='reverberacion.png')
+imagen7 = PhotoImage(file ='sinreverberacion.png')
 
 boton1 = Button(frame2, image= imagen1, command= abrir_archivo)
 boton1.grid(column=0, row=2, pady=10)
@@ -222,9 +212,9 @@ boton4 = Button(frame2,image= imagen4, bg='blue', command=pausa)
 boton4.grid(column=3, row=2, pady=10)
 boton5 = Button(frame2, image= imagen5, bg='green2',command=continuar)
 boton5.grid(column=4, row=2, pady=10)
-atras = Button(frame2, image= imagen6, bg='orange',command= retroceder)
+atras = Button(frame2, image = imagen6, bg='orange',command= Reverberacion)
 atras.grid(column=5, row=2, pady=10)
-adelante = Button(frame2, image= imagen7, bg='green',command=adelantar)
+adelante = Button(frame2, image = imagen7, bg='green',command= SinReverberacion)
 adelante.grid(column=6, row=2, pady=10)
 
 volumen = ttk.Scale(frame2, to = 10, from_ =0, orient='horizontal',length=90, style= 'Horizontal.TScale')
