@@ -1,0 +1,13 @@
+riscv32-unknown-elf-as -march=rv32imafdc -o filereader.o filereader.s
+riscv32-unknown-elf-ld -o filereader filereader.o
+
+riscv32-unknown-elf-objdump -d filereader &> filereader.txt && gedit filereader.txt &
+
+rv-jit filereader
+
+rv-jit -d filereader
+
+
+************ ARM *************
+arm-linux-gnueabi-as filereader.s -o filereader.o
+arm-linux-gnueabi-ld filereader.o -o filereader
