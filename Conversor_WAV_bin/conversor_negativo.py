@@ -49,9 +49,9 @@ def convertir_a_negativo(numero_decimal, bits_enteros, bits_fraccionarios):
     return resultado
 
 # Ejemplo de uso
-numero_decimal = -0.25
-bits_enteros = 4
-bits_fraccionarios = 4
+numero_decimal = -3.051850947599719e-05
+bits_enteros = 16
+bits_fraccionarios = 17
 
 resultado = convertir_a_negativo(numero_decimal, bits_enteros, bits_fraccionarios)
 print("Representación en complemento a uno:", resultado)

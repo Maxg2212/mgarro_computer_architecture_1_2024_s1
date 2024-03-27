@@ -48,7 +48,7 @@ archivo_txt = "audio_muestras.txt"
 convertir_wav_a_txt(archivo_wav, archivo_txt)
 
 """
-
+"""
 import wave
 
 def convertir_wav_a_txt(archivo_wav, archivo_txt):
@@ -87,6 +87,92 @@ archivo_txt = "audio_muestras2.txt"
 
 # Convertir el archivo WAV a texto
 convertir_wav_a_txt(archivo_wav, archivo_txt)
+
+"""
+import wave
+import struct
+
+def complemento_a_uno(numero_binario):
+    complemento = ""
+    for bit in numero_binario:
+        if bit == '.':
+            complemento += ''
+        else:
+            complemento += '1' if bit == '0' else '0'
+    
+    return complemento
+
+def sumar_uno(numero_binario):
+    resultado = ""
+    acarreo = 1
+    for i in range(len(numero_binario) - 1, -1, -1):
+        if numero_binario[i] == '.':
+            resultado = '' + resultado
+        else:
+            suma = int(numero_binario[i]) + acarreo
+            resultado = str(suma % 2) + resultado
+            acarreo = suma // 2
+    
+    return resultado
+
+def float_to_q15_16(value):
+    # Convierte un número de punto flotante en formato Q15.16
+    if value >= 0:
+        sign = '0'
+    else:
+        sign = '1'
+        value = abs(value)
+    integer_part = int(value)
+    fractional_part = int((value - integer_part) * (2**17))
+    q15_16 = format(integer_part, '014b') + format(fractional_part, '017b')
+    
+    if sign == '1':
+        binario_complemento = complemento_a_uno(q15_16)
+        q15_16 = sumar_uno(binario_complemento)
+
+    return sign + q15_16
+
+def convertir_wav_a_txt(archivo_wav, archivo_txt):
+    # Abrir el archivo WAV
+    with wave.open(archivo_wav, 'rb') as wav_file:
+        # Obtener los parámetros del archivo WAV
+        num_frames = wav_file.getnframes()
+        num_channels = wav_file.getnchannels()
+        sample_width = wav_file.getsampwidth()
+        frame_rate = wav_file.getframerate()
+
+        # Leer todas las muestras de audio
+        frames = wav_file.readframes(num_frames)
+
+        # Normalizar las muestras de audio
+        max_valor = 2 ** (8 * sample_width - 1) - 1
+        muestras_normalizadas = [int.from_bytes(frames[i:i+sample_width], byteorder='little', signed=True) / max_valor for i in range(0, len(frames), sample_width)]
+
+        # Convertir las muestras normalizadas a formato Q15.16 en binario
+        muestras_q15_16_binario = [float_to_q15_16(sample) for sample in muestras_normalizadas]
+
+        # Escribir las muestras de audio en formato Q15.16 en un archivo de texto
+        with open(archivo_txt, 'w') as txt_file:
+            # Escribir la información de los parámetros
+            txt_file.write(f"Numero de frames: {num_frames}\n")
+            txt_file.write(f"Numero de canales: {num_channels}\n")
+            txt_file.write(f"Ancho de muestra: {sample_width}\n")
+            txt_file.write(f"Velocidad de cuadro: {frame_rate}\n")
+
+            # Escribir las muestras de audio en formato Q15.16
+            for sample_binario in muestras_q15_16_binario:
+                txt_file.write(f"{sample_binario}\n")
+
+        print("Archivo de texto generado correctamente.")
+
+# Rutas de los archivos de entrada y salida
+archivo_wav = "audiowav.wav"
+archivo_txt = "audio_muestras_q15_16.txt"
+
+# Convertir el archivo WAV a texto en formato Q15.16
+convertir_wav_a_txt(archivo_wav, archivo_txt)
+
+
 
 
 
