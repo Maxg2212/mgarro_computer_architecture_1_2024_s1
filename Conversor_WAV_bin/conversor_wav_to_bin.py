@@ -79,7 +79,7 @@ def convertir_wav_a_bin_y_txt(archivo_wav, archivo_bin, archivo_txt_norm, archiv
                 # Asegurar que el valor entero esté dentro del rango permitido para un entero de 32 bits con signo
                 valor_entero_clamped = max(-2147483648, min(valor_entero, 2147483647))
                 # Convertir el valor entero a formato hexadecimal
-                valor_hexadecimal = struct.pack('<i', valor_entero_clamped).hex()
+                valor_hexadecimal = struct.pack('>i', valor_entero_clamped).hex()
                 bin_file.write(bytes.fromhex(valor_hexadecimal))
 
         print("Archivos generados correctamente.")
