@@ -6,41 +6,60 @@ Disassembly of section .text:
 
 00010074 <_start>:
    10074:	e3a07005 	mov	r7, #5
-   10078:	e59f0074 	ldr	r0, [pc, #116]	; 100f4 <_end+0x1c>
+   10078:	e59f0098 	ldr	r0, [pc, #152]	; 10118 <_end+0x14>
    1007c:	e3a01002 	mov	r1, #2
    10080:	e3a02000 	mov	r2, #0
    10084:	ef000000 	svc	0x00000000
    10088:	e3a07003 	mov	r7, #3
-   1008c:	e59f1064 	ldr	r1, [pc, #100]	; 100f8 <_end+0x20>
-   10090:	e59f2064 	ldr	r2, [pc, #100]	; 100fc <_end+0x24>
+   1008c:	e59f1088 	ldr	r1, [pc, #136]	; 1011c <_end+0x18>
+   10090:	e59f2088 	ldr	r2, [pc, #136]	; 10120 <_end+0x1c>
    10094:	ef000000 	svc	0x00000000
-   10098:	e59f1058 	ldr	r1, [pc, #88]	; 100f8 <_end+0x20>
-   1009c:	e5918000 	ldr	r8, [r1]
-   100a0:	e5919220 	ldr	r9, [r1, #544]	; 0x220
-   100a4:	e59f1054 	ldr	r1, [pc, #84]	; 10100 <_end+0x28>
-   100a8:	e3a03005 	mov	r3, #5
-   100ac:	e5813000 	str	r3, [r1]
-   100b0:	e5914000 	ldr	r4, [r1]
-   100b4:	e3a07005 	mov	r7, #5
-   100b8:	e59f0044 	ldr	r0, [pc, #68]	; 10104 <_end+0x2c>
-   100bc:	e3a01002 	mov	r1, #2
-   100c0:	e3a02064 	mov	r2, #100	; 0x64
-   100c4:	ef000000 	svc	0x00000000
-   100c8:	e3a07004 	mov	r7, #4
-   100cc:	e59f102c 	ldr	r1, [pc, #44]	; 10100 <_end+0x28>
-   100d0:	e59f2024 	ldr	r2, [pc, #36]	; 100fc <_end+0x24>
-   100d4:	ef000000 	svc	0x00000000
+   10098:	e59f107c 	ldr	r1, [pc, #124]	; 1011c <_end+0x18>
+   1009c:	e59f2080 	ldr	r2, [pc, #128]	; 10124 <_end+0x20>
+   100a0:	e3a03009 	mov	r3, #9
+   100a4:	e5823004 	str	r3, [r2, #4]
+   100a8:	e5918000 	ldr	r8, [r1]
+   100ac:	e59f3074 	ldr	r3, [pc, #116]	; 10128 <_end+0x24>
+   100b0:	e59f4074 	ldr	r4, [pc, #116]	; 1012c <_end+0x28>
+   100b4:	e59f5074 	ldr	r5, [pc, #116]	; 10130 <_end+0x2c>
+   100b8:	e5936000 	ldr	r6, [r3]
+   100bc:	e5948000 	ldr	r8, [r4]
+   100c0:	e5959000 	ldr	r9, [r5]
 
-000100d8 <_end>:
-   100d8:	e3a07006 	mov	r7, #6
-   100dc:	ef000000 	svc	0x00000000
-   100e0:	e3a07006 	mov	r7, #6
-   100e4:	ef000000 	svc	0x00000000
-   100e8:	e3a07001 	mov	r7, #1
-   100ec:	e3a00000 	mov	r0, #0
-   100f0:	ef000000 	svc	0x00000000
-   100f4:	00020114 	.word	0x00020114
-   100f8:	00020129 	.word	0x00020129
-   100fc:	000d767a 	.word	0x000d767a
-   10100:	00114369 	.word	0x00114369
-   10104:	0002011e 	.word	0x0002011e
+000100c4 <_reverb>:
+   100c4:	e3043eee 	movw	r3, #20206	; 0x4eee
+   100c8:	e086a008 	add	sl, r6, r8
+   100cc:	e00b019a 	mul	fp, sl, r1
+   100d0:	e043a009 	sub	sl, r3, r9
+   100d4:	e35a0000 	cmp	sl, #0
+   100d8:	0a000001 	beq	100e4 <_equals>
+   100dc:	ba000002 	blt	100ec <_less_than>
+   100e0:	ca000003 	bgt	100f4 <_greater_than>
+
+000100e4 <_equals>:
+   100e4:	e3a04000 	mov	r4, #0
+   100e8:	ea000005 	b	10104 <_end>
+
+000100ec <_less_than>:
+   100ec:	e3a04000 	mov	r4, #0
+   100f0:	ea000003 	b	10104 <_end>
+
+000100f4 <_greater_than>:
+   100f4:	e3a05004 	mov	r5, #4
+   100f8:	e00a0a95 	mul	sl, r5, sl
+   100fc:	e792400a 	ldr	r4, [r2, sl]
+   10100:	eaffffff 	b	10104 <_end>
+
+00010104 <_end>:
+   10104:	e3a07006 	mov	r7, #6
+   10108:	ef000000 	svc	0x00000000
+   1010c:	e3a07001 	mov	r7, #1
+   10110:	e3a00000 	mov	r0, #0
+   10114:	ef000000 	svc	0x00000000
+   10118:	00020140 	.word	0x00020140
+   1011c:	00020155 	.word	0x00020155
+   10120:	000d767a 	.word	0x000d767a
+   10124:	00114395 	.word	0x00114395
+   10128:	00020134 	.word	0x00020134
+   1012c:	00020138 	.word	0x00020138
+   10130:	0002013c 	.word	0x0002013c

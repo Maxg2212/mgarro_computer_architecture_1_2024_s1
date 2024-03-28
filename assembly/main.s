@@ -3,7 +3,7 @@
 
 .section .data
   constante_1: .word 0x10000 @ Valor de 1 en formato q16.17
-  constante_alpha: .word 0x999A @ Valor de alpha = 0.6 en formato Q16.17
+  constante_alpha: .word 0xFFFF6666 @ Valor de alpha = 0.6 en formato Q16.17
   constante_k: .word 20205 @ Resultado de realizar K = Fs x 50ms = 20205
   name_input: .asciz "input.bin"
   name_output: .asciz "output.bin"  
@@ -18,57 +18,97 @@ _start:
   mov r1, #2              
   mov r2, #0              
   swi 0                   
-  @ R1 = buffer, R2 = buffer size, R3 - R6 sin usar, R7 = llamada al sistema, R8 - R12 sin usar
+  @ R1 = buffer, R2 = buffer size, R3 = constant1, R4 = alpha, R5 = constantk, R6 - R9 values of the constants, R7 = swi, R10 - R12 not used
+
+
   @ Read the file with buffer
   mov r7, #0x3            
   ldr r1, =buffer_input   
   ldr r2, =#882298       @ buffer size
   swi 0   
 
+  @ldr r1, =buffer_input
+  ldr r2, =buffer_output
+
+  @ Load the first 32-bit number into r8 ( x(1) )
   
-  ldr r1, =buffer_input
-  @ Load the first 32-bit number into r8
-  ldr r8, [r1]            @ load first 32 bits into r8
-  @ Load the second 32-bit number into r9
-  ldr r9, [r1, #544]        @ load next 32 bits (offset by 4 bytes) into r9 
-  @ Direcciones de las constantes
-  @ldr r3, =constante_1
-  @ldr r4, =constante_alpha
-  @ldr r5, =constante_k
+  
+  @ Load the addresses of the different constants
+  ldr r3, =constante_1
+  ldr r4, =constante_alpha
+  ldr r5, =constante_k
 
-  @ldr r6, [r3]
-  @ldr r8, [r4]
-  @ldr r9, [r5]
-  @ Open the file output file
+  @ Load the values of the constants
+  ldr r6, [r3] @ 1 Q16.17
+  ldr r8, [r4] @ alpha q16.17
+  ldr r9, [r5] @ constant k
 
-   @ Cargar el valor #5 en la primera posición de buffer_output
-  ldr r1, =buffer_output     @ Cargar la dirección de buffer_output en r1
-  mov r3, #5                 @ Cargar el valor #5 en r3
-  str r3, [r1]               @ Guardar el valor #5 en la primera posición de buffer_output
+  mov r3, #0 @ main counter for loop
 
-  ldr r4, [r1]
+_reverb:
 
-   @ Write the buffer of the output file
-   mov r7, #0x5            
-   ldr r0, =name_output   
-   mov r1, #2         
-   mov r2, #100
-   swi 0          
+  ldr r8, [r1]            @ load first 32 bits into r8 x(n)
 
-   mov r7, #0x4
-   ldr r1, =buffer_output
-   ldr r2, =#882298
-   swi 0
+  @(1 - a)x(n)
+  add r10, r6, r8  @ 1 - 0.6 result  
+  mul r11, r10, r1 @ (1 - 0.6) * x(n) (se debe cambiar como se realiza la multiplicacion)
 
-   
+  @ a*y(n - k)
+  sub r10, r3, r9 @ (n - k)
+
+  cmp r10, #0        @ Compara el valor en r10 con cero
+  beq _equals   @ Salta a valor_igual_cero si r10 es igual a cero
+  blt _less_than    @ Salta a valor_menor si r10 es menor que cero
+  bgt _greater_than    @ Salta a valor_mayor si r10 es mayor que cero
+
+  _equals:
+    ldr r4, [r2]
+    b _end_if_else    @ Salto al final de la sección _reverb
+  _less_than:
+    mov r4, #0
+    b _end_if_else     @ Salto al final de la sección _reverb
+  _greater_than:
+    mov r5, #4       @ Establecer r4 en cero si r10 es igual a cero
+    mul r10, r5       @ multiplicamos el indice por 4 para poder acceder a la lista sin problemas
+    ldr r4, [r2, r10]
+    b _end_if_else     @ Salto al final de la sección _reverb
+  _end_if_else:
+  
+  mul r8, r4 @ alpha * y(n-k)
+
+  add r12, r11, r8 @ (1 - 0.6) * x(n) + alpha * y(n-k)
+
+  str r12, [r2] @ se almacena la posicion y(n) en la lista
+_loadfiles:
+  @ Cargar el valor #5 en la primera posición de buffer_output
+  @ldr r1, =buffer_output     @ Cargar la dirección de buffer_output en r1
+  @mov r3, #5                 @ Cargar el valor #5 en r3
+  @str r3, [r1]               @ Guardar el valor #5 en la primera posición de buffer_output
+
+  @ldr r4, [r1]
+
+
+   @ Load the outbit.bin file
+   @mov r7, #0x5            
+   @ldr r0, =name_output   
+   @mov r1, #2         
+   @mov r2, #100
+   @swi 0          
+
+  @ Writes the output buffer in output.bin file
+   @mov r7, #0x4
+   @ldr r1, =buffer_output
+   @ldr r2, =#882298
+   @swi 0
+
 _end:
   @ Close input
   mov r7, #6              
   swi 0                   
 
   @ @ Close output
-   mov r7, #6             
-   swi 0                  
+   @mov r7, #6             
+   @swi 0                  
 
   @ Finish program
   mov r7, #0x1            
