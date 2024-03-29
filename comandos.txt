@@ -1,0 +1,11 @@
+arm-linux-gnueabi-as multi.s -o multi.o
+arm-linux-gnueabi-ld multi.o -o multi
+
+arm-none-eabi-as multi.s -g -o multi.o
+arm-none-eabi-ld multi.o -o multi
+
+qemu-arm -singlestep -g 1233 multi
+
+arm-none-eabi-gdb
+file multi
+target remote localhost:1233
