@@ -79,6 +79,11 @@ _reverb:
   add r12, r11, r8 @ (1 - 0.6) * x(n) + alpha * y(n-k)
 
   str r12, [r2] @ se almacena la posicion y(n) en la lista
+
+  add r3, r3, #1  @ Incrementar el valor de r6 en uno
+
+  @cmp r3, #882298     @ comparar r3 con 882298 que es el tamaño completo del buffer
+  @blt _reverb         @ Repetir el ciclo si el valor en r3 es menor que el valor dado
 _loadfiles:
   @ Cargar el valor #5 en la primera posición de buffer_output
   @ldr r1, =buffer_output     @ Cargar la dirección de buffer_output en r1
