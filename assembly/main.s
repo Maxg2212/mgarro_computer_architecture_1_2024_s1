@@ -132,16 +132,20 @@ _mult_pfijo1:
   b _mult_end
 
 _equals:
-    ldr r4, [r0]
+    ldr r5, =buffer_output @ Cargar la dirección de constante_k en r5
+    ldr r9, [r5] @ constant k @ Cargar el valor de constante_k en r9
+    ldr r4, [r9]
     b _end_if_else    @ Salto al final de la sección _reverb
 _less_than:
   mov r4, #0
-  b _end_if_else     @ Salto al final de la sección _reverb
+  b _end_if_else      @ Salto al final de la sección _reverb
 _greater_than:
-  mov r5, #4       @ Establecer r4 en cero si r10 es igual a cero
-  mul r10, r5       @ multiplicamos el indice por 4 para poder acceder a la lista sin problemas
-  ldr r4, [r0, r10]
-  b _end_if_else     @ Salto al final de la sección _reverb
+  mov r5, #4       
+  mul r10, r10, r5         @ multiplicamos el indice por 4 para poder acceder a la lista sin problemas
+  ldr r5, =buffer_output @ Cargar la dirección de constante_k en r5
+  ldr r9, [r5] @ constant k @ Cargar el valor de constante_k en r9
+  ldr r4, [r9, r10]
+  b _end_if_else      @ Salto al final de la sección _reverb
 _loadfiles:
    @ Load the outbit.bin file
    mov r7, #0x5            
