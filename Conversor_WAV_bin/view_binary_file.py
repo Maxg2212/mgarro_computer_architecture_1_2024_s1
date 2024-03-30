@@ -1,28 +1,26 @@
-def read_raw_bytes(file_path):
+def read_raw_bytes(file_path, num_words):
     try:
         with open(file_path, 'rb') as f:
             # Leer el contenido binario del archivo
             binary_data = f.read()
 
-            # Verificar si la longitud del archivo es divisible por 4 (tamaño de una palabra de 32 bits)
-            if len(binary_data) % 4 != 0:
-                print("La longitud del archivo no es un múltiplo de 4. No se pueden leer palabras de 32 bits.")
+            # Verificar si hay suficientes bytes para mostrar las primeras 'num_words' palabras
+            if len(binary_data) < num_words * 4:
+                print(f"El archivo no tiene suficientes datos para mostrar {num_words} palabras.")
                 return
             
-            # Iterar sobre el contenido binario, leyendo cada palabra de 32 bits
-            for i in range(0, len(binary_data), 4):
-                # Incrementar el contador de palabra
-                palabra_num = i // 4 + 1
-                # Extraer una palabra de 32 bits
-                word = binary_data[i:i+4]
-                # Mostrar los bytes de la palabra sin modificar
-                print(f"Palabra {palabra_num}: {' '.join(f'{byte:02X}' for byte in word)}")
-            
+            # Mostrar los bytes de las primeras 'num_words' palabras en formato hexadecimal
+            print(f"Primeras {num_words} palabras del archivo en formato hexadecimal:")
+            for i in range(num_words):
+                word_bytes = binary_data[i * 4 : (i + 1) * 4]
+                print(f"Palabra {i+1}: {' '.join(f'{byte:02X}' for byte in word_bytes)}")
+
     except FileNotFoundError:
         print("El archivo no se encontró.")
     except Exception as e:
         print("Error al leer el archivo:", e)
 
-# Ejemplo de uso
-file_path = 'audio_muestras_q15_16.bin'
-read_raw_bytes(file_path)
+# Ejemplo de uso para mostrar las primeras dos palabras del archivo
+file_path = 'output.bin'
+num_words_to_show = 2
+read_raw_bytes(file_path, num_words_to_show)

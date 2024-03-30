@@ -145,15 +145,15 @@ _greater_than:
 _loadfiles:
    @ Load the outbit.bin file
    mov r7, #0x5            
-   ldr r2, =name_output   
+   ldr r0, =name_output   
    mov r1, #2         
    mov r2, #100
    swi 0          
 
   @ Writes the output buffer in output.bin file
    mov r7, #0x4
-   ldr r3, =buffer_output
-   ldr r2, =#8
+   ldr r1, =buffer_output
+   ldr r2, =#882298
    swi 0
 
 _end:
@@ -169,3 +169,4 @@ _end:
   mov r7, #0x1            
   mov r0, #0             
   swi 0
+  

@@ -6,110 +6,128 @@ Disassembly of section .text:
 
 00010074 <_start>:
    10074:	e3a07005 	mov	r7, #5
-   10078:	e59f0130 	ldr	r0, [pc, #304]	; 101b0 <_end+0x14>
+   10078:	e59f0164 	ldr	r0, [pc, #356]	; 101e4 <_end+0x1c>
    1007c:	e3a01002 	mov	r1, #2
    10080:	e3a02000 	mov	r2, #0
    10084:	ef000000 	svc	0x00000000
    10088:	e3a07003 	mov	r7, #3
-   1008c:	e59f1120 	ldr	r1, [pc, #288]	; 101b4 <_end+0x18>
-   10090:	e59f2120 	ldr	r2, [pc, #288]	; 101b8 <_end+0x1c>
+   1008c:	e59f1154 	ldr	r1, [pc, #340]	; 101e8 <_end+0x20>
+   10090:	e59f2154 	ldr	r2, [pc, #340]	; 101ec <_end+0x24>
    10094:	ef000000 	svc	0x00000000
    10098:	e3a03000 	mov	r3, #0
-   1009c:	e59f0118 	ldr	r0, [pc, #280]	; 101bc <_end+0x20>
-   100a0:	e59f110c 	ldr	r1, [pc, #268]	; 101b4 <_end+0x18>
+   1009c:	e59f014c 	ldr	r0, [pc, #332]	; 101f0 <_end+0x28>
+   100a0:	e59f1140 	ldr	r1, [pc, #320]	; 101e8 <_end+0x20>
 
 000100a4 <_reverb>:
-   100a4:	e5912004 	ldr	r2, [r1, #4]
-   100a8:	e59f5110 	ldr	r5, [pc, #272]	; 101c0 <_end+0x24>
-   100ac:	e5956000 	ldr	r6, [r5]
-   100b0:	ea000021 	b	1013c <_mult_pfijo1>
+   100a4:	e5912000 	ldr	r2, [r1]
+   100a8:	e2811004 	add	r1, r1, #4
+   100ac:	e59f5140 	ldr	r5, [pc, #320]	; 101f4 <_end+0x2c>
+   100b0:	e5956000 	ldr	r6, [r5]
+   100b4:	ea000022 	b	10144 <_mult_pfijo1>
 
-000100b4 <_mult_end>:
-   100b4:	e59f5108 	ldr	r5, [pc, #264]	; 101c4 <_end+0x28>
-   100b8:	e5959000 	ldr	r9, [r5]
-   100bc:	e043a009 	sub	sl, r3, r9
-   100c0:	e35a0000 	cmp	sl, #0
-   100c4:	0a00002c 	beq	1017c <_equals>
-   100c8:	ba00002d 	blt	10184 <_less_than>
-   100cc:	ca00002e 	bgt	1018c <_greater_than>
+000100b8 <_mult_end>:
+   100b8:	e59f5138 	ldr	r5, [pc, #312]	; 101f8 <_end+0x30>
+   100bc:	e5959000 	ldr	r9, [r5]
+   100c0:	e043a009 	sub	sl, r3, r9
+   100c4:	e35a0000 	cmp	sl, #0
+   100c8:	0a00002d 	beq	10184 <_equals>
+   100cc:	ba00002e 	blt	1018c <_less_than>
+   100d0:	ca00002f 	bgt	10194 <_greater_than>
 
-000100d0 <_end_if_else>:
-   100d0:	e59f50f0 	ldr	r5, [pc, #240]	; 101c8 <_end+0x2c>
-   100d4:	e5958000 	ldr	r8, [r5]
-   100d8:	ea000007 	b	100fc <_mult_pfijo2>
+000100d4 <_end_if_else>:
+   100d4:	e59f5120 	ldr	r5, [pc, #288]	; 101fc <_end+0x34>
+   100d8:	e5958000 	ldr	r8, [r5]
+   100dc:	ea000008 	b	10104 <_mult_pfijo2>
 
-000100dc <_mult_end2>:
-   100dc:	e082c009 	add	ip, r2, r9
-   100e0:	e580c004 	str	ip, [r0, #4]
-   100e4:	e2833001 	add	r3, r3, #1
-   100e8:	e59f50dc 	ldr	r5, [pc, #220]	; 101cc <_end+0x30>
-   100ec:	e5958000 	ldr	r8, [r5]
-   100f0:	e1530008 	cmp	r3, r8
-   100f4:	baffffea 	blt	100a4 <_reverb>
-   100f8:	0a000027 	beq	1019c <_end>
+000100e0 <_mult_end2>:
+   100e0:	e082c009 	add	ip, r2, r9
 
-000100fc <_mult_pfijo2>:
-   100fc:	e59f50cc 	ldr	r5, [pc, #204]	; 101d0 <_end+0x34>
-   10100:	e595c000 	ldr	ip, [r5]
-   10104:	e1a07848 	asr	r7, r8, #16
-   10108:	e1a05844 	asr	r5, r4, #16
-   1010c:	e008a00c 	and	sl, r8, ip
-   10110:	e004b00c 	and	fp, r4, ip
-   10114:	e00c0597 	mul	ip, r7, r5
-   10118:	e0060b9a 	mul	r6, sl, fp
-   1011c:	e0080b97 	mul	r8, r7, fp
-   10120:	e009059a 	mul	r9, sl, r5
-   10124:	e0885009 	add	r5, r8, r9
-   10128:	e1a0c80c 	lsl	ip, ip, #16
-   1012c:	e1a06826 	lsr	r6, r6, #16
-   10130:	e08c8006 	add	r8, ip, r6
-   10134:	e0889007 	add	r9, r8, r7
-   10138:	eaffffe7 	b	100dc <_mult_end2>
+000100e4 <_result_r12>:
+   100e4:	e580c000 	str	ip, [r0]
+   100e8:	e2800004 	add	r0, r0, #4
+   100ec:	e59f510c 	ldr	r5, [pc, #268]	; 10200 <_end+0x38>
+   100f0:	e5958000 	ldr	r8, [r5]
+   100f4:	e2833001 	add	r3, r3, #1
+   100f8:	e1530008 	cmp	r3, r8
+   100fc:	baffffe8 	blt	100a4 <_reverb>
+   10100:	0a000027 	beq	101a4 <_loadfiles>
 
-0001013c <_mult_pfijo1>:
-   1013c:	e59f508c 	ldr	r5, [pc, #140]	; 101d0 <_end+0x34>
-   10140:	e5958000 	ldr	r8, [r5]
-   10144:	e1a04846 	asr	r4, r6, #16
-   10148:	e1a07842 	asr	r7, r2, #16
-   1014c:	e0065008 	and	r5, r6, r8
-   10150:	e002a008 	and	sl, r2, r8
-   10154:	e00b0794 	mul	fp, r4, r7
-   10158:	e00c0a95 	mul	ip, r5, sl
-   1015c:	e0090a94 	mul	r9, r4, sl
-   10160:	e0020795 	mul	r2, r5, r7
-   10164:	e0897002 	add	r7, r9, r2
-   10168:	e1a0b80b 	lsl	fp, fp, #16
-   1016c:	e1a0c82c 	lsr	ip, ip, #16
-   10170:	e08b400c 	add	r4, fp, ip
-   10174:	e0842007 	add	r2, r4, r7
-   10178:	eaffffcd 	b	100b4 <_mult_end>
+00010104 <_mult_pfijo2>:
+   10104:	e59f50f8 	ldr	r5, [pc, #248]	; 10204 <_end+0x3c>
+   10108:	e595c000 	ldr	ip, [r5]
+   1010c:	e1a07848 	asr	r7, r8, #16
+   10110:	e1a05844 	asr	r5, r4, #16
+   10114:	e008a00c 	and	sl, r8, ip
+   10118:	e004b00c 	and	fp, r4, ip
+   1011c:	e00c0597 	mul	ip, r7, r5
+   10120:	e0060b9a 	mul	r6, sl, fp
+   10124:	e0080b97 	mul	r8, r7, fp
+   10128:	e009059a 	mul	r9, sl, r5
+   1012c:	e0885009 	add	r5, r8, r9
+   10130:	e1a0c80c 	lsl	ip, ip, #16
+   10134:	e1a06826 	lsr	r6, r6, #16
+   10138:	e08c8006 	add	r8, ip, r6
+   1013c:	e0889005 	add	r9, r8, r5
+   10140:	eaffffe6 	b	100e0 <_mult_end2>
 
-0001017c <_equals>:
-   1017c:	e5904000 	ldr	r4, [r0]
-   10180:	eaffffd2 	b	100d0 <_end_if_else>
+00010144 <_mult_pfijo1>:
+   10144:	e59f50b8 	ldr	r5, [pc, #184]	; 10204 <_end+0x3c>
+   10148:	e5958000 	ldr	r8, [r5]
+   1014c:	e1a04846 	asr	r4, r6, #16
+   10150:	e1a07842 	asr	r7, r2, #16
+   10154:	e0065008 	and	r5, r6, r8
+   10158:	e002a008 	and	sl, r2, r8
+   1015c:	e00b0794 	mul	fp, r4, r7
+   10160:	e00c0a95 	mul	ip, r5, sl
+   10164:	e0090a94 	mul	r9, r4, sl
+   10168:	e0020795 	mul	r2, r5, r7
+   1016c:	e0897002 	add	r7, r9, r2
+   10170:	e1a0b80b 	lsl	fp, fp, #16
+   10174:	e1a0c82c 	lsr	ip, ip, #16
+   10178:	e08b400c 	add	r4, fp, ip
+   1017c:	e0842007 	add	r2, r4, r7
+   10180:	eaffffcc 	b	100b8 <_mult_end>
 
-00010184 <_less_than>:
-   10184:	e3a04000 	mov	r4, #0
-   10188:	eaffffd0 	b	100d0 <_end_if_else>
+00010184 <_equals>:
+   10184:	e5904000 	ldr	r4, [r0]
+   10188:	eaffffd1 	b	100d4 <_end_if_else>
 
-0001018c <_greater_than>:
-   1018c:	e3a05004 	mov	r5, #4
-   10190:	e00a0a95 	mul	sl, r5, sl
-   10194:	e790400a 	ldr	r4, [r0, sl]
-   10198:	eaffffcc 	b	100d0 <_end_if_else>
+0001018c <_less_than>:
+   1018c:	e3a04000 	mov	r4, #0
+   10190:	eaffffcf 	b	100d4 <_end_if_else>
 
-0001019c <_end>:
-   1019c:	e3a07006 	mov	r7, #6
-   101a0:	ef000000 	svc	0x00000000
-   101a4:	e3a07001 	mov	r7, #1
-   101a8:	e3a00000 	mov	r0, #0
-   101ac:	ef000000 	svc	0x00000000
-   101b0:	000201e8 	.word	0x000201e8
-   101b4:	000201fd 	.word	0x000201fd
-   101b8:	000d767a 	.word	0x000d767a
-   101bc:	0011443d 	.word	0x0011443d
-   101c0:	000201d4 	.word	0x000201d4
-   101c4:	000201dc 	.word	0x000201dc
-   101c8:	000201d8 	.word	0x000201d8
-   101cc:	000201e4 	.word	0x000201e4
-   101d0:	000201e0 	.word	0x000201e0
+00010194 <_greater_than>:
+   10194:	e3a05004 	mov	r5, #4
+   10198:	e00a0a95 	mul	sl, r5, sl
+   1019c:	e790400a 	ldr	r4, [r0, sl]
+   101a0:	eaffffcb 	b	100d4 <_end_if_else>
+
+000101a4 <_loadfiles>:
+   101a4:	e3a07005 	mov	r7, #5
+   101a8:	e59f0058 	ldr	r0, [pc, #88]	; 10208 <_end+0x40>
+   101ac:	e3a01002 	mov	r1, #2
+   101b0:	e3a02064 	mov	r2, #100	; 0x64
+   101b4:	ef000000 	svc	0x00000000
+   101b8:	e3a07004 	mov	r7, #4
+   101bc:	e59f102c 	ldr	r1, [pc, #44]	; 101f0 <_end+0x28>
+   101c0:	e59f2024 	ldr	r2, [pc, #36]	; 101ec <_end+0x24>
+   101c4:	ef000000 	svc	0x00000000
+
+000101c8 <_end>:
+   101c8:	e3a07006 	mov	r7, #6
+   101cc:	ef000000 	svc	0x00000000
+   101d0:	e3a07006 	mov	r7, #6
+   101d4:	ef000000 	svc	0x00000000
+   101d8:	e3a07001 	mov	r7, #1
+   101dc:	e3a00000 	mov	r0, #0
+   101e0:	ef000000 	svc	0x00000000
+   101e4:	00020220 	.word	0x00020220
+   101e8:	00020235 	.word	0x00020235
+   101ec:	000d767a 	.word	0x000d767a
+   101f0:	00114475 	.word	0x00114475
+   101f4:	0002020c 	.word	0x0002020c
+   101f8:	00020214 	.word	0x00020214
+   101fc:	00020210 	.word	0x00020210
+   10200:	0002021c 	.word	0x0002021c
+   10204:	00020218 	.word	0x00020218
+   10208:	0002022a 	.word	0x0002022a
