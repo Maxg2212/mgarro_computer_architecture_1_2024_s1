@@ -1,0 +1,19 @@
+REGISTROS RESERVADOS
+Direcciones:
+r0 = Direccion de buffer output
+r1 = Direccion de buffer input
+r3 = Contador
+
+TEMPORALES
+1. r2 = (1 - alpha) * x(n)
+2. r4 = valor y(n - k)
+3. r8 = alpha * y(n - k) 
+
+REGISTROS DISPONIBLES
+r5 = lo uso para cargar direcciones temporales **
+r6 = **
+r7 = **
+r9 = **
+r10 = **
+r11 = **
+r12 = **
