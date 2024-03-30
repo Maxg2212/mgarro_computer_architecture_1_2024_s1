@@ -141,10 +141,10 @@ _less_than:
   b _end_if_else      @ Salto al final de la sección _reverb
 _greater_than:
   mov r5, #4       
-  mul r10, r10, r5         @ multiplicamos el indice por 4 para poder acceder a la lista sin problemas
+  mul r11, r10, r5         @ multiplicamos el indice por 4 para poder acceder a la lista sin problemas
   ldr r5, =buffer_output @ Cargar la dirección de constante_k en r5
   ldr r9, [r5] @ constant k @ Cargar el valor de constante_k en r9
-  ldr r4, [r9, r10]
+  ldr r4, [r9, r11]
   b _end_if_else      @ Salto al final de la sección _reverb
 _loadfiles:
    @ Load the outbit.bin file

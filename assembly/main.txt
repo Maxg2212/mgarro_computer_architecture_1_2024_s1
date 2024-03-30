@@ -6,36 +6,36 @@ Disassembly of section .text:
 
 00010074 <_start>:
    10074:	e3a07005 	mov	r7, #5
-   10078:	e59f0164 	ldr	r0, [pc, #356]	; 101e4 <_end+0x1c>
+   10078:	e59f0174 	ldr	r0, [pc, #372]	; 101f4 <_end+0x1c>
    1007c:	e3a01002 	mov	r1, #2
    10080:	e3a02000 	mov	r2, #0
    10084:	ef000000 	svc	0x00000000
    10088:	e3a07003 	mov	r7, #3
-   1008c:	e59f1154 	ldr	r1, [pc, #340]	; 101e8 <_end+0x20>
-   10090:	e59f2154 	ldr	r2, [pc, #340]	; 101ec <_end+0x24>
+   1008c:	e59f1164 	ldr	r1, [pc, #356]	; 101f8 <_end+0x20>
+   10090:	e59f2164 	ldr	r2, [pc, #356]	; 101fc <_end+0x24>
    10094:	ef000000 	svc	0x00000000
    10098:	e3a03000 	mov	r3, #0
-   1009c:	e59f014c 	ldr	r0, [pc, #332]	; 101f0 <_end+0x28>
-   100a0:	e59f1140 	ldr	r1, [pc, #320]	; 101e8 <_end+0x20>
+   1009c:	e59f015c 	ldr	r0, [pc, #348]	; 10200 <_end+0x28>
+   100a0:	e59f1150 	ldr	r1, [pc, #336]	; 101f8 <_end+0x20>
 
 000100a4 <_reverb>:
    100a4:	e5912000 	ldr	r2, [r1]
    100a8:	e2811004 	add	r1, r1, #4
-   100ac:	e59f5140 	ldr	r5, [pc, #320]	; 101f4 <_end+0x2c>
+   100ac:	e59f5150 	ldr	r5, [pc, #336]	; 10204 <_end+0x2c>
    100b0:	e5956000 	ldr	r6, [r5]
    100b4:	ea000022 	b	10144 <_mult_pfijo1>
 
 000100b8 <_mult_end>:
-   100b8:	e59f5138 	ldr	r5, [pc, #312]	; 101f8 <_end+0x30>
+   100b8:	e59f5148 	ldr	r5, [pc, #328]	; 10208 <_end+0x30>
    100bc:	e5959000 	ldr	r9, [r5]
    100c0:	e043a009 	sub	sl, r3, r9
    100c4:	e35a0000 	cmp	sl, #0
    100c8:	0a00002d 	beq	10184 <_equals>
-   100cc:	ba00002e 	blt	1018c <_less_than>
-   100d0:	ca00002f 	bgt	10194 <_greater_than>
+   100cc:	ba000030 	blt	10194 <_less_than>
+   100d0:	ca000031 	bgt	1019c <_greater_than>
 
 000100d4 <_end_if_else>:
-   100d4:	e59f5120 	ldr	r5, [pc, #288]	; 101fc <_end+0x34>
+   100d4:	e59f5130 	ldr	r5, [pc, #304]	; 1020c <_end+0x34>
    100d8:	e5958000 	ldr	r8, [r5]
    100dc:	ea000008 	b	10104 <_mult_pfijo2>
 
@@ -45,15 +45,15 @@ Disassembly of section .text:
 000100e4 <_result_r12>:
    100e4:	e580c000 	str	ip, [r0]
    100e8:	e2800004 	add	r0, r0, #4
-   100ec:	e59f510c 	ldr	r5, [pc, #268]	; 10200 <_end+0x38>
+   100ec:	e59f511c 	ldr	r5, [pc, #284]	; 10210 <_end+0x38>
    100f0:	e5958000 	ldr	r8, [r5]
    100f4:	e2833001 	add	r3, r3, #1
    100f8:	e1530008 	cmp	r3, r8
    100fc:	baffffe8 	blt	100a4 <_reverb>
-   10100:	0a000027 	beq	101a4 <_loadfiles>
+   10100:	0a00002b 	beq	101b4 <_loadfiles>
 
 00010104 <_mult_pfijo2>:
-   10104:	e59f50f8 	ldr	r5, [pc, #248]	; 10204 <_end+0x3c>
+   10104:	e59f5108 	ldr	r5, [pc, #264]	; 10214 <_end+0x3c>
    10108:	e595c000 	ldr	ip, [r5]
    1010c:	e1a07848 	asr	r7, r8, #16
    10110:	e1a05844 	asr	r5, r4, #16
@@ -71,7 +71,7 @@ Disassembly of section .text:
    10140:	eaffffe6 	b	100e0 <_mult_end2>
 
 00010144 <_mult_pfijo1>:
-   10144:	e59f50b8 	ldr	r5, [pc, #184]	; 10204 <_end+0x3c>
+   10144:	e59f50c8 	ldr	r5, [pc, #200]	; 10214 <_end+0x3c>
    10148:	e5958000 	ldr	r8, [r5]
    1014c:	e1a04846 	asr	r4, r6, #16
    10150:	e1a07842 	asr	r7, r2, #16
@@ -89,45 +89,49 @@ Disassembly of section .text:
    10180:	eaffffcc 	b	100b8 <_mult_end>
 
 00010184 <_equals>:
-   10184:	e5904000 	ldr	r4, [r0]
-   10188:	eaffffd1 	b	100d4 <_end_if_else>
-
-0001018c <_less_than>:
-   1018c:	e3a04000 	mov	r4, #0
+   10184:	e59f5074 	ldr	r5, [pc, #116]	; 10200 <_end+0x28>
+   10188:	e5959000 	ldr	r9, [r5]
+   1018c:	e5994000 	ldr	r4, [r9]
    10190:	eaffffcf 	b	100d4 <_end_if_else>
 
-00010194 <_greater_than>:
-   10194:	e3a05004 	mov	r5, #4
-   10198:	e00a0a95 	mul	sl, r5, sl
-   1019c:	e790400a 	ldr	r4, [r0, sl]
-   101a0:	eaffffcb 	b	100d4 <_end_if_else>
+00010194 <_less_than>:
+   10194:	e3a04000 	mov	r4, #0
+   10198:	eaffffcd 	b	100d4 <_end_if_else>
 
-000101a4 <_loadfiles>:
-   101a4:	e3a07005 	mov	r7, #5
-   101a8:	e59f0058 	ldr	r0, [pc, #88]	; 10208 <_end+0x40>
-   101ac:	e3a01002 	mov	r1, #2
-   101b0:	e3a02064 	mov	r2, #100	; 0x64
-   101b4:	ef000000 	svc	0x00000000
-   101b8:	e3a07004 	mov	r7, #4
-   101bc:	e59f102c 	ldr	r1, [pc, #44]	; 101f0 <_end+0x28>
-   101c0:	e59f2024 	ldr	r2, [pc, #36]	; 101ec <_end+0x24>
+0001019c <_greater_than>:
+   1019c:	e3a05004 	mov	r5, #4
+   101a0:	e00b059a 	mul	fp, sl, r5
+   101a4:	e59f5054 	ldr	r5, [pc, #84]	; 10200 <_end+0x28>
+   101a8:	e5959000 	ldr	r9, [r5]
+   101ac:	e799400b 	ldr	r4, [r9, fp]
+   101b0:	eaffffc7 	b	100d4 <_end_if_else>
+
+000101b4 <_loadfiles>:
+   101b4:	e3a07005 	mov	r7, #5
+   101b8:	e59f0058 	ldr	r0, [pc, #88]	; 10218 <_end+0x40>
+   101bc:	e3a01002 	mov	r1, #2
+   101c0:	e3a02064 	mov	r2, #100	; 0x64
    101c4:	ef000000 	svc	0x00000000
-
-000101c8 <_end>:
-   101c8:	e3a07006 	mov	r7, #6
-   101cc:	ef000000 	svc	0x00000000
-   101d0:	e3a07006 	mov	r7, #6
+   101c8:	e3a07004 	mov	r7, #4
+   101cc:	e59f102c 	ldr	r1, [pc, #44]	; 10200 <_end+0x28>
+   101d0:	e59f2024 	ldr	r2, [pc, #36]	; 101fc <_end+0x24>
    101d4:	ef000000 	svc	0x00000000
-   101d8:	e3a07001 	mov	r7, #1
-   101dc:	e3a00000 	mov	r0, #0
-   101e0:	ef000000 	svc	0x00000000
-   101e4:	00020220 	.word	0x00020220
-   101e8:	00020235 	.word	0x00020235
-   101ec:	000d767a 	.word	0x000d767a
-   101f0:	00114475 	.word	0x00114475
-   101f4:	0002020c 	.word	0x0002020c
-   101f8:	00020214 	.word	0x00020214
-   101fc:	00020210 	.word	0x00020210
-   10200:	0002021c 	.word	0x0002021c
-   10204:	00020218 	.word	0x00020218
-   10208:	0002022a 	.word	0x0002022a
+
+000101d8 <_end>:
+   101d8:	e3a07006 	mov	r7, #6
+   101dc:	ef000000 	svc	0x00000000
+   101e0:	e3a07006 	mov	r7, #6
+   101e4:	ef000000 	svc	0x00000000
+   101e8:	e3a07001 	mov	r7, #1
+   101ec:	e3a00000 	mov	r0, #0
+   101f0:	ef000000 	svc	0x00000000
+   101f4:	00020230 	.word	0x00020230
+   101f8:	00020245 	.word	0x00020245
+   101fc:	000d767a 	.word	0x000d767a
+   10200:	00114485 	.word	0x00114485
+   10204:	0002021c 	.word	0x0002021c
+   10208:	00020224 	.word	0x00020224
+   1020c:	00020220 	.word	0x00020220
+   10210:	0002022c 	.word	0x0002022c
+   10214:	00020228 	.word	0x00020228
+   10218:	0002023a 	.word	0x0002023a
