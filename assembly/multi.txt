@@ -1,0 +1,29 @@
+
+multi:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00010074 <_start>:
+   10074:	e3a0890e 	mov	r8, #229376	; 0x38000
+   10078:	e59f3038 	ldr	r3, [pc, #56]	; 100b8 <HLT>
+   1007c:	e3a0490e 	mov	r4, #229376	; 0x38000
+   10080:	e30f0fff 	movw	r0, #65535	; 0xffff
+
+00010084 <mult_pfijo>:
+   10084:	e1a07848 	asr	r7, r8, #16
+   10088:	e1a05844 	asr	r5, r4, #16
+   1008c:	e008a000 	and	sl, r8, r0
+   10090:	e004b000 	and	fp, r4, r0
+   10094:	e00c0597 	mul	ip, r7, r5
+   10098:	e0060b9a 	mul	r6, sl, fp
+   1009c:	e0080b97 	mul	r8, r7, fp
+   100a0:	e009059a 	mul	r9, sl, r5
+   100a4:	e0885009 	add	r5, r8, r9
+   100a8:	e1a0c80c 	lsl	ip, ip, #16
+   100ac:	e1a06826 	lsr	r6, r6, #16
+   100b0:	e08c8006 	add	r8, ip, r6
+   100b4:	e0889005 	add	r9, r8, r5
+
+000100b8 <HLT>:
+   100b8:	000200bc 	.word	0x000200bc
