@@ -99,7 +99,7 @@ _mult_pfijo2:
   lsr r6, r6, #16 @ low >> 16
 
   add r8, r12, r6 @ high<<<16 + low>>>16
-  add r9, r8, r7   @ high<<<16 + low>>>16 + mid (aun no se está utilizando buffer output)
+  add r9, r8, r5   @ high<<<16 + low>>>16 + mid (aun no se está utilizando buffer output)
   b _mult_end2
 
 _mult_pfijo1:

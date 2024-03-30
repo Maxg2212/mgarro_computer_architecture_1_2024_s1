@@ -5,9 +5,9 @@ multi:     file format elf32-littlearm
 Disassembly of section .text:
 
 00010074 <_start>:
-   10074:	e3a0890d 	mov	r8, #212992	; 0x34000
+   10074:	e3a0890e 	mov	r8, #229376	; 0x38000
    10078:	e59f3038 	ldr	r3, [pc, #56]	; 100b8 <HLT>
-   1007c:	e3a0490d 	mov	r4, #212992	; 0x34000
+   1007c:	e3a0490e 	mov	r4, #229376	; 0x38000
    10080:	e30f0fff 	movw	r0, #65535	; 0xffff
 
 00010084 <mult_pfijo>:
@@ -23,7 +23,7 @@ Disassembly of section .text:
    100a8:	e1a0c80c 	lsl	ip, ip, #16
    100ac:	e1a06826 	lsr	r6, r6, #16
    100b0:	e08c8006 	add	r8, ip, r6
-   100b4:	e0889007 	add	r9, r8, r7
+   100b4:	e0889005 	add	r9, r8, r5
 
 000100b8 <HLT>:
    100b8:	000200bc 	.word	0x000200bc

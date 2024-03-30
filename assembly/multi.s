@@ -6,9 +6,9 @@
 
 .section .text
 _start:
-	mov r8, #0x00034000 @3.25
+	mov r8, #0x00038000 @3.25
 	ldr r3, =constante
-	mov r4, #0x00034000 @3.25
+	mov r4, #0x00038000 @3.25
 	mov r0, #0xFFFF
 	
 mult_pfijo:
@@ -29,7 +29,7 @@ mult_pfijo:
   lsr r6, r6, #16 @ low >> 16
 
   add r8, r12, r6 @ high<<<16 + low>>>16
-  add r9, r8, r7   @ high<<<16 + low>>>16 + mid (aun no se está utilizando buffer output)
+  add r9, r8, r5   @ high<<<16 + low>>>16 + mid (aun no se está utilizando buffer output)
 
 
 	
