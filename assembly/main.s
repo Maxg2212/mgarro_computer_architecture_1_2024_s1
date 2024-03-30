@@ -5,6 +5,8 @@
   constante_1_alpha: .word 0x00006666 @ Valor de 1 - alpha
   constante_alpha: .word 0x0000999a @ Valor de alpha
   constante_k: .word 20205 @ Resultado de realizar K = Fs x 50ms = 20205
+  constante_mask: .word 0xFFFF @ Máscara para obtener los 16 bits menos significativos
+  constante_loop: .word 882298 @ Resultado de realizar K = Fs x 50ms = 20205
   name_input: .asciz "input.bin"
   name_output: .asciz "output.bin"  
   buffer_input: .space 1000000    @ reserved buffer
@@ -69,17 +71,22 @@ _reverb:
 
   add r3, r3, #1  @ Incrementar el valor de r6 en uno
 
-  cmp r3, #882298     @ comparar r3 con 882298 que es el tamaño completo del buffer
+  ldr r5, =constante_loop
+  ldr r8, [r5] @ alpha q16.17
+
+  cmp r3, r8     @ comparar r3 con 882298 que es el tamaño completo del buffer
   blt _reverb         @ Repetir el ciclo si el valor en r3 es menor que el valor dado
   beq _loadfiles
 
 _mult_pfijo2:
-  @ r1, r0 reserved
+  ldr r5, =constante_mask
+  ldr r12, [r5] @ mask
+
   asr r7, r8, #16 @ Qa
   asr r5, r4, #16 @ Qb
 
-  and r10, r8, #0xFFFF @ Qc
-  and r11, r4, #0xFFFF @ Qd
+  and r10, r8, r12 @ Qc
+  and r11, r4, r12 @ Qd
 
   mul r12, r7, r5 @ high = a * b @ high =  a * c
   mul r6, r10, r11 @ low =  b * d @ low = b * d
@@ -96,11 +103,14 @@ _mult_pfijo2:
   b _mult_end2
 
 _mult_pfijo1:
+  ldr r5, =constante_mask
+  ldr r8, [r5] @ (1 - alpha)
+
   asr r4, r6, #16 @ Qa
   asr r7, r2, #16 @ Qb
 
-  and r5, r6, #0xFFFF @ Qc
-  and r10, r2, #0xFFFF @ Qd
+  and r5, r6, r8 @ Qc
+  and r10, r2, r8 @ Qd
 
   mul r11, r4, r7 @ high = a * b 
   mul r12, r5, r10 @ low =  c * d 

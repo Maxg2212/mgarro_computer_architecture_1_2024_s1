@@ -6,33 +6,32 @@
 
 .section .text
 _start:
-	mov r1, #0x00034000 @3.25
+	mov r8, #0x00034000 @3.25
 	ldr r3, =constante
-	ldr r2, [r3]
-	mov r0, #0xFFFF @256 en hexadecimales
+	mov r4, #0x00034000 @3.25
+	mov r0, #0xFFFF
 	
 mult_pfijo:
-	asr r4, r1, #16 @Qa
-	asr r5, r2, #16 @Qc
+  asr r7, r8, #16 @ Qa
+  asr r5, r4, #16 @ Qb
 
-	and r6, r1, r0 @Qb
-	and r7, r2, r0 @Qd
-	
-	mul r8, r4, r5 @high=axb
-	mul r9, r6, r7 @low=bxd
-	
-	mul r10, r4, r7 @axd
-	mul r11, r6, r5 @bxc
-	add r5, r10, r11 @mid
-	
-	lsl r8, r8, #16 @high<<<16
-	lsr r9, r9, #16 @low>>>16
-	
-	add r10, r8, r9 @high<<<16 + low>>>16
-	add r11, r10, r5 @high<<<16 + low>>>16 + mid
-	
-	sub sp, sp, #4
-	str r11, [sp]
+  and r10, r8, r0 @ Qc
+  and r11, r4, r0 @ Qd
+
+  mul r12, r7, r5 @ high = a * b @ high =  a * c
+  mul r6, r10, r11 @ low =  b * d @ low = b * d
+
+  mul r8, r7, r11 @ high = a * d 
+  mul r9, r10, r5 @ high = b * c
+  add r5, r8, r9 @ mid 
+
+  lsl r12, r12, #16 @ high << 16
+  lsr r6, r6, #16 @ low >> 16
+
+  add r8, r12, r6 @ high<<<16 + low>>>16
+  add r9, r8, r7   @ high<<<16 + low>>>16 + mid (aun no se está utilizando buffer output)
+
+
 	
 HLT:	
 
