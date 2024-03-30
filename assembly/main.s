@@ -6,7 +6,7 @@
   constante_alpha: .word 0x0000999a @ Valor de alpha
   constante_k: .word 20205 @ Resultado de realizar K = Fs x 50ms = 20205
   constante_mask: .word 0xFFFF @ Máscara para obtener los 16 bits menos significativos
-  constante_loop: .word 2 @ Resultado de realizar K = Fs x 50ms = 20205
+  constante_loop: .word 882298 @ Resultado de realizar K = Fs x 50ms = 20205
   name_input: .asciz "input.bin"
   name_output: .asciz "output.bin"  
   buffer_input: .space 1000000    @ reserved buffer
@@ -33,12 +33,11 @@ _start:
   
   
 _reverb:
-  ldr r2, [r1] @ Cargo el valor al que apunta la dirección r1
-  add r1, r1, #4 @ Incremento la dirección en 4 para apuntar al siguiente valor
+  ldr r2, [r1, #4] @ Cargo el valor al que apunta la direccion r1
  
   ldr r5, =constante_1_alpha
   ldr r6, [r5] @ (1 - alpha)
-  
+
   b _mult_pfijo1 @ (1 - 0.6) * x(n)
 
   _mult_end:
@@ -68,16 +67,12 @@ _reverb:
   @r10, r2 registros con valores
   add r12, r2, r9 @ (1 - 0.6) * x(n) + alpha * y(n-k)
 
-  _result_r12:
-  str r12, [r0] @ se almacena la posicion y(n) en la lista
-  add r0, r0, #4 @ Incremento la dirección en 4 para apuntar al siguiente valor
+  str r12, [r0, #4] @ se almacena la posicion y(n) en la lista
 
-  
+  add r3, r3, #1  @ Incrementar el valor de r6 en uno
 
   ldr r5, =constante_loop
-  ldr r8, [r5] @ constante de comparacion del loop
-
-  add r3, r3, #1  @ Incrementar el valor de r3 en uno
+  ldr r8, [r5] @ alpha q16.17
 
   cmp r3, r8     @ comparar r3 con 882298 que es el tamaño completo del buffer
   blt _reverb         @ Repetir el ciclo si el valor en r3 es menor que el valor dado
@@ -144,17 +139,17 @@ _greater_than:
   b _end_if_else     @ Salto al final de la sección _reverb
 _loadfiles:
    @ Load the outbit.bin file
-   mov r7, #0x5            
-   ldr r2, =name_output   
-   mov r1, #2         
-   mov r2, #100
-   swi 0          
+   @mov r7, #0x5            
+   @ldr r2, =name_output   
+   @mov r1, #2         
+   @mov r2, #100
+   @swi 0          
 
   @ Writes the output buffer in output.bin file
-   mov r7, #0x4
-   ldr r3, =buffer_output
-   ldr r2, =#8
-   swi 0
+   @mov r7, #0x4
+   @ldr r3, =buffer_output
+   @ldr r2, =#882298
+   @swi 0
 
 _end:
   @ Close input
@@ -162,8 +157,8 @@ _end:
   swi 0                   
 
   @ @ Close output
-   mov r7, #6             
-   swi 0                  
+   @mov r7, #6             
+   @swi 0                  
 
   @ Finish program
   mov r7, #0x1            
