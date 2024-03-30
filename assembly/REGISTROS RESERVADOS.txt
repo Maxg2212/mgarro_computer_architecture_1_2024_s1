@@ -8,6 +8,7 @@ TEMPORALES
 1. r2 = (1 - alpha) * x(n)
 2. r4 = valor y(n - k)
 3. r8 = alpha * y(n - k) 
+4. r12 = (1 - alpha) * x(n) + alpha * y(n - k)
 
 REGISTROS DISPONIBLES
 r5 = lo uso para cargar direcciones temporales **
@@ -17,3 +18,17 @@ r9 = **
 r10 = **
 r11 = **
 r12 = **
+
+
+RESULTADOS
+(1 - 0.6) = 00006666
+
+iteracion 0:
+(1 - 0.6) * x(0) == fffff612
+y(0) = fffff612
+
+iteracion 1:
+(1 - 0.6) * x(0) == fff792
+y(1) = fff792
+
+iteracion 2:
