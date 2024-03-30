@@ -9,3 +9,10 @@ qemu-arm -singlestep -g 1233 multi
 arm-none-eabi-gdb
 file multi
 target remote localhost:1233
+
+
+1.  dissambly: arm-linux-gnueabi-objdump -d main &> main.txt
+2. mega comando: arm-linux-gnueabi-as main.s -o main.o && arm-linux-gnueabi-ld main.o -o main && rm main.txt && arm-linux-gnueabi-objdump -d main &> main.txt 
+3. qemu-arm -g 1234 ./main & 
+4. gdb-multiarch main 
+5. target remote localhost:1234 
