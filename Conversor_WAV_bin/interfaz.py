@@ -55,14 +55,14 @@ def reproducir_audio(archivo_wav):
 
 # Crear la ventana
 ventana = pygame.display.set_mode((ANCHO, ALTO))
-pygame.display.set_caption('Interfaz con Pygame')
+pygame.display.set_caption('Reproductor de audio')
 
 # Reloj para controlar la velocidad de actualización
 reloj = pygame.time.Clock()
 
 # Definir botones
-boton_convertir_1 = crear_boton(ventana, AZUL, 50, 50, 300, 50, "Convertir archivo 1", lambda: convertir_y_reproducir("audio_muestras_q15_16.bin", "audio_convertido_1.wav"))
-boton_convertir_2 = crear_boton(ventana, VERDE, 50, 120, 300, 50, "Convertir archivo 2", lambda: convertir_y_reproducir("audio_muestras_q15_16.bin", "audio_convertido_2.wav"))
+boton_convertir_1 = crear_boton(ventana, AZUL, 50, 50, 300, 50, "Insertar reverb", lambda: convertir_y_reproducir("audio_muestras_q15_16.bin", "audio_convertido_1.wav"))
+boton_convertir_2 = crear_boton(ventana, VERDE, 50, 120, 300, 50, "Eliminar reverb", lambda: convertir_y_reproducir("audio_muestras_q15_16.bin", "audio_convertido_2.wav"))
 
 # Función para convertir y luego reproducir el archivo WAV
 def convertir_y_reproducir(archivo_bin, archivo_wav):
