@@ -7,7 +7,7 @@ def q15_16_to_float(value):
     value &= 0x7FFF
     return sign * (value / 32768.0)
 
-def convertir_bin_a_wav(archivo_bin, archivo_wav, num_channels=6, sample_width=2, frame_rate=37485):
+def convertir_bin_a_wav(archivo_bin, archivo_wav, num_channels=6, sample_width=2, frame_rate=29988):
     # Leer el archivo binario
     with open(archivo_bin, 'rb') as bin_file:
         # Leer todos los bytes del archivo binario
