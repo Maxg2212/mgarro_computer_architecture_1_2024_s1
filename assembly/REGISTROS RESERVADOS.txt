@@ -31,4 +31,12 @@ iteracion 1:
 (1 - 0.6) * x(0) == fff792
 y(1) = fff792
 
-iteracion 2:
+iteracion 20205:
+(1 - 0.6) = 00006666
+(1 - 0.6) * x(20205) == fff8c9a0d0
+
+y(0) = fffff612
+alpha * y(0) = fffa0ac8d4
+
+r12 = fffff2d468
+

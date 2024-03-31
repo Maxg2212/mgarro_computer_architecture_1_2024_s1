@@ -6,10 +6,14 @@
   constante_alpha: .word 0x0000999a @ Valor de alpha
   constante_k: .word 20205 @ Resultado de realizar K = Fs x 50ms = 20205
   constante_mask: .word 0xFFFF @ Máscara para obtener los 16 bits menos significativos
-  constante_loop: .word 2 @ Resultado de realizar K = Fs x 50ms = 20205
+  constante_loop: .word 20206 @ Constante de comparacion del loop
+  prueba: .word 240000
   name_input: .asciz "input.bin"
   name_output: .asciz "output.bin"  
   buffer_input: .space 1000000    @ reserved buffer
+  buffer_input_start: .word buffer_input
+  buffer_input_end: .word buffer_input + 10000   @ Tamaño de la ventana de lectura
+  
   buffer_output: .space 1000000   @ reserved buffer
 
 .section .text
@@ -30,8 +34,14 @@ _start:
   mov r3, #0 @ main counter for loop
   ldr r0, =buffer_output @ Cargar la dirección de buffer_output 
   ldr r1, =buffer_input  @ Cargar la dirección de buffer_input 
-  
-  
+
+  @ldr r6, =prueba
+  @ldr r8, [r6]
+  @mov r4, #4
+  @mul r3, r8, r4
+  @ldr r2, [r1, r3]
+  @_prueba0:
+
 _reverb:
   ldr r2, [r1] @ Cargo el valor al que apunta la dirección r1
   add r1, r1, #4 @ Incremento la dirección en 4 para apuntar al siguiente valor
@@ -63,7 +73,7 @@ _reverb:
   b _mult_pfijo2 @ alpha * y(n-k)
 
   _mult_end2:
-    @ Se almacena en r8 resultado alpha * y(n-k)
+    @ Se almacena en r9 resultado alpha * y(n-k)
 
   @r10, r2 registros con valores
   add r12, r2, r9 @ (1 - 0.6) * x(n) + alpha * y(n-k)
@@ -133,32 +143,30 @@ _mult_pfijo1:
 
 _equals:
     ldr r5, =buffer_output @ Cargar la dirección de constante_k en r5
-    ldr r9, [r5] @ constant k @ Cargar el valor de constante_k en r9
-    ldr r4, [r9]
+    ldr r4, [r5]
     b _end_if_else    @ Salto al final de la sección _reverb
 _less_than:
   mov r4, #0
   b _end_if_else      @ Salto al final de la sección _reverb
 _greater_than:
   mov r5, #4       
-  mul r11, r10, r5         @ multiplicamos el indice por 4 para poder acceder a la lista sin problemas
+  mul r9, r10, r5         @ multiplicamos el indice por 4 para poder acceder a la lista sin problemas
   ldr r5, =buffer_output @ Cargar la dirección de constante_k en r5
-  ldr r9, [r5] @ constant k @ Cargar el valor de constante_k en r9
-  ldr r4, [r9, r11]
+  ldr r4, [r5, r9]
   b _end_if_else      @ Salto al final de la sección _reverb
 _loadfiles:
-   @ Load the outbit.bin file
-   mov r7, #0x5            
-   ldr r0, =name_output   
-   mov r1, #2         
-   mov r2, #100
-   swi 0          
+  @ Load the outbit.bin file
+  mov r7, #0x5            
+  ldr r0, =name_output   
+  mov r1, #2         
+  mov r2, #100
+  swi 0          
 
   @ Writes the output buffer in output.bin file
-   mov r7, #0x4
-   ldr r1, =buffer_output
-   ldr r2, =#882298
-   swi 0
+  mov r7, #0x4
+  ldr r1, =buffer_output
+  ldr r2, =#882298
+  swi 0
 
 _end:
   @ Close input
