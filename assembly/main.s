@@ -6,15 +6,11 @@
   constante_alpha: .word 0x0000999a @ Valor de alpha
   constante_k: .word 20205 @ Resultado de realizar K = Fs x 50ms = 20205
   constante_mask: .word 0xFFFF @ Máscara para obtener los 16 bits menos significativos
-  constante_loop: .word 20206 @ Constante de comparacion del loop
-  prueba: .word 240000
+  constante_loop: .word 200000 @ Constante de comparacion del loop
   name_input: .asciz "input.bin"
   name_output: .asciz "output.bin"  
-  buffer_input: .space 1000000    @ reserved buffer
-  buffer_input_start: .word buffer_input
-  buffer_input_end: .word buffer_input + 10000   @ Tamaño de la ventana de lectura
-  
-  buffer_output: .space 1000000   @ reserved buffer
+  buffer_input: .space 882298    @ reserved buffer
+  buffer_output: .space 882298   @ reserved buffer
 
 .section .text
 _start:
@@ -34,13 +30,6 @@ _start:
   mov r3, #0 @ main counter for loop
   ldr r0, =buffer_output @ Cargar la dirección de buffer_output 
   ldr r1, =buffer_input  @ Cargar la dirección de buffer_input 
-
-  @ldr r6, =prueba
-  @ldr r8, [r6]
-  @mov r4, #4
-  @mul r3, r8, r4
-  @ldr r2, [r1, r3]
-  @_prueba0:
 
 _reverb:
   ldr r2, [r1] @ Cargo el valor al que apunta la dirección r1
