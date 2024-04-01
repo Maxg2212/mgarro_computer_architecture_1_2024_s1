@@ -81,7 +81,7 @@ while ejecutando:
             if evento.button == 1:
                 # Verificar si se hizo clic en alguno de los botones de convertir
                 if boton_convertir_1.collidepoint(evento.pos):
-                    convertir_y_reproducir("audio_muestras_q15_16.bin", "audio_convertido_1.wav")
+                    convertir_y_reproducir("output.bin", "audio_convertido_1.wav")
                 elif boton_convertir_2.collidepoint(evento.pos):
                     convertir_y_reproducir("audio_muestras_q15_16.bin", "audio_convertido_2.wav")
 

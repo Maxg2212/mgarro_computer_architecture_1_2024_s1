@@ -11,7 +11,7 @@ screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("Reproductor de Audio")
 
 # Cargar el archivo de audio
-audio_file =  "audio_convertido.wav"
+audio_file =  "audio_convertidodef.wav"
 pygame.mixer.music.load(audio_file)
 
 # Colores
