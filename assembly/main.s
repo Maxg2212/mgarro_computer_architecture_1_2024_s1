@@ -67,7 +67,6 @@ _reverb:
   @r10, r2 registros con valores
   add r12, r2, r9 @ (1 - 0.6) * x(n) + alpha * y(n-k)
 
-  _result_r12:
   str r12, [r0] @ se almacena la posicion y(n) en la lista
   add r0, r0, #4 @ Incremento la dirección en 4 para apuntar al siguiente valor
 
