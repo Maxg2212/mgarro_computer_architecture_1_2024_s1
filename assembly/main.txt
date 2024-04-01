@@ -1,0 +1,133 @@
+
+main:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00010074 <_start>:
+   10074:	e3a07005 	mov	r7, #5
+   10078:	e59f016c 	ldr	r0, [pc, #364]	; 101ec <_end+0x1c>
+   1007c:	e3a01002 	mov	r1, #2
+   10080:	e3a02000 	mov	r2, #0
+   10084:	ef000000 	svc	0x00000000
+   10088:	e3a07003 	mov	r7, #3
+   1008c:	e59f115c 	ldr	r1, [pc, #348]	; 101f0 <_end+0x20>
+   10090:	e59f215c 	ldr	r2, [pc, #348]	; 101f4 <_end+0x24>
+   10094:	ef000000 	svc	0x00000000
+   10098:	e3a03000 	mov	r3, #0
+   1009c:	e59f0154 	ldr	r0, [pc, #340]	; 101f8 <_end+0x28>
+   100a0:	e59f1148 	ldr	r1, [pc, #328]	; 101f0 <_end+0x20>
+
+000100a4 <_reverb>:
+   100a4:	e5912000 	ldr	r2, [r1]
+   100a8:	e2811004 	add	r1, r1, #4
+   100ac:	e59f5148 	ldr	r5, [pc, #328]	; 101fc <_end+0x2c>
+   100b0:	e5956000 	ldr	r6, [r5]
+   100b4:	ea000022 	b	10144 <_mult_pfijo1>
+
+000100b8 <_mult_end>:
+   100b8:	e59f5140 	ldr	r5, [pc, #320]	; 10200 <_end+0x30>
+   100bc:	e5959000 	ldr	r9, [r5]
+   100c0:	e043a009 	sub	sl, r3, r9
+   100c4:	e35a0000 	cmp	sl, #0
+   100c8:	0a00002d 	beq	10184 <_equals>
+   100cc:	ba00002f 	blt	10190 <_less_than>
+   100d0:	ca000030 	bgt	10198 <_greater_than>
+
+000100d4 <_end_if_else>:
+   100d4:	e59f5128 	ldr	r5, [pc, #296]	; 10204 <_end+0x34>
+   100d8:	e5958000 	ldr	r8, [r5]
+   100dc:	ea000008 	b	10104 <_mult_pfijo2>
+
+000100e0 <_mult_end2>:
+   100e0:	e082c009 	add	ip, r2, r9
+   100e4:	e580c000 	str	ip, [r0]
+   100e8:	e2800004 	add	r0, r0, #4
+   100ec:	e59f5114 	ldr	r5, [pc, #276]	; 10208 <_end+0x38>
+   100f0:	e5958000 	ldr	r8, [r5]
+   100f4:	e2833001 	add	r3, r3, #1
+   100f8:	e1530008 	cmp	r3, r8
+   100fc:	baffffe8 	blt	100a4 <_reverb>
+   10100:	0a000029 	beq	101ac <_loadfiles>
+
+00010104 <_mult_pfijo2>:
+   10104:	e59f5100 	ldr	r5, [pc, #256]	; 1020c <_end+0x3c>
+   10108:	e595c000 	ldr	ip, [r5]
+   1010c:	e1a07848 	asr	r7, r8, #16
+   10110:	e1a05844 	asr	r5, r4, #16
+   10114:	e008a00c 	and	sl, r8, ip
+   10118:	e004b00c 	and	fp, r4, ip
+   1011c:	e00c0597 	mul	ip, r7, r5
+   10120:	e0060b9a 	mul	r6, sl, fp
+   10124:	e0080b97 	mul	r8, r7, fp
+   10128:	e009059a 	mul	r9, sl, r5
+   1012c:	e0885009 	add	r5, r8, r9
+   10130:	e1a0c80c 	lsl	ip, ip, #16
+   10134:	e1a06826 	lsr	r6, r6, #16
+   10138:	e08c8006 	add	r8, ip, r6
+   1013c:	e0889005 	add	r9, r8, r5
+   10140:	eaffffe6 	b	100e0 <_mult_end2>
+
+00010144 <_mult_pfijo1>:
+   10144:	e59f50c0 	ldr	r5, [pc, #192]	; 1020c <_end+0x3c>
+   10148:	e5958000 	ldr	r8, [r5]
+   1014c:	e1a04846 	asr	r4, r6, #16
+   10150:	e1a07842 	asr	r7, r2, #16
+   10154:	e0065008 	and	r5, r6, r8
+   10158:	e002a008 	and	sl, r2, r8
+   1015c:	e00b0794 	mul	fp, r4, r7
+   10160:	e00c0a95 	mul	ip, r5, sl
+   10164:	e0090a94 	mul	r9, r4, sl
+   10168:	e0020795 	mul	r2, r5, r7
+   1016c:	e0897002 	add	r7, r9, r2
+   10170:	e1a0b80b 	lsl	fp, fp, #16
+   10174:	e1a0c82c 	lsr	ip, ip, #16
+   10178:	e08b400c 	add	r4, fp, ip
+   1017c:	e0842007 	add	r2, r4, r7
+   10180:	eaffffcc 	b	100b8 <_mult_end>
+
+00010184 <_equals>:
+   10184:	e59f506c 	ldr	r5, [pc, #108]	; 101f8 <_end+0x28>
+   10188:	e5954000 	ldr	r4, [r5]
+   1018c:	eaffffd0 	b	100d4 <_end_if_else>
+
+00010190 <_less_than>:
+   10190:	e3a04000 	mov	r4, #0
+   10194:	eaffffce 	b	100d4 <_end_if_else>
+
+00010198 <_greater_than>:
+   10198:	e3a05004 	mov	r5, #4
+   1019c:	e009059a 	mul	r9, sl, r5
+   101a0:	e59f5050 	ldr	r5, [pc, #80]	; 101f8 <_end+0x28>
+   101a4:	e7954009 	ldr	r4, [r5, r9]
+   101a8:	eaffffc9 	b	100d4 <_end_if_else>
+
+000101ac <_loadfiles>:
+   101ac:	e3a07005 	mov	r7, #5
+   101b0:	e59f0058 	ldr	r0, [pc, #88]	; 10210 <_end+0x40>
+   101b4:	e3a01002 	mov	r1, #2
+   101b8:	e3a02064 	mov	r2, #100	; 0x64
+   101bc:	ef000000 	svc	0x00000000
+   101c0:	e3a07004 	mov	r7, #4
+   101c4:	e59f102c 	ldr	r1, [pc, #44]	; 101f8 <_end+0x28>
+   101c8:	e59f2024 	ldr	r2, [pc, #36]	; 101f4 <_end+0x24>
+   101cc:	ef000000 	svc	0x00000000
+
+000101d0 <_end>:
+   101d0:	e3a07006 	mov	r7, #6
+   101d4:	ef000000 	svc	0x00000000
+   101d8:	e3a07006 	mov	r7, #6
+   101dc:	ef000000 	svc	0x00000000
+   101e0:	e3a07001 	mov	r7, #1
+   101e4:	e3a00000 	mov	r0, #0
+   101e8:	ef000000 	svc	0x00000000
+   101ec:	00020228 	.word	0x00020228
+   101f0:	0002023d 	.word	0x0002023d
+   101f4:	0035d9e8 	.word	0x0035d9e8
+   101f8:	0037dc25 	.word	0x0037dc25
+   101fc:	00020214 	.word	0x00020214
+   10200:	0002021c 	.word	0x0002021c
+   10204:	00020218 	.word	0x00020218
+   10208:	00020224 	.word	0x00020224
+   1020c:	00020220 	.word	0x00020220
+   10210:	00020232 	.word	0x00020232

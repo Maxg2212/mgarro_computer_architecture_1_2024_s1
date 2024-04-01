@@ -1,0 +1,52 @@
+REGISTROS RESERVADOS
+Direcciones:
+r0 = Direccion de buffer output
+r1 = Direccion de buffer input
+r3 = Contador
+
+TEMPORALES
+1. r2 = (1 - alpha) * x(n)
+2. r4 = valor y(n - k)
+3. r8 = alpha * y(n - k) 
+4. r12 = (1 - alpha) * x(n) + alpha * y(n - k)
+
+REGISTROS DISPONIBLES
+r5 = lo uso para cargar direcciones temporales **
+r6 = **
+r7 = **
+r9 = **
+r10 = **
+r11 = **
+r12 = **
+
+
+RESULTADOS
+(1 - 0.6) = 00006666
+
+iteracion 0:
+(1 - 0.6) * x(1) == fffff612
+y(0) = fffff612
+
+iteracion 1:
+(1 - 0.6) * x(2) == fff792
+y(1) = fff792
+
+iteracion 20205:
+(1 - 0.6) = 00006666
+(1 - 0.6) * x(20205) == fff8c9a0d0
+
+y(0) = fffff612
+alpha * y(0) = fffa0ac8d4
+
+r12 = fffff2d468
+
+iteracion 20206:
+
+n - k = 1
+y(1) = fff792
+
+(1 - 0.6) * x(20206) == 0002dbfd24
+
+alpha * y(1) = fffaf12fd4
+
+
