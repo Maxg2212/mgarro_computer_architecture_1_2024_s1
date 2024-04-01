@@ -86,7 +86,7 @@ def convertir_wav_a_bin_y_txt(archivo_wav, archivo_bin, archivo_txt_norm, archiv
 
 # Rutas de los archivos de entrada y salida
 archivo_wav = "audiowav.wav"
-archivo_bin = "audio_muestras_q15_16.bin"
+archivo_bin = "input.bin"
 archivo_txt_norm = "audio_muestras_normalizadas.txt"
 archivo_txt_q15_16 = "audio_muestras_q15_16.txt"
 

@@ -41,8 +41,6 @@ Disassembly of section .text:
 
 000100e0 <_mult_end2>:
    100e0:	e082c009 	add	ip, r2, r9
-
-000100e4 <_result_r12>:
    100e4:	e580c000 	str	ip, [r0]
    100e8:	e2800004 	add	r0, r0, #4
    100ec:	e59f5114 	ldr	r5, [pc, #276]	; 10208 <_end+0x38>
@@ -133,4 +131,3 @@ Disassembly of section .text:
    10208:	00020224 	.word	0x00020224
    1020c:	00020220 	.word	0x00020220
    10210:	00020232 	.word	0x00020232
-arm-linux-gnueabi-objdump: 'w': No such file
