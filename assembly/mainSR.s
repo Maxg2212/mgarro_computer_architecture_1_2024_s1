@@ -36,9 +36,6 @@ _reverbsr:
   ldr r2, [r1] @ Cargo el valor al que apunta la dirección r1 (x(n))
   add r1, r1, #4 @ Incremento la dirección en 4 para apuntar al siguiente valor
 
-  ldr r5, =constante_div
-  ldr r6, [r5] @ 1/(1- alpha)
-
   ldr r5, =constante_k @ Cargar la dirección de constante_k en r5
   ldr r9, [r5] @ constant k @ Cargar el valor de constante_k en r9
 
@@ -55,7 +52,7 @@ _reverbsr:
   _mult_end1:
   @ r9 = alpha * x(n-k)
 
-  add r8, r2, r9 @ x(n) - alpha * x(n-k)
+  sub r8, r2, r9 @ x(n) - alpha * x(n-k)
   b _mult_pfijo2
 
   _mult_end2:
@@ -104,6 +101,9 @@ _mult_pfijo1:
 _mult_pfijo2:
   ldr r5, =constante_mask
   ldr r2, [r5] @ mask
+
+  ldr r5, =constante_div
+  ldr r6, [r5] @ 1/(1- alpha)
 
   asr r4, r6, #16 @ Qa
   asr r7, r8, #16 @ Qb
