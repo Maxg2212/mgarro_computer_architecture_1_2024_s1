@@ -123,14 +123,14 @@ Disassembly of section .text:
    101e0:	e3a07001 	mov	r7, #1
    101e4:	e3a00000 	mov	r0, #0
    101e8:	ef000000 	svc	0x00000000
-   101ec:	0002022c 	.word	0x0002022c
-   101f0:	00020241 	.word	0x00020241
-   101f4:	000d767a 	.word	0x000d767a
-   101f8:	000f78bb 	.word	0x000f78bb
+   101ec:	00020228 	.word	0x00020228
+   101f0:	0002023d 	.word	0x0002023d
+   101f4:	0035d9e8 	.word	0x0035d9e8
+   101f8:	0037dc25 	.word	0x0037dc25
    101fc:	00020214 	.word	0x00020214
    10200:	0002021c 	.word	0x0002021c
    10204:	00020218 	.word	0x00020218
    10208:	00020224 	.word	0x00020224
    1020c:	00020220 	.word	0x00020220
-   10210:	00020236 	.word	0x00020236
+   10210:	00020232 	.word	0x00020232
 arm-linux-gnueabi-objdump: 'w': No such file

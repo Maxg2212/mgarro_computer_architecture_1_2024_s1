@@ -6,11 +6,11 @@
   constante_alpha: .word 0x0000999a @ Valor de alpha
   constante_k: .word 20205 @ Resultado de realizar K = Fs x 50ms = 20205
   constante_mask: .word 0xFFFF @ Máscara para obtener los 16 bits menos significativos
-  constante_loop: .word 200000 @ Constante de comparacion del loop
+  constante_loop: .word 882298 @ Constante de comparacion del loop
   name_input: .asciz "input.bin"
   name_output: .asciz "output.bin"  
-  buffer_input: .space 882298    @ reserved buffer
-  buffer_output: .space 882298   @ reserved buffer
+  buffer_input: .space 3529192      @ reserved buffer
+  buffer_output: .space 3529192     @ reserved buffer
 
 .section .text
 _start:
@@ -24,7 +24,7 @@ _start:
   @ Read the file with buffer
   mov r7, #0x3            
   ldr r1, =buffer_input   
-  ldr r2, =#882298       @ buffer size
+  ldr r2, =#3529192         @ buffer size
   swi 0     
   
   mov r3, #0 @ main counter for loop
@@ -154,7 +154,7 @@ _loadfiles:
   @ Writes the output buffer in output.bin file
   mov r7, #0x4
   ldr r1, =buffer_output
-  ldr r2, =#882298
+  ldr r2, =#3529192
   swi 0
 
 _end:
