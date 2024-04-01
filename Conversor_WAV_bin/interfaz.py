@@ -83,7 +83,7 @@ while ejecutando:
                 if boton_convertir_1.collidepoint(evento.pos):
                     convertir_y_reproducir("output.bin", "audio_convertido_1.wav")
                 elif boton_convertir_2.collidepoint(evento.pos):
-                    convertir_y_reproducir("audio_muestras_q15_16.bin", "audio_convertido_2.wav")
+                    convertir_y_reproducir("outputsr.bin", "audio_convertido_2.wav")
 
     # Actualizar pantalla
     pygame.display.flip()

@@ -31,7 +31,7 @@ def convertir_bin_a_wav(archivo_bin, archivo_wav, num_channels=6, sample_width=2
     print("Archivo WAV generado correctamente.")
 
 # Rutas de los archivos de entrada y salida
-archivo_bin = "output.bin"
+archivo_bin = "outputsr.bin"
 archivo_wav_convertido = "audio_convertidodef.wav"
 
 # Convertir el archivo binario a formato WAV
