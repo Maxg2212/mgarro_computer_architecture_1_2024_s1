@@ -83,11 +83,12 @@ class Compiler:
         instr = Binary(Mnemonic=x[0], Rest=x[1], Line=x[2])
         print(instr)
         return instr.getHex()
-           
-in_ = "program_raw.asm"
-out_ = "../RSA_PIPELINE_CPU/inst_mem_init.dat"
-compiler = Compiler(in_, out_)
+
+
+#in_ = "program_raw.asm"
+#out_ = "../RSA_PIPELINE_CPU/inst_mem_init.dat"
+#compiler = Compiler(in_, out_)
 
 # copyfile("inst_mem_init.dat", out_)
 
-print("Se ha compilado el programa correctamente")
+#print("Se ha compilado el programa correctamente")
