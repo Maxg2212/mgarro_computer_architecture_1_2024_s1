@@ -7,15 +7,16 @@ class Type(Enum):
     Control = '11'
 
 types_dict =	{
-    Type.Sistema : ['nop'],  
-    Type.Datos : ['sum', 'res', 'mul','dld', 'cr', 'ce', 'pinto'],
-    Type.Memoria : ['tome', 'deme'],
-    Type.Control : ['beto', 'brin', 'bmnq', 'bmq'] 
+    Type.Sistema : ['nop', 'end'],  
+    Type.Datos : ['sum','res','mul','dld','cr','ce','pinto'],
+    Type.Memoria : ['tome','deme'],
+    Type.Control : ['beto','brin','bmnq','bmq'] 
 }
 
 
 opcode_dict =	{
     "nop" : '0',
+    "end" : '1',
     
     "sum" : '000',
     "res" : '001',
@@ -113,7 +114,7 @@ class Binary:
                 case Type.Datos:
                     self.data()
                 case Type.Memoria:
-                    self.memoria()
+                    self.memory()
                 case Type.Control:
                     self.control()
             return
@@ -144,14 +145,13 @@ class Binary:
             self.Bin = self.Type.value + self.Opcode + self.I + self.Rd + self.Rs1 + self.Rs2 + ('0' * (13-0+1)) 
     
     def data_special_case_2reg(self, regs):
-        self.Rd  = '0'*(self.reg_size) 
         self.Rs1  = '0'*(self.reg_size)
-        self.Rs2  = '0'*(self.reg_size)
+        self.Rd  = '0'*(self.reg_size) 
         
         # Si el operando 2 es un inmediato, es decir CR con imm y CE con imm.
         if ('#' in regs[1]): 
             self.I = '1'
-            self.Imm = getbinary(int(regs[1][1:0]), self.imm_size)
+            self.Imm = getbinary(int(regs[1][1:]), self.imm_size)
 
             if (self.Mnemonic == 'cr'):
                 self.Rd = regs_dict[regs[0]]
@@ -164,8 +164,11 @@ class Binary:
             self.Rs2  = regs_dict[regs[1]]
 
             if (self.Mnemonic == 'cr'):
+                print('Es cr')
                 self.Rd = regs_dict[regs[0]]
             elif (self.Mnemonic == 'ce'):
+                self.Rs1 = regs_dict[regs[0]]
+            elif (self.Mnemonic == 'pinto'):
                 self.Rs1 = regs_dict[regs[0]]
             self.Bin = self.Type.value + self.Opcode + self.I + self.Rd + self.Rs1 + self.Rs2 + ('0' * (13-0+1))
     def memory(self):

@@ -53,7 +53,7 @@ class Compiler:
         
         # Regular expression to verify labels
         start_with = '^[A-Za-z_][A-Za-z0-9_]*'
-        end_with = ':\Z'
+        end_with = ':$'
         for i in range(len(arr)):
             # Stripe out comments
             x = arr[i].split(';')[0]
@@ -72,7 +72,7 @@ class Compiler:
 
             ## analize mnemonics
             for key in opcode_dict:
-                if (key.lower() == x[0:5]) or (key.lower() == x[0:4]) or (key.lower() == x[0:3]) or (key.lower() == x[0:2]):
+                if (key.lower() == x[0:5]) or (key.lower() == x[0:4]) or (key.lower() == x[0:3]) or (key.lower() == x[0:2]) or (key.lower() == x[0:1]):
                     # remove garbage
                     x = [x[0:len(key)], x[len(key):], i+1]
                     tmp.append(x)
@@ -85,10 +85,10 @@ class Compiler:
         return instr.getHex()
 
 
-#in_ = "program_raw.asm"
-#out_ = "../RSA_PIPELINE_CPU/inst_mem_init.dat"
-#compiler = Compiler(in_, out_)
+in_ = "program_test.asm"
+out_ = "mem_prueba.dat"
+compiler = Compiler(in_, out_)
 
 # copyfile("inst_mem_init.dat", out_)
 
-#print("Se ha compilado el programa correctamente")
+print("Se ha compilado el programa correctamente")
