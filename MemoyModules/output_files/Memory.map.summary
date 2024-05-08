@@ -1,7 +1,7 @@
-Analysis & Elaboration Status : Successful - Sun May  5 15:48:27 2024
+Analysis & Elaboration Status : Successful - Tue May  7 19:36:55 2024
 Quartus Prime Version : 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 Revision Name : Memory
-Top-level Entity Name : ROM
+Top-level Entity Name : pc_control_unit
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A until Partition Merge
 Total registers : N/A until Partition Merge
