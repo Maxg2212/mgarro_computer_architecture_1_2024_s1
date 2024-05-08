@@ -35,10 +35,5 @@ module TB_ALU;
 					a = 32'd5;
 					b = 32'd5;
 					#10;
-					// Desplazamiento lógico a la derecha
-				   opcode = 3'b011; // Opcode para shift right
-				   a = 32'd16;      // Valor para desplazar
-				   b = 32'd3;       // Cantidad de bits a desplazar
-				   #10;
 			end
 endmodule

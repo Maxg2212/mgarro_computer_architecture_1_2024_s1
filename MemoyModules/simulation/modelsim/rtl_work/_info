@@ -1,111 +1,91 @@
 m255
 K4
 z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
 13
 !s112 1.1
 !i10d 8192
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules/simulation/modelsim
-vflopenr
-Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1715132240
+Z0 dC:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/simulation/modelsim
+valu
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+DXx4 work 8 alu_defs 0 22 87dQTdbhacd;56Yb3e?TG1
+Z2 !s110 1715149627
 !i10b 1
-!s100 [8c<BVSWm`XgzUULS`^i70
-I4Q4kNMB0A>S96JQEg`PSP2
-Z3 VDg1SIo80bB@j0V0VzS_@n1
-!s105 flopenr_sv_unit
+!s100 ZXz>zbAOeLYR[fOfInQNZ1
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IYW8@cfB5WOkCfEh888MkZ3
+Z4 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-w1715132115
-8C:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules/flopenr.sv
-FC:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules/flopenr.sv
-L0 1
-Z4 OV;L;10.5b;63
+w1715148832
+8C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/alu.sv
+FC:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/alu.sv
+!i122 1
+L0 1 53
+Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1715132240.000000
-!s107 C:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules/flopenr.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules|C:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules/flopenr.sv|
+Z6 !s108 1715149627.000000
+!s107 C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/alu.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules|C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/alu.sv|
 !i113 1
-Z6 o-sv -work work
-Z7 !s92 -sv -work work {+incdir+C:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules}
-Z8 tCvgOpt 0
-vflopr
+Z7 o-sv -work work
+Z8 !s92 -sv -work work +incdir+C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules
+Z9 tCvgOpt 0
+Xalu_defs
 R1
 R2
 !i10b 1
-!s100 J2[8AB?lW`G2@VL`3V:YT0
-ImeLdF7aEblCWTk4JW8N4P2
+!s100 h6608VM1m7jeNZ<j9LgRd2
 R3
-!s105 flopr_sv_unit
+I87dQTdbhacd;56Yb3e?TG1
+V87dQTdbhacd;56Yb3e?TG1
 S1
 R0
-w1715132206
-8C:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules/flopr.sv
-FC:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules/flopr.sv
-L0 1
-R4
+w1715147746
+8C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/alu_defs.sv
+FC:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/alu_defs.sv
+!i122 0
+L0 1 0
+R5
 r1
 !s85 0
 31
-R5
-!s107 C:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules/flopr.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules|C:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules/flopr.sv|
-!i113 1
 R6
+!s107 C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/alu_defs.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules|C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/alu_defs.sv|
+!i113 1
 R7
 R8
-vpc_control_unit
+R9
+vTB_ALU
 R1
 R2
 !i10b 1
-!s100 TEFYhiF4^?Tc[nMYKYh@l0
-ISRX^E9OBBbX3QKPWXLMk[0
+!s100 ZVhhR3Kiggi2hUhi>Bk>a0
 R3
-!s105 pc_control_unit_sv_unit
+I`I<mKk<^f4Oi<;C4F1lgW0
+R4
 S1
 R0
-w1715110252
-8C:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules/pc_control_unit.sv
-FC:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules/pc_control_unit.sv
-L0 1
-R4
-r1
-!s85 0
-31
+w1715149610
+8C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_ALU.sv
+FC:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_ALU.sv
+!i122 2
+L0 1 44
 R5
-!s107 C:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules/pc_control_unit.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules|C:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules/pc_control_unit.sv|
-!i113 1
-R6
-R7
-R8
-vTB_PC_CONTROL_UNIT
-R1
-!s110 1715132241
-!i10b 1
-!s100 odgTla7o;Q>Vm7ZnT7WQf0
-I`Kl5>R;JI;CRNAE5f[dI=2
-R3
-!s105 TB_PC_CONTROL_UNIT_sv_unit
-S1
-R0
-w1715131363
-8C:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_PC_CONTROL_UNIT.sv
-FC:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_PC_CONTROL_UNIT.sv
-L0 1
-R4
 r1
 !s85 0
 31
-!s108 1715132241.000000
-!s107 C:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_PC_CONTROL_UNIT.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules|C:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_PC_CONTROL_UNIT.sv|
-!i113 1
 R6
+!s107 C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_ALU.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules|C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_ALU.sv|
+!i113 1
 R7
 R8
-n@t@b_@p@c_@c@o@n@t@r@o@l_@u@n@i@t
+R9
+n@t@b_@a@l@u
