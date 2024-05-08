@@ -1,0 +1,8 @@
+module control_unit
+(
+	input logic [5:0] Id,
+	
+	//Salidas
+	output logic RegWrite, MemtoReg, MemWrite, ALUSrc, FlagsWrite, RegSrc,
+	output logic [2:0] ALUControl
+);
