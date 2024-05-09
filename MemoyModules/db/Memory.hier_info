@@ -1,4 +1,66 @@
-|pipelined_processor
+|top
+clk_FPGA => clk_FPGA.IN1
+reset => reset.IN1
+start => start.IN1
+EndFlag <= pipelined_processor:cpu.EndFlag
+clk_out <= <GND>
+ReadDataOut[0] <= <GND>
+ReadDataOut[1] <= <GND>
+ReadDataOut[2] <= <GND>
+ReadDataOut[3] <= <GND>
+ReadDataOut[4] <= <GND>
+ReadDataOut[5] <= <GND>
+ReadDataOut[6] <= <GND>
+ReadDataOut[7] <= <GND>
+
+
+|top|clock_manager:cm
+clk_FPGA => clk_FPGA.IN2
+COMFlag => COMFlag.IN1
+clk <= mux2:clk_mux.y
+
+
+|top|clock_manager:cm|clockDivider:div
+clk_in => clk_out~reg0.CLK
+clk_in => counter[0].CLK
+clk_in => counter[1].CLK
+clk_in => counter[2].CLK
+clk_in => counter[3].CLK
+clk_in => counter[4].CLK
+clk_in => counter[5].CLK
+clk_in => counter[6].CLK
+clk_in => counter[7].CLK
+clk_in => counter[8].CLK
+clk_in => counter[9].CLK
+clk_in => counter[10].CLK
+clk_in => counter[11].CLK
+clk_in => counter[12].CLK
+clk_in => counter[13].CLK
+clk_in => counter[14].CLK
+clk_in => counter[15].CLK
+clk_in => counter[16].CLK
+clk_in => counter[17].CLK
+clk_in => counter[18].CLK
+clk_in => counter[19].CLK
+clk_in => counter[20].CLK
+clk_in => counter[21].CLK
+clk_in => counter[22].CLK
+clk_in => counter[23].CLK
+clk_in => counter[24].CLK
+clk_in => counter[25].CLK
+clk_in => counter[26].CLK
+clk_in => counter[27].CLK
+clk_out <= clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|clock_manager:cm|mux2:clk_mux
+s => y.OUTPUTSELECT
+d0[0] => y.DATAA
+d1[0] => y.DATAB
+y[0] <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|pipelined_processor:cpu
 clk => clk.IN2
 reset => reset.IN2
 start => start.IN1
@@ -168,7 +230,7 @@ WriteData[30] <= datapath:dp.WriteDataM
 WriteData[31] <= datapath:dp.WriteDataM
 
 
-|pipelined_processor|pc_control_unit:pcu
+|top|pipelined_processor:cpu|pc_control_unit:pcu
 clk => clk.IN3
 reset => reset.IN3
 FlagsW => FlagsW.IN1
@@ -401,7 +463,7 @@ PCNext[30] <= flopr:pcreg.q
 PCNext[31] <= flopr:pcreg.q
 
 
-|pipelined_processor|pc_control_unit:pcu|flopenr:flagreg1
+|top|pipelined_processor:cpu|pc_control_unit:pcu|flopenr:flagreg1
 clk => q[0]~reg0.CLK
 clk => q[1]~reg0.CLK
 reset => q[0]~reg0.ACLR
@@ -414,7 +476,7 @@ q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|pipelined_processor|pc_control_unit:pcu|flopenr:flagreg2
+|top|pipelined_processor:cpu|pc_control_unit:pcu|flopenr:flagreg2
 clk => q[0]~reg0.CLK
 reset => q[0]~reg0.ACLR
 en => q[0]~reg0.ENA
@@ -422,7 +484,7 @@ d[0] => q[0]~reg0.DATAIN
 q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|pipelined_processor|pc_control_unit:pcu|flopr:pcreg
+|top|pipelined_processor:cpu|pc_control_unit:pcu|flopr:pcreg
 clk => q[0]~reg0.CLK
 clk => q[1]~reg0.CLK
 clk => q[2]~reg0.CLK
@@ -585,7 +647,7 @@ q[30] <= q[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 q[31] <= q[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|pipelined_processor|control_unit:c
+|top|pipelined_processor:cpu|control_unit:c
 Id[0] => Mux0.IN5
 Id[1] => Decoder1.IN1
 Id[1] => ALUControl.DATAA
@@ -617,7 +679,7 @@ ALUControl[1] <= ALUControl.DB_MAX_OUTPUT_PORT_TYPE
 ALUControl[2] <= ALUControl.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|pipelined_processor|datapath:dp
+|top|pipelined_processor:cpu|datapath:dp
 clk => clk.IN5
 reset => reset.IN4
 RegWrite => RegWrite.IN1
@@ -828,7 +890,7 @@ InstrD[30] <= segment_if_id:seg_if_id.InstrD
 InstrD[31] <= segment_if_id:seg_if_id.InstrD
 
 
-|pipelined_processor|datapath:dp|segment_if_id:seg_if_id
+|top|pipelined_processor:cpu|datapath:dp|segment_if_id:seg_if_id
 clk => InstrD[0]~reg0.CLK
 clk => InstrD[1]~reg0.CLK
 clk => InstrD[2]~reg0.CLK
@@ -959,7 +1021,7 @@ InstrD[30] <= InstrD[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 InstrD[31] <= InstrD[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|pipelined_processor|datapath:dp|mux2:ra2mux
+|top|pipelined_processor:cpu|datapath:dp|mux2:ra2mux
 s => y.OUTPUTSELECT
 s => y.OUTPUTSELECT
 s => y.OUTPUTSELECT
@@ -978,7 +1040,7 @@ y[2] <= y.DB_MAX_OUTPUT_PORT_TYPE
 y[3] <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|pipelined_processor|datapath:dp|regfile:rf
+|top|pipelined_processor:cpu|datapath:dp|regfile:rf
 clk => rf.we_a.CLK
 clk => rf.waddr_a[3].CLK
 clk => rf.waddr_a[2].CLK
@@ -1165,7 +1227,7 @@ RD2[30] <= rf.PORTBDATAOUT30
 RD2[31] <= rf.PORTBDATAOUT31
 
 
-|pipelined_processor|datapath:dp|extend:ext
+|top|pipelined_processor:cpu|datapath:dp|extend:ext
 Imm[0] => ExtImm[0].DATAIN
 Imm[1] => ExtImm[1].DATAIN
 Imm[2] => ExtImm[2].DATAIN
@@ -1218,7 +1280,7 @@ ExtImm[30] <= <GND>
 ExtImm[31] <= <GND>
 
 
-|pipelined_processor|datapath:dp|segment_id_ex:seg_id_ex
+|top|pipelined_processor:cpu|datapath:dp|segment_id_ex:seg_id_ex
 clk => FlagsWriteE~reg0.CLK
 clk => ExtImmE[0]~reg0.CLK
 clk => ExtImmE[1]~reg0.CLK
@@ -1653,7 +1715,7 @@ ExtImmE[30] <= ExtImmE[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 ExtImmE[31] <= ExtImmE[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|pipelined_processor|datapath:dp|mux2:srcbmux
+|top|pipelined_processor:cpu|datapath:dp|mux2:srcbmux
 s => y.OUTPUTSELECT
 s => y.OUTPUTSELECT
 s => y.OUTPUTSELECT
@@ -1784,7 +1846,7 @@ y[30] <= y.DB_MAX_OUTPUT_PORT_TYPE
 y[31] <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|pipelined_processor|datapath:dp|alu:alu
+|top|pipelined_processor:cpu|datapath:dp|alu:alu
 a_i[0] => Add0.IN32
 a_i[0] => Add1.IN64
 a_i[0] => Mult0.IN31
@@ -2175,7 +2237,7 @@ ALUFlags[0] <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
 ALUFlags[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|pipelined_processor|datapath:dp|segment_ex_mem:seg_ex_mem
+|top|pipelined_processor:cpu|datapath:dp|segment_ex_mem:seg_ex_mem
 clk => ALUFlagsM[0]~reg0.CLK
 clk => ALUFlagsM[1]~reg0.CLK
 clk => FlagsWriteM~reg0.CLK
@@ -2474,7 +2536,7 @@ WriteDataM[30] <= WriteDataM[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 WriteDataM[31] <= WriteDataM[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|pipelined_processor|datapath:dp|segment_mem_wb:seg_mem_wb
+|top|pipelined_processor:cpu|datapath:dp|segment_mem_wb:seg_mem_wb
 clk => ALUFlagsW[0]~reg0.CLK
 clk => ALUFlagsW[1]~reg0.CLK
 clk => FlagsWriteW~reg0.CLK
@@ -2769,7 +2831,7 @@ ALUOutW[30] <= ALUOutW[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 ALUOutW[31] <= ALUOutW[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|pipelined_processor|datapath:dp|mux2:resmux
+|top|pipelined_processor:cpu|datapath:dp|mux2:resmux
 s => y.OUTPUTSELECT
 s => y.OUTPUTSELECT
 s => y.OUTPUTSELECT
@@ -2898,5 +2960,260 @@ y[28] <= y.DB_MAX_OUTPUT_PORT_TYPE
 y[29] <= y.DB_MAX_OUTPUT_PORT_TYPE
 y[30] <= y.DB_MAX_OUTPUT_PORT_TYPE
 y[31] <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|P_ROM:instr_mem
+A[0] => ~NO_FANOUT~
+A[1] => ~NO_FANOUT~
+A[2] => RAM.RADDR
+A[3] => RAM.RADDR1
+A[4] => RAM.RADDR2
+A[5] => RAM.RADDR3
+A[6] => RAM.RADDR4
+A[7] => RAM.RADDR5
+A[8] => RAM.RADDR6
+A[9] => ~NO_FANOUT~
+A[10] => ~NO_FANOUT~
+A[11] => ~NO_FANOUT~
+A[12] => ~NO_FANOUT~
+A[13] => ~NO_FANOUT~
+A[14] => ~NO_FANOUT~
+A[15] => ~NO_FANOUT~
+A[16] => ~NO_FANOUT~
+A[17] => ~NO_FANOUT~
+A[18] => ~NO_FANOUT~
+A[19] => ~NO_FANOUT~
+A[20] => ~NO_FANOUT~
+A[21] => ~NO_FANOUT~
+A[22] => ~NO_FANOUT~
+A[23] => ~NO_FANOUT~
+A[24] => ~NO_FANOUT~
+A[25] => ~NO_FANOUT~
+A[26] => ~NO_FANOUT~
+A[27] => ~NO_FANOUT~
+A[28] => ~NO_FANOUT~
+A[29] => ~NO_FANOUT~
+A[30] => ~NO_FANOUT~
+A[31] => ~NO_FANOUT~
+RD[0] <= RAM.DATAOUT
+RD[1] <= RAM.DATAOUT1
+RD[2] <= RAM.DATAOUT2
+RD[3] <= RAM.DATAOUT3
+RD[4] <= RAM.DATAOUT4
+RD[5] <= RAM.DATAOUT5
+RD[6] <= RAM.DATAOUT6
+RD[7] <= RAM.DATAOUT7
+RD[8] <= RAM.DATAOUT8
+RD[9] <= RAM.DATAOUT9
+RD[10] <= RAM.DATAOUT10
+RD[11] <= RAM.DATAOUT11
+RD[12] <= RAM.DATAOUT12
+RD[13] <= RAM.DATAOUT13
+RD[14] <= RAM.DATAOUT14
+RD[15] <= RAM.DATAOUT15
+RD[16] <= RAM.DATAOUT16
+RD[17] <= RAM.DATAOUT17
+RD[18] <= RAM.DATAOUT18
+RD[19] <= RAM.DATAOUT19
+RD[20] <= RAM.DATAOUT20
+RD[21] <= RAM.DATAOUT21
+RD[22] <= RAM.DATAOUT22
+RD[23] <= RAM.DATAOUT23
+RD[24] <= RAM.DATAOUT24
+RD[25] <= RAM.DATAOUT25
+RD[26] <= RAM.DATAOUT26
+RD[27] <= RAM.DATAOUT27
+RD[28] <= RAM.DATAOUT28
+RD[29] <= RAM.DATAOUT29
+RD[30] <= RAM.DATAOUT30
+RD[31] <= RAM.DATAOUT31
+
+
+|top|P_RAM:data_mem
+clk => RAM.we_a.CLK
+clk => RAM.waddr_a[6].CLK
+clk => RAM.waddr_a[5].CLK
+clk => RAM.waddr_a[4].CLK
+clk => RAM.waddr_a[3].CLK
+clk => RAM.waddr_a[2].CLK
+clk => RAM.waddr_a[1].CLK
+clk => RAM.waddr_a[0].CLK
+clk => RAM.data_a[31].CLK
+clk => RAM.data_a[30].CLK
+clk => RAM.data_a[29].CLK
+clk => RAM.data_a[28].CLK
+clk => RAM.data_a[27].CLK
+clk => RAM.data_a[26].CLK
+clk => RAM.data_a[25].CLK
+clk => RAM.data_a[24].CLK
+clk => RAM.data_a[23].CLK
+clk => RAM.data_a[22].CLK
+clk => RAM.data_a[21].CLK
+clk => RAM.data_a[20].CLK
+clk => RAM.data_a[19].CLK
+clk => RAM.data_a[18].CLK
+clk => RAM.data_a[17].CLK
+clk => RAM.data_a[16].CLK
+clk => RAM.data_a[15].CLK
+clk => RAM.data_a[14].CLK
+clk => RAM.data_a[13].CLK
+clk => RAM.data_a[12].CLK
+clk => RAM.data_a[11].CLK
+clk => RAM.data_a[10].CLK
+clk => RAM.data_a[9].CLK
+clk => RAM.data_a[8].CLK
+clk => RAM.data_a[7].CLK
+clk => RAM.data_a[6].CLK
+clk => RAM.data_a[5].CLK
+clk => RAM.data_a[4].CLK
+clk => RAM.data_a[3].CLK
+clk => RAM.data_a[2].CLK
+clk => RAM.data_a[1].CLK
+clk => RAM.data_a[0].CLK
+clk => RAM.CLK0
+WE => RAM.we_a.DATAIN
+WE => RAM.WE
+A[0] => ~NO_FANOUT~
+A[1] => ~NO_FANOUT~
+A[2] => RAM.waddr_a[0].DATAIN
+A[2] => RAM.WADDR
+A[2] => RAM.RADDR
+A[3] => RAM.waddr_a[1].DATAIN
+A[3] => RAM.WADDR1
+A[3] => RAM.RADDR1
+A[4] => RAM.waddr_a[2].DATAIN
+A[4] => RAM.WADDR2
+A[4] => RAM.RADDR2
+A[5] => RAM.waddr_a[3].DATAIN
+A[5] => RAM.WADDR3
+A[5] => RAM.RADDR3
+A[6] => RAM.waddr_a[4].DATAIN
+A[6] => RAM.WADDR4
+A[6] => RAM.RADDR4
+A[7] => RAM.waddr_a[5].DATAIN
+A[7] => RAM.WADDR5
+A[7] => RAM.RADDR5
+A[8] => RAM.waddr_a[6].DATAIN
+A[8] => RAM.WADDR6
+A[8] => RAM.RADDR6
+A[9] => ~NO_FANOUT~
+A[10] => ~NO_FANOUT~
+A[11] => ~NO_FANOUT~
+A[12] => ~NO_FANOUT~
+A[13] => ~NO_FANOUT~
+A[14] => ~NO_FANOUT~
+A[15] => ~NO_FANOUT~
+A[16] => ~NO_FANOUT~
+A[17] => ~NO_FANOUT~
+A[18] => ~NO_FANOUT~
+A[19] => ~NO_FANOUT~
+A[20] => ~NO_FANOUT~
+A[21] => ~NO_FANOUT~
+A[22] => ~NO_FANOUT~
+A[23] => ~NO_FANOUT~
+A[24] => ~NO_FANOUT~
+A[25] => ~NO_FANOUT~
+A[26] => ~NO_FANOUT~
+A[27] => ~NO_FANOUT~
+A[28] => ~NO_FANOUT~
+A[29] => ~NO_FANOUT~
+A[30] => ~NO_FANOUT~
+A[31] => ~NO_FANOUT~
+WD[0] => RAM.data_a[0].DATAIN
+WD[0] => RAM.DATAIN
+WD[1] => RAM.data_a[1].DATAIN
+WD[1] => RAM.DATAIN1
+WD[2] => RAM.data_a[2].DATAIN
+WD[2] => RAM.DATAIN2
+WD[3] => RAM.data_a[3].DATAIN
+WD[3] => RAM.DATAIN3
+WD[4] => RAM.data_a[4].DATAIN
+WD[4] => RAM.DATAIN4
+WD[5] => RAM.data_a[5].DATAIN
+WD[5] => RAM.DATAIN5
+WD[6] => RAM.data_a[6].DATAIN
+WD[6] => RAM.DATAIN6
+WD[7] => RAM.data_a[7].DATAIN
+WD[7] => RAM.DATAIN7
+WD[8] => RAM.data_a[8].DATAIN
+WD[8] => RAM.DATAIN8
+WD[9] => RAM.data_a[9].DATAIN
+WD[9] => RAM.DATAIN9
+WD[10] => RAM.data_a[10].DATAIN
+WD[10] => RAM.DATAIN10
+WD[11] => RAM.data_a[11].DATAIN
+WD[11] => RAM.DATAIN11
+WD[12] => RAM.data_a[12].DATAIN
+WD[12] => RAM.DATAIN12
+WD[13] => RAM.data_a[13].DATAIN
+WD[13] => RAM.DATAIN13
+WD[14] => RAM.data_a[14].DATAIN
+WD[14] => RAM.DATAIN14
+WD[15] => RAM.data_a[15].DATAIN
+WD[15] => RAM.DATAIN15
+WD[16] => RAM.data_a[16].DATAIN
+WD[16] => RAM.DATAIN16
+WD[17] => RAM.data_a[17].DATAIN
+WD[17] => RAM.DATAIN17
+WD[18] => RAM.data_a[18].DATAIN
+WD[18] => RAM.DATAIN18
+WD[19] => RAM.data_a[19].DATAIN
+WD[19] => RAM.DATAIN19
+WD[20] => RAM.data_a[20].DATAIN
+WD[20] => RAM.DATAIN20
+WD[21] => RAM.data_a[21].DATAIN
+WD[21] => RAM.DATAIN21
+WD[22] => RAM.data_a[22].DATAIN
+WD[22] => RAM.DATAIN22
+WD[23] => RAM.data_a[23].DATAIN
+WD[23] => RAM.DATAIN23
+WD[24] => RAM.data_a[24].DATAIN
+WD[24] => RAM.DATAIN24
+WD[25] => RAM.data_a[25].DATAIN
+WD[25] => RAM.DATAIN25
+WD[26] => RAM.data_a[26].DATAIN
+WD[26] => RAM.DATAIN26
+WD[27] => RAM.data_a[27].DATAIN
+WD[27] => RAM.DATAIN27
+WD[28] => RAM.data_a[28].DATAIN
+WD[28] => RAM.DATAIN28
+WD[29] => RAM.data_a[29].DATAIN
+WD[29] => RAM.DATAIN29
+WD[30] => RAM.data_a[30].DATAIN
+WD[30] => RAM.DATAIN30
+WD[31] => RAM.data_a[31].DATAIN
+WD[31] => RAM.DATAIN31
+RD[0] <= RAM.DATAOUT
+RD[1] <= RAM.DATAOUT1
+RD[2] <= RAM.DATAOUT2
+RD[3] <= RAM.DATAOUT3
+RD[4] <= RAM.DATAOUT4
+RD[5] <= RAM.DATAOUT5
+RD[6] <= RAM.DATAOUT6
+RD[7] <= RAM.DATAOUT7
+RD[8] <= RAM.DATAOUT8
+RD[9] <= RAM.DATAOUT9
+RD[10] <= RAM.DATAOUT10
+RD[11] <= RAM.DATAOUT11
+RD[12] <= RAM.DATAOUT12
+RD[13] <= RAM.DATAOUT13
+RD[14] <= RAM.DATAOUT14
+RD[15] <= RAM.DATAOUT15
+RD[16] <= RAM.DATAOUT16
+RD[17] <= RAM.DATAOUT17
+RD[18] <= RAM.DATAOUT18
+RD[19] <= RAM.DATAOUT19
+RD[20] <= RAM.DATAOUT20
+RD[21] <= RAM.DATAOUT21
+RD[22] <= RAM.DATAOUT22
+RD[23] <= RAM.DATAOUT23
+RD[24] <= RAM.DATAOUT24
+RD[25] <= RAM.DATAOUT25
+RD[26] <= RAM.DATAOUT26
+RD[27] <= RAM.DATAOUT27
+RD[28] <= RAM.DATAOUT28
+RD[29] <= RAM.DATAOUT29
+RD[30] <= RAM.DATAOUT30
+RD[31] <= RAM.DATAOUT31
 
 
