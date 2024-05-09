@@ -16,7 +16,39 @@
 <TH>Output only Bidir</TH>
 </TR>
 <TR >
-<TD >resmux</TD>
+<TD >data_mem</TD>
+<TD >66</TD>
+<TD >0</TD>
+<TD >25</TD>
+<TD >0</TD>
+<TD >32</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >instr_mem</TD>
+<TD >32</TD>
+<TD >0</TD>
+<TD >25</TD>
+<TD >0</TD>
+<TD >32</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >cpu|dp|resmux</TD>
 <TD >65</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -32,7 +64,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >seg_mem_wb</TD>
+<TD >cpu|dp|seg_mem_wb</TD>
 <TD >75</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -48,7 +80,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >seg_ex_mem</TD>
+<TD >cpu|dp|seg_ex_mem</TD>
 <TD >76</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -64,7 +96,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >alu</TD>
+<TD >cpu|dp|alu</TD>
 <TD >67</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -80,7 +112,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >srcbmux</TD>
+<TD >cpu|dp|srcbmux</TD>
 <TD >65</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -96,7 +128,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >seg_id_ex</TD>
+<TD >cpu|dp|seg_id_ex</TD>
 <TD >110</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -112,7 +144,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ext</TD>
+<TD >cpu|dp|ext</TD>
 <TD >18</TD>
 <TD >14</TD>
 <TD >0</TD>
@@ -128,7 +160,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >rf</TD>
+<TD >cpu|dp|rf</TD>
 <TD >46</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -144,7 +176,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ra2mux</TD>
+<TD >cpu|dp|ra2mux</TD>
 <TD >9</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -160,12 +192,172 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >seg_if_id</TD>
+<TD >cpu|dp|seg_if_id</TD>
 <TD >34</TD>
 <TD >0</TD>
 <TD >0</TD>
 <TD >0</TD>
 <TD >32</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >cpu|dp</TD>
+<TD >107</TD>
+<TD >0</TD>
+<TD >32</TD>
+<TD >0</TD>
+<TD >101</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >cpu|c</TD>
+<TD >6</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >9</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >cpu|pcu|pcreg</TD>
+<TD >35</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >32</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >cpu|pcu|flagreg2</TD>
+<TD >4</TD>
+<TD >1</TD>
+<TD >0</TD>
+<TD >1</TD>
+<TD >1</TD>
+<TD >1</TD>
+<TD >1</TD>
+<TD >1</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >cpu|pcu|flagreg1</TD>
+<TD >5</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >2</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >cpu|pcu</TD>
+<TD >28</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >34</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >cpu</TD>
+<TD >67</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >100</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >cm|clk_mux</TD>
+<TD >3</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >1</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >cm|div</TD>
+<TD >1</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >1</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >cm</TD>
+<TD >2</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >1</TD>
 <TD >0</TD>
 <TD >0</TD>
 <TD >0</TD>
