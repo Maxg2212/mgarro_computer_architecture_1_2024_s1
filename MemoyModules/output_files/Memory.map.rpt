@@ -1,6 +1,6 @@
 Analysis & Elaboration report for Memory
-Wed May 08 00:27:00 2024
-Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Wed May 08 19:04:24 2024
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
 ---------------------
@@ -9,10 +9,13 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   1. Legal Notice
   2. Analysis & Elaboration Summary
   3. Parallel Compilation
-  4. Parameter Settings for User Entity Instance: Top-level Entity: |alu
-  5. Analysis & Elaboration Settings
-  6. Analysis & Elaboration Messages
-  7. Analysis & Elaboration Suppressed Messages
+  4. Parameter Settings for User Entity Instance: mux2:ra2mux
+  5. Parameter Settings for User Entity Instance: mux2:srcbmux
+  6. Parameter Settings for User Entity Instance: alu:alu
+  7. Parameter Settings for User Entity Instance: mux2:resmux
+  8. Analysis & Elaboration Settings
+  9. Analysis & Elaboration Messages
+ 10. Analysis & Elaboration Suppressed Messages
 
 
 
@@ -39,10 +42,10 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                              ;
 +-------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Wed May 08 00:27:00 2024       ;
-; Quartus Prime Version         ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Analysis & Elaboration Status ; Successful - Wed May 08 19:04:24 2024       ;
+; Quartus Prime Version         ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                 ; Memory                                      ;
-; Top-level Entity Name         ; alu                                         ;
+; Top-level Entity Name         ; datapath                                    ;
 ; Family                        ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
 ; Total registers               ; N/A until Partition Merge                   ;
@@ -59,8 +62,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -70,13 +73,43 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |alu ;
-+----------------+-------+--------------------------------------------+
-; Parameter Name ; Value ; Type                                       ;
-+----------------+-------+--------------------------------------------+
-; N              ; 4     ; Signed Integer                             ;
-+----------------+-------+--------------------------------------------+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux2:ra2mux ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; WIDTH          ; 4     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux2:srcbmux ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; WIDTH          ; 32    ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------+
+; Parameter Settings for User Entity Instance: alu:alu ;
++----------------+-------+-----------------------------+
+; Parameter Name ; Value ; Type                        ;
++----------------+-------+-----------------------------+
+; N              ; 32    ; Signed Integer              ;
++----------------+-------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux2:resmux ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; WIDTH          ; 32    ; Signed Integer                  ;
++----------------+-------+---------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -86,7 +119,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; alu                ; Memory             ;
+; Top-level entity name                                                           ; datapath           ; Memory             ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -172,56 +205,77 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
-    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Wed May 08 00:26:51 2024
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Wed May 08 19:04:17 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Memory -c Memory --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file p_rom.sv
-    Info (12023): Found entity 1: P_ROM File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/P_ROM.sv Line: 1
+    Info (12023): Found entity 1: P_ROM File: C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/P_ROM.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file p_ram.sv
-    Info (12023): Found entity 1: P_RAM File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/P_RAM.sv Line: 1
+    Info (12023): Found entity 1: P_RAM File: C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/P_RAM.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file pc_control_unit.sv
-    Info (12023): Found entity 1: pc_control_unit File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/pc_control_unit.sv Line: 1
+    Info (12023): Found entity 1: pc_control_unit File: C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/pc_control_unit.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file regfile.sv
-    Info (12023): Found entity 1: regfile File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/regfile.sv Line: 1
-Warning (10229): Verilog HDL Expression warning at TB_PC_CONTROL_UNIT.sv(44): truncated literal to match 31 bits File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_PC_CONTROL_UNIT.sv Line: 44
-Warning (10229): Verilog HDL Expression warning at TB_PC_CONTROL_UNIT.sv(50): truncated literal to match 31 bits File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_PC_CONTROL_UNIT.sv Line: 50
-Warning (10229): Verilog HDL Expression warning at TB_PC_CONTROL_UNIT.sv(56): truncated literal to match 31 bits File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_PC_CONTROL_UNIT.sv Line: 56
+    Info (12023): Found entity 1: regfile File: C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/regfile.sv Line: 1
+Warning (10229): Verilog HDL Expression warning at TB_PC_CONTROL_UNIT.sv(44): truncated literal to match 31 bits File: C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_PC_CONTROL_UNIT.sv Line: 44
+Warning (10229): Verilog HDL Expression warning at TB_PC_CONTROL_UNIT.sv(50): truncated literal to match 31 bits File: C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_PC_CONTROL_UNIT.sv Line: 50
+Warning (10229): Verilog HDL Expression warning at TB_PC_CONTROL_UNIT.sv(56): truncated literal to match 31 bits File: C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_PC_CONTROL_UNIT.sv Line: 56
 Info (12021): Found 1 design units, including 1 entities, in source file tb_pc_control_unit.sv
-    Info (12023): Found entity 1: TB_PC_CONTROL_UNIT File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_PC_CONTROL_UNIT.sv Line: 1
+    Info (12023): Found entity 1: TB_PC_CONTROL_UNIT File: C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_PC_CONTROL_UNIT.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file flopenr.sv
-    Info (12023): Found entity 1: flopenr File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/flopenr.sv Line: 1
+    Info (12023): Found entity 1: flopenr File: C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/flopenr.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file flopr.sv
-    Info (12023): Found entity 1: flopr File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/flopr.sv Line: 1
+    Info (12023): Found entity 1: flopr File: C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/flopr.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file alu.sv
-    Info (12023): Found entity 1: alu File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/alu.sv Line: 1
+    Info (12023): Found entity 1: alu File: C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/alu.sv Line: 1
 Info (12021): Found 1 design units, including 0 entities, in source file alu_defs.sv
-    Info (12022): Found design unit 1: alu_defs (SystemVerilog) File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/alu_defs.sv Line: 1
+    Info (12022): Found design unit 1: alu_defs (SystemVerilog) File: C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/alu_defs.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file clock_manager.sv
-    Info (12023): Found entity 1: clock_manager File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/clock_manager.sv Line: 1
+    Info (12023): Found entity 1: clock_manager File: C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/clock_manager.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file clockdivider.sv
-    Info (12023): Found entity 1: clockDivider File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/clockDivider.sv Line: 1
+    Info (12023): Found entity 1: clockDivider File: C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/clockDivider.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file control_unit.sv
-    Info (12023): Found entity 1: control_unit File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/control_unit.sv Line: 1
+    Info (12023): Found entity 1: control_unit File: C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/control_unit.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file mux2.sv
-    Info (12023): Found entity 1: mux2 File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/mux2.sv Line: 1
+    Info (12023): Found entity 1: mux2 File: C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/mux2.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file tb_alu.sv
-    Info (12023): Found entity 1: TB_ALU File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_ALU.sv Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at clock_manager.sv(13): created implicit net for "clk_Serial" File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/clock_manager.sv Line: 13
-Info (12127): Elaborating entity "alu" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at alu.sv(49): truncated value with size 5 to match size of target (4) File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/alu.sv Line: 49
-Info (144001): Generated suppressed messages file C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/output_files/Memory.map.smsg
+    Info (12023): Found entity 1: TB_ALU File: C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_ALU.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file segment_if_id.sv
+    Info (12023): Found entity 1: segment_if_id File: C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/segment_if_id.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file segment_ex_mem.sv
+    Info (12023): Found entity 1: segment_ex_mem File: C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/segment_ex_mem.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file segment_id_ex.sv
+    Info (12023): Found entity 1: segment_id_ex File: C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/segment_id_ex.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file segment_mem_wb.sv
+    Info (12023): Found entity 1: segment_mem_wb File: C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/segment_mem_wb.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file extend.sv
+    Info (12023): Found entity 1: extend File: C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/extend.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file datapath.sv
+    Info (12023): Found entity 1: datapath File: C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/datapath.sv Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at clock_manager.sv(13): created implicit net for "clk_Serial" File: C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/clock_manager.sv Line: 13
+Info (12127): Elaborating entity "datapath" for the top level hierarchy
+Info (12128): Elaborating entity "segment_if_id" for hierarchy "segment_if_id:seg_if_id" File: C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/datapath.sv Line: 55
+Info (12128): Elaborating entity "mux2" for hierarchy "mux2:ra2mux" File: C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/datapath.sv Line: 67
+Info (12128): Elaborating entity "regfile" for hierarchy "regfile:rf" File: C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/datapath.sv Line: 80
+Info (12128): Elaborating entity "extend" for hierarchy "extend:ext" File: C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/datapath.sv Line: 87
+Info (12128): Elaborating entity "segment_id_ex" for hierarchy "segment_id_ex:seg_id_ex" File: C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/datapath.sv Line: 115
+Info (12128): Elaborating entity "mux2" for hierarchy "mux2:srcbmux" File: C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/datapath.sv Line: 126
+Info (12128): Elaborating entity "alu" for hierarchy "alu:alu" File: C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/datapath.sv Line: 136
+Warning (10230): Verilog HDL assignment warning at alu.sv(49): truncated value with size 33 to match size of target (32) File: C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/alu.sv Line: 49
+Info (12128): Elaborating entity "segment_ex_mem" for hierarchy "segment_ex_mem:seg_ex_mem" File: C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/datapath.sv Line: 159
+Info (12128): Elaborating entity "segment_mem_wb" for hierarchy "segment_mem_wb:seg_mem_wb" File: C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/datapath.sv Line: 182
+Info (144001): Generated suppressed messages file C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/output_files/Memory.map.smsg
 Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 4765 megabytes
-    Info: Processing ended: Wed May 08 00:27:00 2024
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:21
+    Info: Peak virtual memory: 4762 megabytes
+    Info: Processing ended: Wed May 08 19:04:24 2024
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:05
 
 
 +--------------------------------------------+
 ; Analysis & Elaboration Suppressed Messages ;
 +--------------------------------------------+
-The suppressed messages can be found in C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/output_files/Memory.map.smsg.
+The suppressed messages can be found in C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/output_files/Memory.map.smsg.
 
 
