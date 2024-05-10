@@ -26,19 +26,14 @@ module TB_ALU;
 					b = 32'd5;
 					#10;
 					// CR
-					opcode = 3'b100;
+					opcode = 3'b010;
 					a = 32'd11;
 					b = 32'd11;
 					#10;
 					// MUL
-					opcode = 3'b010;
+					opcode = 3'b011;
 					a = 32'd5;
 					b = 32'd5;
 					#10;
-					// Desplazamiento lógico a la derecha
-				   opcode = 3'b011; // Opcode para shift right
-				   a = 32'd16;      // Valor para desplazar
-				   b = 32'd3;       // Cantidad de bits a desplazar
-				   #10;
 			end
 endmodule

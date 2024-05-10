@@ -7,291 +7,60 @@
 # vmap work rtl_work
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
 # vmap work rtl_work 
-# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Copying C:/Users/maxga/FPGA/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -sv -work work +incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules {C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/pc_control_unit.sv}
+# vlog -sv -work work +incdir+C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules {C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/alu_defs.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 03:37:14 on May 10,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules" C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/pc_control_unit.sv 
-# -- Compiling module pc_control_unit
-# 
-# Top level modules:
-# 	pc_control_unit
-# End time: 03:37:15 on May 10,2024, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules {C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/regfile.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 03:37:15 on May 10,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules" C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/regfile.sv 
-# -- Compiling module regfile
-# 
-# Top level modules:
-# 	regfile
-# End time: 03:37:15 on May 10,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules {C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/flopenr.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 03:37:15 on May 10,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules" C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/flopenr.sv 
-# -- Compiling module flopenr
-# 
-# Top level modules:
-# 	flopenr
-# End time: 03:37:15 on May 10,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules {C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/flopr.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 03:37:15 on May 10,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules" C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/flopr.sv 
-# -- Compiling module flopr
-# 
-# Top level modules:
-# 	flopr
-# End time: 03:37:15 on May 10,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules {C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/alu_defs.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 03:37:15 on May 10,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules" C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/alu_defs.sv 
+# Start time: 12:10:14 on May 10,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules" C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/alu_defs.sv 
 # -- Compiling package alu_defs
 # 
 # Top level modules:
 # 	--none--
-# End time: 03:37:15 on May 10,2024, Elapsed time: 0:00:00
+# End time: 12:10:14 on May 10,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules {C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/clock_manager.sv}
+# vlog -sv -work work +incdir+C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules {C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/alu.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 03:37:15 on May 10,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules" C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/clock_manager.sv 
-# -- Compiling module clock_manager
-# 
-# Top level modules:
-# 	clock_manager
-# End time: 03:37:15 on May 10,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules {C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/clockDivider.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 03:37:15 on May 10,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules" C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/clockDivider.sv 
-# -- Compiling module clockDivider
-# 
-# Top level modules:
-# 	clockDivider
-# End time: 03:37:15 on May 10,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules {C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/control_unit.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 03:37:15 on May 10,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules" C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/control_unit.sv 
-# -- Compiling module control_unit
-# 
-# Top level modules:
-# 	control_unit
-# End time: 03:37:15 on May 10,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules {C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/mux2.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 03:37:15 on May 10,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules" C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/mux2.sv 
-# -- Compiling module mux2
-# 
-# Top level modules:
-# 	mux2
-# End time: 03:37:15 on May 10,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules {C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/segment_if_id.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 03:37:15 on May 10,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules" C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/segment_if_id.sv 
-# -- Compiling module segment_if_id
-# 
-# Top level modules:
-# 	segment_if_id
-# End time: 03:37:16 on May 10,2024, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules {C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/segment_ex_mem.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 03:37:16 on May 10,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules" C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/segment_ex_mem.sv 
-# -- Compiling module segment_ex_mem
-# 
-# Top level modules:
-# 	segment_ex_mem
-# End time: 03:37:16 on May 10,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules {C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/segment_id_ex.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 03:37:16 on May 10,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules" C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/segment_id_ex.sv 
-# -- Compiling module segment_id_ex
-# 
-# Top level modules:
-# 	segment_id_ex
-# End time: 03:37:16 on May 10,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules {C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/segment_mem_wb.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 03:37:16 on May 10,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules" C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/segment_mem_wb.sv 
-# -- Compiling module segment_mem_wb
-# 
-# Top level modules:
-# 	segment_mem_wb
-# End time: 03:37:16 on May 10,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules {C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/extend.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 03:37:16 on May 10,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules" C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/extend.sv 
-# -- Compiling module extend
-# 
-# Top level modules:
-# 	extend
-# End time: 03:37:16 on May 10,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules {C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/datapath.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 03:37:16 on May 10,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules" C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/datapath.sv 
-# -- Compiling module datapath
-# 
-# Top level modules:
-# 	datapath
-# End time: 03:37:16 on May 10,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules {C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/pipelined_processor.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 03:37:16 on May 10,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules" C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/pipelined_processor.sv 
-# -- Compiling module pipelined_processor
-# 
-# Top level modules:
-# 	pipelined_processor
-# End time: 03:37:16 on May 10,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules {C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/top.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 03:37:16 on May 10,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules" C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/top.sv 
-# -- Compiling module top
-# 
-# Top level modules:
-# 	top
-# End time: 03:37:16 on May 10,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules {C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_TOP.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 03:37:16 on May 10,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules" C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_TOP.sv 
-# -- Compiling module TB_TOP
-# 
-# Top level modules:
-# 	TB_TOP
-# End time: 03:37:16 on May 10,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules {C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/P_ROM.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 03:37:16 on May 10,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules" C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/P_ROM.sv 
-# -- Compiling module P_ROM
-# 
-# Top level modules:
-# 	P_ROM
-# End time: 03:37:16 on May 10,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules {C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/P_RAM.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 03:37:16 on May 10,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules" C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/P_RAM.sv 
-# -- Compiling module P_RAM
-# 
-# Top level modules:
-# 	P_RAM
-# End time: 03:37:16 on May 10,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules {C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/alu.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 03:37:16 on May 10,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules" C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/alu.sv 
+# Start time: 12:10:14 on May 10,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules" C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/alu.sv 
 # -- Compiling module alu
 # -- Importing package alu_defs
 # 
 # Top level modules:
 # 	alu
-# End time: 03:37:16 on May 10,2024, Elapsed time: 0:00:00
+# End time: 12:10:14 on May 10,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vlog -sv -work work +incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules {C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_TOP.sv}
+# vlog -sv -work work +incdir+C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules {C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_ALU.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 03:37:16 on May 10,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules" C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_TOP.sv 
-# -- Compiling module TB_TOP
+# Start time: 12:10:14 on May 10,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules" C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_ALU.sv 
+# -- Compiling module TB_ALU
 # 
 # Top level modules:
-# 	TB_TOP
-# End time: 03:37:16 on May 10,2024, Elapsed time: 0:00:00
+# 	TB_ALU
+# End time: 12:10:14 on May 10,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  TB_TOP
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" TB_TOP 
-# Start time: 03:37:17 on May 10,2024
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  TB_ALU
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" TB_ALU 
+# Start time: 12:10:15 on May 10,2024
 # Loading sv_std.std
-# Loading work.TB_TOP
-# Loading work.top
-# Loading work.clock_manager
-# Loading work.clockDivider
-# Loading work.mux2
-# Loading work.pipelined_processor
-# Loading work.pc_control_unit
-# Loading work.flopenr
-# Loading work.flopr
-# Loading work.control_unit
-# Loading work.datapath
-# Loading work.segment_if_id
-# Loading work.regfile
-# Loading work.extend
-# Loading work.segment_id_ex
+# Loading work.TB_ALU
 # Loading work.alu_defs
 # Loading work.alu
-# Loading work.segment_ex_mem
-# Loading work.segment_mem_wb
-# Loading work.P_ROM
-# Loading work.P_RAM
 # 
 # add wave *
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: maxga  Hostname: LAPTOP-85GS8ERK  ProcessID: 30184
-#           Attempting to use alternate WLF file "./wlft2ebbe1".
+#           Attempting to use alternate WLF file "./wlftnismbr".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft2ebbe1
+#           Using alternate file: ./wlftnismbr
 # view structure
 # .main_pane.structure.interior.cs.body.struct
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# 
-# 
-# ---Write cycle DataMem----
-# Address (hex):---------- 00000000
-# Write data (hex):------- 00000001
-# Write data (dec):-------          1
-# 
-# 
-# ---Write cycle DataMem----
-# Address (hex):---------- 00000001
-# Write data (hex):------- 00000001
-# Write data (dec):-------          1
-# 
-# 
-# ---Write cycle DataMem----
-# Address (hex):---------- 00000002
-# Write data (hex):------- 00000008
-# Write data (dec):-------          8
-# 
-# 
-#  *** El programa ha terminado exitosamente ***
-# Break key hit
-# Break in Module TB_TOP at C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_TOP.sv line 18
-# End time: 03:39:20 on May 10,2024, Elapsed time: 0:02:03
+# End time: 12:11:17 on May 10,2024, Elapsed time: 0:01:02
 # Errors: 0, Warnings: 2
