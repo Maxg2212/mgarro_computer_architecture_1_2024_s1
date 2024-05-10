@@ -86,7 +86,7 @@ class Compiler:
 
 
 in_ = "program_test.asm"
-out_ = "mem_prueba.dat"
+out_ = "../MemoyModules/simulation/modelsim/ROMdata.dat"
 compiler = Compiler(in_, out_)
 
 # copyfile("inst_mem_init.dat", out_)

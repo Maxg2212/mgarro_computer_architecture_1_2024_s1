@@ -119,10 +119,9 @@ module control_unit
 		case(Id[3:1])
 			3'b000: ALUControl = 3'b000; // SUM
 			3'b001: ALUControl = 3'b001; // RES
-			3'b010: ALUControl = 3'b010; // MUL
-			3'b011: ALUControl = 3'b011; // DLD
-			3'b100: ALUControl = 3'b100; // CR = MOV
-			3'b101: ALUControl = 3'b001; // CE = CMP
+			3'b010: ALUControl = 3'b010; // CR
+			3'b011: ALUControl = 3'b011; // MUL
+			3'b100: ALUControl = 3'b001; // CMP
 			
 			default: ALUControl = 3'bx; // unimplemented
 		endcase

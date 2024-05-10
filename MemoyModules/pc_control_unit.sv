@@ -48,26 +48,20 @@ module pc_control_unit
 	always_comb begin
 		case(Id)
 	
-			4'b0000: PC <= PCNext + 4;		 		// NOP
-		
-		
-			4'b0001: begin 							// COM
+			4'b0000: begin
 			
-				PC <= PCNext + 4;							
-				$display("\n\n *** Se inicia la comunicacion con el interprete ***");
-				
-			end
-		
-			4'b0010: begin 
+				PC <= PCNext + 4;		 		// NOP
+			end 
+			4'b0001: begin 
 			
 				PC <= PCNext;							// END
 				$display("\n\n *** El programa ha terminado exitosamente ***");
 				
 			end
 	
-			4'b1100: PC <= Imm; 						// JMP
+			4'b1100: PC <= Imm; 						// BRIN
 			
-			4'b1101: if (ALUFlagsTemp[0])		 	// JEQ
+			4'b1101: if (ALUFlagsTemp[0])		 	// BETO
 						begin 
 							PC <= Imm;	
 						end
@@ -75,7 +69,7 @@ module pc_control_unit
 							PC <= PCNext + 4;
 						end
 						
-			4'b1110: if (ALUFlagsTemp[1])			// JLT
+			4'b1110: if (ALUFlagsTemp[1])			// BMNQ
 						begin
 							PC <= Imm;
 						end
@@ -90,7 +84,6 @@ module pc_control_unit
 		
 	end
 	
-	assign EndFlag = (Id == 4'b0010);
-	assign COMFlagTemp = (Id == 4'b0001);
+	assign EndFlag = (Id == 4'b0001);
 	
 endmodule

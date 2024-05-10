@@ -29,11 +29,6 @@ module alu #(parameter N = 4)
 					begin
 						result_r = (a_i * b_i);
 					end
-					LOGIC_DLD:
-					begin
-						result_r = a_i >> 1; // Shift logical right
-
-					end
 					// Hace lo mismo que un mov
 					CR_:
 					begin

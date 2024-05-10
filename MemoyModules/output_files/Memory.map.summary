@@ -1,7 +1,7 @@
-Analysis & Elaboration Status : Successful - Thu May  9 19:58:48 2024
-Quartus Prime Version : 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+Analysis & Elaboration Status : Successful - Thu May 09 23:59:26 2024
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : Memory
-Top-level Entity Name : P_ROM
+Top-level Entity Name : TB_TOP
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A until Partition Merge
 Total registers : N/A until Partition Merge
