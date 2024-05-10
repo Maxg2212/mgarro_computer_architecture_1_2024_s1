@@ -1,0 +1,7 @@
+Info (10281): Verilog HDL Declaration information at videoGen.sv(2): object "b" differs only in case from object "B" in the same scope File: C:/Users/camf/Downloads/VGA/videoGen.sv Line: 2
+Info (10281): Verilog HDL Declaration information at videoGen.sv(2): object "g" differs only in case from object "G" in the same scope File: C:/Users/camf/Downloads/VGA/videoGen.sv Line: 2
+Info (10281): Verilog HDL Declaration information at videoGen.sv(2): object "r" differs only in case from object "R" in the same scope File: C:/Users/camf/Downloads/VGA/videoGen.sv Line: 2
+Info (10281): Verilog HDL Declaration information at videoGen.sv(1): object "x" differs only in case from object "X" in the same scope File: C:/Users/camf/Downloads/VGA/videoGen.sv Line: 1
+Info (10281): Verilog HDL Declaration information at videoGen.sv(1): object "y" differs only in case from object "Y" in the same scope File: C:/Users/camf/Downloads/VGA/videoGen.sv Line: 1
+Info (10281): Verilog HDL Declaration information at set_icon.sv(1): object "x" differs only in case from object "X" in the same scope File: C:/Users/camf/Downloads/VGA/set_icon.sv Line: 1
+Info (10281): Verilog HDL Declaration information at set_icon.sv(1): object "y" differs only in case from object "Y" in the same scope File: C:/Users/camf/Downloads/VGA/set_icon.sv Line: 1
