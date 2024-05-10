@@ -64,7 +64,7 @@ set_global_assignment -name SYSTEMVERILOG_FILE pc_control_unit.sv
 set_global_assignment -name SYSTEMVERILOG_FILE regfile.sv
 set_global_assignment -name SYSTEMVERILOG_FILE TB_PC_CONTROL_UNIT.sv
 set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
-set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH TB_ALU -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH TB_TOP -section_id eda_simulation
 set_global_assignment -name EDA_TEST_BENCH_NAME TB_PC_CONTROL_UNIT -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id TB_PC_CONTROL_UNIT
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME TB_PC_CONTROL_UNIT -section_id TB_PC_CONTROL_UNIT
@@ -80,8 +80,6 @@ set_global_assignment -name SYSTEMVERILOG_FILE TB_ALU.sv
 set_global_assignment -name EDA_TEST_BENCH_NAME TB_ALU -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id TB_ALU
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME TB_ALU -section_id TB_ALU
-set_global_assignment -name EDA_TEST_BENCH_FILE TB_PC_CONTROL_UNIT.sv -section_id TB_PC_CONTROL_UNIT
-set_global_assignment -name EDA_TEST_BENCH_FILE TB_ALU.sv -section_id TB_ALU
 set_global_assignment -name SYSTEMVERILOG_FILE segment_if_id.sv
 set_global_assignment -name SYSTEMVERILOG_FILE segment_ex_mem.sv
 set_global_assignment -name SYSTEMVERILOG_FILE segment_id_ex.sv
@@ -90,6 +88,13 @@ set_global_assignment -name SYSTEMVERILOG_FILE extend.sv
 set_global_assignment -name SYSTEMVERILOG_FILE datapath.sv
 set_global_assignment -name SYSTEMVERILOG_FILE pipelined_processor.sv
 set_global_assignment -name SYSTEMVERILOG_FILE top.sv
+set_global_assignment -name SYSTEMVERILOG_FILE TB_TOP.sv
+set_global_assignment -name EDA_TEST_BENCH_FILE TB_PC_CONTROL_UNIT.sv -section_id TB_PC_CONTROL_UNIT
+set_global_assignment -name EDA_TEST_BENCH_FILE TB_ALU.sv -section_id TB_ALU
+set_global_assignment -name EDA_TEST_BENCH_NAME TB_TOP -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id TB_TOP
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME TB_TOP -section_id TB_TOP
+set_global_assignment -name EDA_TEST_BENCH_FILE TB_TOP.sv -section_id TB_TOP
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top

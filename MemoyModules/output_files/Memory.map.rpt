@@ -1,5 +1,5 @@
 Analysis & Elaboration report for Memory
-Wed May 08 23:23:34 2024
+Thu May 09 19:30:14 2024
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -50,7 +50,7 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                              ;
 +-------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Wed May 08 23:23:34 2024       ;
+; Analysis & Elaboration Status ; Successful - Thu May 09 19:30:14 2024       ;
 ; Quartus Prime Version         ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                 ; Memory                                      ;
 ; Top-level Entity Name         ; top                                         ;
@@ -291,7 +291,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Wed May 08 23:23:20 2024
+    Info: Processing started: Thu May 09 19:30:05 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Memory -c Memory --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -342,6 +342,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file pipelin
     Info (12023): Found entity 1: pipelined_processor File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/pipelined_processor.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file top.sv
     Info (12023): Found entity 1: top File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/top.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb_top.sv
+    Info (12023): Found entity 1: TB_TOP File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_TOP.sv Line: 1
 Warning (10236): Verilog HDL Implicit Net warning at clock_manager.sv(13): created implicit net for "clk_Serial" File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/clock_manager.sv Line: 13
 Warning (10236): Verilog HDL Implicit Net warning at pipelined_processor.sv(42): created implicit net for "MemtoReg" File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/pipelined_processor.sv Line: 42
 Warning (10236): Verilog HDL Implicit Net warning at top.sv(19): created implicit net for "COMFlag" File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/top.sv Line: 19
@@ -369,17 +371,17 @@ Warning (10230): Verilog HDL assignment warning at alu.sv(49): truncated value w
 Info (12128): Elaborating entity "segment_ex_mem" for hierarchy "pipelined_processor:cpu|datapath:dp|segment_ex_mem:seg_ex_mem" File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/datapath.sv Line: 159
 Info (12128): Elaborating entity "segment_mem_wb" for hierarchy "pipelined_processor:cpu|datapath:dp|segment_mem_wb:seg_mem_wb" File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/datapath.sv Line: 182
 Info (12128): Elaborating entity "P_ROM" for hierarchy "P_ROM:instr_mem" File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/top.sv Line: 50
-Warning (10850): Verilog HDL warning at P_ROM.sv(14): number of words (83) in memory file does not match the number of elements in the address range [0:100] File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/P_ROM.sv Line: 14
+Warning (10850): Verilog HDL warning at P_ROM.sv(14): number of words (25) in memory file does not match the number of elements in the address range [0:100] File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/P_ROM.sv Line: 14
 Warning (10030): Net "RAM.data_a" at P_ROM.sv(10) has no driver or initial value, using a default initial value '0' File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/P_ROM.sv Line: 10
 Warning (10030): Net "RAM.waddr_a" at P_ROM.sv(10) has no driver or initial value, using a default initial value '0' File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/P_ROM.sv Line: 10
 Warning (10030): Net "RAM.we_a" at P_ROM.sv(10) has no driver or initial value, using a default initial value '0' File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/P_ROM.sv Line: 10
 Info (12128): Elaborating entity "P_RAM" for hierarchy "P_RAM:data_mem" File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/top.sv Line: 61
 Info (144001): Generated suppressed messages file C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/output_files/Memory.map.smsg
 Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 14 warnings
-    Info: Peak virtual memory: 4762 megabytes
-    Info: Processing ended: Wed May 08 23:23:34 2024
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:30
+    Info: Peak virtual memory: 4769 megabytes
+    Info: Processing ended: Thu May 09 19:30:14 2024
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:22
 
 
 +--------------------------------------------+
