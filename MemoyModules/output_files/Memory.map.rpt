@@ -1,6 +1,6 @@
 Analysis & Elaboration report for Memory
-Sun May  5 15:48:27 2024
-Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+Fri May 10 13:57:45 2024
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
 ---------------------
@@ -9,19 +9,28 @@ Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
   1. Legal Notice
   2. Analysis & Elaboration Summary
   3. Parallel Compilation
-  4. Analysis & Elaboration IP Cores Summary
-  5. Source assignments for altsyncram:altsyncram_component|altsyncram_8o14:auto_generated
-  6. Parameter Settings for User Entity Instance: altsyncram:altsyncram_component
-  7. altsyncram Parameter Settings by Entity Instance
-  8. Analysis & Elaboration Settings
-  9. Analysis & Elaboration Messages
+  4. Parameter Settings for User Entity Instance: clock_manager:cm|clockDivider:div
+  5. Parameter Settings for User Entity Instance: clock_manager:cm|mux2:clk_mux
+  6. Parameter Settings for User Entity Instance: pipelined_processor:cpu|pc_control_unit:pcu|flopenr:flagreg1
+  7. Parameter Settings for User Entity Instance: pipelined_processor:cpu|pc_control_unit:pcu|flopenr:flagreg2
+  8. Parameter Settings for User Entity Instance: pipelined_processor:cpu|pc_control_unit:pcu|flopr:pcreg
+  9. Parameter Settings for User Entity Instance: pipelined_processor:cpu|datapath:dp|mux2:ra2mux
+ 10. Parameter Settings for User Entity Instance: pipelined_processor:cpu|datapath:dp|mux2:srcbmux
+ 11. Parameter Settings for User Entity Instance: pipelined_processor:cpu|datapath:dp|alu:alu
+ 12. Parameter Settings for User Entity Instance: pipelined_processor:cpu|datapath:dp|mux2:resmux
+ 13. Analysis & Elaboration Settings
+ 14. Port Connectivity Checks: "interpreter_comunication:ic"
+ 15. Port Connectivity Checks: "pipelined_processor:cpu|datapath:dp"
+ 16. Port Connectivity Checks: "pipelined_processor:cpu|pc_control_unit:pcu|flopenr:flagreg2"
+ 17. Analysis & Elaboration Messages
+ 18. Analysis & Elaboration Suppressed Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2022  Intel Corporation. All rights reserved.
+Copyright (C) 2020  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -38,22 +47,22 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+--------------------------------------------------------------------------------+
-; Analysis & Elaboration Summary                                                 ;
-+-------------------------------+------------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Sun May  5 15:48:27 2024          ;
-; Quartus Prime Version         ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
-; Revision Name                 ; Memory                                         ;
-; Top-level Entity Name         ; ROM                                            ;
-; Family                        ; Cyclone V                                      ;
-; Logic utilization (in ALMs)   ; N/A until Partition Merge                      ;
-; Total registers               ; N/A until Partition Merge                      ;
-; Total pins                    ; N/A until Partition Merge                      ;
-; Total virtual pins            ; N/A until Partition Merge                      ;
-; Total block memory bits       ; N/A until Partition Merge                      ;
-; Total PLLs                    ; N/A until Partition Merge                      ;
-; Total DLLs                    ; N/A until Partition Merge                      ;
-+-------------------------------+------------------------------------------------+
++-----------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                              ;
++-------------------------------+---------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Fri May 10 13:57:45 2024       ;
+; Quartus Prime Version         ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name                 ; Memory                                      ;
+; Top-level Entity Name         ; top                                         ;
+; Family                        ; Cyclone V                                   ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
+; Total registers               ; N/A until Partition Merge                   ;
+; Total pins                    ; N/A until Partition Merge                   ;
+; Total virtual pins            ; N/A until Partition Merge                   ;
+; Total block memory bits       ; N/A until Partition Merge                   ;
+; Total PLLs                    ; N/A until Partition Merge                   ;
+; Total DLLs                    ; N/A until Partition Merge                   ;
++-------------------------------+---------------------------------------------+
 
 
 +------------------------------------------+
@@ -61,8 +70,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 6           ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -72,103 +81,94 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------+
-; Analysis & Elaboration IP Cores Summary                                                           ;
-+--------+--------------+---------+--------------+--------------+-----------------+-----------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance ; IP Include File ;
-+--------+--------------+---------+--------------+--------------+-----------------+-----------------+
-; Altera ; ROM: 1-PORT  ; 22.1    ; N/A          ; N/A          ; |ROM            ; ROM.vhd         ;
-+--------+--------------+---------+--------------+--------------+-----------------+-----------------+
-
-
-+---------------------------------------------------------------------------------------+
-; Source assignments for altsyncram:altsyncram_component|altsyncram_8o14:auto_generated ;
-+---------------------------------+--------------------+------+-------------------------+
-; Assignment                      ; Value              ; From ; To                      ;
-+---------------------------------+--------------------+------+-------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                       ;
-+---------------------------------+--------------------+------+-------------------------+
-
-
-+------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: altsyncram:altsyncram_component ;
-+------------------------------------+----------------------+------------------+
-; Parameter Name                     ; Value                ; Type             ;
-+------------------------------------+----------------------+------------------+
-; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped          ;
-; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY       ;
-; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY     ;
-; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE     ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE   ;
-; WIDTH_BYTEENA                      ; 1                    ; Untyped          ;
-; OPERATION_MODE                     ; ROM                  ; Untyped          ;
-; WIDTH_A                            ; 5                    ; Signed Integer   ;
-; WIDTHAD_A                          ; 5                    ; Signed Integer   ;
-; NUMWORDS_A                         ; 32                   ; Signed Integer   ;
-; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped          ;
-; ADDRESS_ACLR_A                     ; NONE                 ; Untyped          ;
-; OUTDATA_ACLR_A                     ; NONE                 ; Untyped          ;
-; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped          ;
-; INDATA_ACLR_A                      ; NONE                 ; Untyped          ;
-; BYTEENA_ACLR_A                     ; NONE                 ; Untyped          ;
-; WIDTH_B                            ; 1                    ; Signed Integer   ;
-; WIDTHAD_B                          ; 1                    ; Signed Integer   ;
-; NUMWORDS_B                         ; 0                    ; Signed Integer   ;
-; INDATA_REG_B                       ; CLOCK1               ; Untyped          ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped          ;
-; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped          ;
-; ADDRESS_REG_B                      ; CLOCK1               ; Untyped          ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped          ;
-; BYTEENA_REG_B                      ; CLOCK1               ; Untyped          ;
-; INDATA_ACLR_B                      ; NONE                 ; Untyped          ;
-; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped          ;
-; ADDRESS_ACLR_B                     ; NONE                 ; Untyped          ;
-; OUTDATA_ACLR_B                     ; NONE                 ; Untyped          ;
-; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped          ;
-; BYTEENA_ACLR_B                     ; NONE                 ; Untyped          ;
-; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer   ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Signed Integer   ;
-; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped          ;
-; BYTE_SIZE                          ; 8                    ; Signed Integer   ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped          ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped          ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped          ;
-; INIT_FILE                          ; ROM.mif              ; Untyped          ;
-; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped          ;
-; MAXIMUM_DEPTH                      ; 0                    ; Signed Integer   ;
-; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped          ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped          ;
-; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped          ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped          ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped          ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped          ;
-; ENABLE_ECC                         ; FALSE                ; Untyped          ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped          ;
-; WIDTH_ECCSTATUS                    ; 3                    ; Signed Integer   ;
-; DEVICE_FAMILY                      ; Cyclone V            ; Untyped          ;
-; CBXI_PARAMETER                     ; altsyncram_8o14      ; Untyped          ;
-+------------------------------------+----------------------+------------------+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clock_manager:cm|clockDivider:div ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; divisor        ; 9600  ; Signed Integer                                        ;
++----------------+-------+-------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------+
-; altsyncram Parameter Settings by Entity Instance                            ;
-+-------------------------------------------+---------------------------------+
-; Name                                      ; Value                           ;
-+-------------------------------------------+---------------------------------+
-; Number of entity instances                ; 1                               ;
-; Entity Instance                           ; altsyncram:altsyncram_component ;
-;     -- OPERATION_MODE                     ; ROM                             ;
-;     -- WIDTH_A                            ; 5                               ;
-;     -- NUMWORDS_A                         ; 32                              ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                    ;
-;     -- WIDTH_B                            ; 1                               ;
-;     -- NUMWORDS_B                         ; 0                               ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                          ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                    ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                            ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                       ;
-+-------------------------------------------+---------------------------------+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clock_manager:cm|mux2:clk_mux ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; WIDTH          ; 1     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pipelined_processor:cpu|pc_control_unit:pcu|flopenr:flagreg1 ;
++----------------+-------+----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                             ;
++----------------+-------+----------------------------------------------------------------------------------+
+; WIDTH          ; 2     ; Signed Integer                                                                   ;
++----------------+-------+----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pipelined_processor:cpu|pc_control_unit:pcu|flopenr:flagreg2 ;
++----------------+-------+----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                             ;
++----------------+-------+----------------------------------------------------------------------------------+
+; WIDTH          ; 1     ; Signed Integer                                                                   ;
++----------------+-------+----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pipelined_processor:cpu|pc_control_unit:pcu|flopr:pcreg ;
++----------------+-------+-----------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                        ;
++----------------+-------+-----------------------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                                              ;
++----------------+-------+-----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pipelined_processor:cpu|datapath:dp|mux2:ra2mux ;
++----------------+-------+---------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                ;
++----------------+-------+---------------------------------------------------------------------+
+; WIDTH          ; 4     ; Signed Integer                                                      ;
++----------------+-------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pipelined_processor:cpu|datapath:dp|mux2:srcbmux ;
++----------------+-------+----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                 ;
++----------------+-------+----------------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                                       ;
++----------------+-------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pipelined_processor:cpu|datapath:dp|alu:alu ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pipelined_processor:cpu|datapath:dp|mux2:resmux ;
++----------------+-------+---------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                ;
++----------------+-------+---------------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                                      ;
++----------------+-------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -177,7 +177,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; ROM                ; Memory             ;
+; Top-level entity name                                                           ; top                ; Memory             ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -258,85 +258,142 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "interpreter_comunication:ic"                                                                                                            ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                                                                          ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------+
+; ReadDataOut ; Output ; Warning  ; Output or bidir port (15 bits) is wider than the port expression (8 bits) it drives; bit(s) "ReadDataOut[14..8]" have no fanouts ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pipelined_processor:cpu|datapath:dp"                                                         ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; InstrD[25..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pipelined_processor:cpu|pc_control_unit:pcu|flopenr:flagreg2" ;
++------+-------+----------+----------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                        ;
++------+-------+----------+----------------------------------------------------------------+
+; d    ; Input ; Info     ; Stuck at VCC                                                   ;
++------+-------+----------+----------------------------------------------------------------+
+
+
 +---------------------------------+
 ; Analysis & Elaboration Messages ;
 +---------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
-    Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Sun May  5 15:48:18 2024
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Fri May 10 13:57:32 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Memory -c Memory --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file rom.vhd
-    Info (12022): Found design unit 1: rom-SYN File: C:/Users/aleji/OneDrive/Escritorio/MemoyModules/ROM.vhd Line: 53
-    Info (12023): Found entity 1: ROM File: C:/Users/aleji/OneDrive/Escritorio/MemoyModules/ROM.vhd Line: 43
-Info (12021): Found 1 design units, including 1 entities, in source file romschem.bdf
-    Info (12023): Found entity 1: ROMschem
-Info (12021): Found 1 design units, including 1 entities, in source file ram.v
-    Info (12023): Found entity 1: RAM File: C:/Users/aleji/OneDrive/Escritorio/MemoyModules/RAM.v Line: 40
-Info (12127): Elaborating entity "ROM" for the top level hierarchy
-Info (12128): Elaborating entity "altsyncram" for hierarchy "altsyncram:altsyncram_component" File: C:/Users/aleji/OneDrive/Escritorio/MemoyModules/ROM.vhd Line: 60
-Info (12130): Elaborated megafunction instantiation "altsyncram:altsyncram_component" File: C:/Users/aleji/OneDrive/Escritorio/MemoyModules/ROM.vhd Line: 60
-Info (12133): Instantiated megafunction "altsyncram:altsyncram_component" with the following parameter: File: C:/Users/aleji/OneDrive/Escritorio/MemoyModules/ROM.vhd Line: 60
-    Info (12134): Parameter "address_aclr_a" = "NONE"
-    Info (12134): Parameter "address_aclr_b" = "NONE"
-    Info (12134): Parameter "address_reg_b" = "CLOCK1"
-    Info (12134): Parameter "byte_size" = "8"
-    Info (12134): Parameter "byteena_aclr_a" = "UNUSED"
-    Info (12134): Parameter "byteena_aclr_b" = "NONE"
-    Info (12134): Parameter "byteena_reg_b" = "CLOCK1"
-    Info (12134): Parameter "clock_enable_core_a" = "USE_INPUT_CLKEN"
-    Info (12134): Parameter "clock_enable_core_b" = "USE_INPUT_CLKEN"
-    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
-    Info (12134): Parameter "clock_enable_input_b" = "NORMAL"
-    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
-    Info (12134): Parameter "clock_enable_output_b" = "NORMAL"
-    Info (12134): Parameter "intended_device_family" = "Cyclone V"
-    Info (12134): Parameter "ecc_pipeline_stage_enabled" = "FALSE"
-    Info (12134): Parameter "enable_ecc" = "FALSE"
-    Info (12134): Parameter "implement_in_les" = "OFF"
-    Info (12134): Parameter "indata_aclr_a" = "UNUSED"
-    Info (12134): Parameter "indata_aclr_b" = "NONE"
-    Info (12134): Parameter "indata_reg_b" = "CLOCK1"
-    Info (12134): Parameter "init_file" = "ROM.mif"
-    Info (12134): Parameter "init_file_layout" = "PORT_A"
-    Info (12134): Parameter "maximum_depth" = "0"
-    Info (12134): Parameter "numwords_a" = "32"
-    Info (12134): Parameter "numwords_b" = "0"
-    Info (12134): Parameter "operation_mode" = "ROM"
-    Info (12134): Parameter "outdata_aclr_a" = "NONE"
-    Info (12134): Parameter "outdata_aclr_b" = "NONE"
-    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
-    Info (12134): Parameter "outdata_reg_b" = "UNREGISTERED"
-    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
-    Info (12134): Parameter "ram_block_type" = "AUTO"
-    Info (12134): Parameter "rdcontrol_aclr_b" = "NONE"
-    Info (12134): Parameter "rdcontrol_reg_b" = "CLOCK1"
-    Info (12134): Parameter "read_during_write_mode_mixed_ports" = "DONT_CARE"
-    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
-    Info (12134): Parameter "read_during_write_mode_port_b" = "NEW_DATA_NO_NBE_READ"
-    Info (12134): Parameter "stratixiv_m144k_allow_dual_clocks" = "ON"
-    Info (12134): Parameter "width_a" = "5"
-    Info (12134): Parameter "width_b" = "1"
-    Info (12134): Parameter "width_byteena_a" = "1"
-    Info (12134): Parameter "width_byteena_b" = "1"
-    Info (12134): Parameter "width_eccstatus" = "3"
-    Info (12134): Parameter "widthad_a" = "5"
-    Info (12134): Parameter "widthad_b" = "1"
-    Info (12134): Parameter "wrcontrol_aclr_a" = "UNUSED"
-    Info (12134): Parameter "wrcontrol_aclr_b" = "NONE"
-    Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
-    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
-    Info (12134): Parameter "lpm_type" = "altsyncram"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_8o14.tdf
-    Info (12023): Found entity 1: altsyncram_8o14 File: C:/Users/aleji/OneDrive/Escritorio/MemoyModules/db/altsyncram_8o14.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_8o14" for hierarchy "altsyncram:altsyncram_component|altsyncram_8o14:auto_generated" File: c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (113018): Width of data items in "ROM.mif" is greater than the memory width. Truncating data items to fit in memory. File: C:/Users/aleji/OneDrive/Escritorio/MemoyModules/ROM.mif Line: 24
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4880 megabytes
-    Info: Processing ended: Sun May  5 15:48:27 2024
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:08
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file p_rom.sv
+    Info (12023): Found entity 1: P_ROM File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/P_ROM.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file p_ram.sv
+    Info (12023): Found entity 1: P_RAM File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/P_RAM.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file pc_control_unit.sv
+    Info (12023): Found entity 1: pc_control_unit File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/pc_control_unit.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file regfile.sv
+    Info (12023): Found entity 1: regfile File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/regfile.sv Line: 1
+Warning (10229): Verilog HDL Expression warning at TB_PC_CONTROL_UNIT.sv(44): truncated literal to match 31 bits File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_PC_CONTROL_UNIT.sv Line: 44
+Warning (10229): Verilog HDL Expression warning at TB_PC_CONTROL_UNIT.sv(50): truncated literal to match 31 bits File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_PC_CONTROL_UNIT.sv Line: 50
+Warning (10229): Verilog HDL Expression warning at TB_PC_CONTROL_UNIT.sv(56): truncated literal to match 31 bits File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_PC_CONTROL_UNIT.sv Line: 56
+Info (12021): Found 1 design units, including 1 entities, in source file tb_pc_control_unit.sv
+    Info (12023): Found entity 1: TB_PC_CONTROL_UNIT File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_PC_CONTROL_UNIT.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file flopenr.sv
+    Info (12023): Found entity 1: flopenr File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/flopenr.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file flopr.sv
+    Info (12023): Found entity 1: flopr File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/flopr.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file alu.sv
+    Info (12023): Found entity 1: alu File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/alu.sv Line: 1
+Info (12021): Found 1 design units, including 0 entities, in source file alu_defs.sv
+    Info (12022): Found design unit 1: alu_defs (SystemVerilog) File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/alu_defs.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file clock_manager.sv
+    Info (12023): Found entity 1: clock_manager File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/clock_manager.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file clockdivider.sv
+    Info (12023): Found entity 1: clockDivider File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/clockDivider.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file control_unit.sv
+    Info (12023): Found entity 1: control_unit File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/control_unit.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux2.sv
+    Info (12023): Found entity 1: mux2 File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/mux2.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb_alu.sv
+    Info (12023): Found entity 1: TB_ALU File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_ALU.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file segment_if_id.sv
+    Info (12023): Found entity 1: segment_if_id File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/segment_if_id.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file segment_ex_mem.sv
+    Info (12023): Found entity 1: segment_ex_mem File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/segment_ex_mem.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file segment_id_ex.sv
+    Info (12023): Found entity 1: segment_id_ex File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/segment_id_ex.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file segment_mem_wb.sv
+    Info (12023): Found entity 1: segment_mem_wb File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/segment_mem_wb.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file extend.sv
+    Info (12023): Found entity 1: extend File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/extend.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file datapath.sv
+    Info (12023): Found entity 1: datapath File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/datapath.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file pipelined_processor.sv
+    Info (12023): Found entity 1: pipelined_processor File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/pipelined_processor.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file top.sv
+    Info (12023): Found entity 1: top File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/top.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb_top.sv
+    Info (12023): Found entity 1: TB_TOP File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_TOP.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file p_rom_tb.sv
+    Info (12023): Found entity 1: P_ROM_tb File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/P_ROM_tb.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file interpreter_comunication.sv
+    Info (12023): Found entity 1: interpreter_comunication File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/interpreter_comunication.sv Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at clock_manager.sv(13): created implicit net for "clk_Serial" File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/clock_manager.sv Line: 13
+Warning (10236): Verilog HDL Implicit Net warning at pipelined_processor.sv(42): created implicit net for "MemtoReg" File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/pipelined_processor.sv Line: 42
+Warning (10236): Verilog HDL Implicit Net warning at top.sv(19): created implicit net for "COMFlag" File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/top.sv Line: 19
+Info (12127): Elaborating entity "top" for the top level hierarchy
+Info (12128): Elaborating entity "clock_manager" for hierarchy "clock_manager:cm" File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/top.sv Line: 22
+Info (12128): Elaborating entity "clockDivider" for hierarchy "clock_manager:cm|clockDivider:div" File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/clock_manager.sv Line: 14
+Info (12128): Elaborating entity "mux2" for hierarchy "clock_manager:cm|mux2:clk_mux" File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/clock_manager.sv Line: 20
+Info (12128): Elaborating entity "pipelined_processor" for hierarchy "pipelined_processor:cpu" File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/top.sv Line: 41
+Info (12128): Elaborating entity "pc_control_unit" for hierarchy "pipelined_processor:cpu|pc_control_unit:pcu" File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/pipelined_processor.sv Line: 35
+Info (12128): Elaborating entity "flopenr" for hierarchy "pipelined_processor:cpu|pc_control_unit:pcu|flopenr:flagreg1" File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/pc_control_unit.sv Line: 26
+Info (12128): Elaborating entity "flopenr" for hierarchy "pipelined_processor:cpu|pc_control_unit:pcu|flopenr:flagreg2" File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/pc_control_unit.sv Line: 36
+Info (12128): Elaborating entity "flopr" for hierarchy "pipelined_processor:cpu|pc_control_unit:pcu|flopr:pcreg" File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/pc_control_unit.sv Line: 46
+Info (12128): Elaborating entity "control_unit" for hierarchy "pipelined_processor:cpu|control_unit:c" File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/pipelined_processor.sv Line: 48
+Info (12128): Elaborating entity "datapath" for hierarchy "pipelined_processor:cpu|datapath:dp" File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/pipelined_processor.sv Line: 73
+Info (12128): Elaborating entity "segment_if_id" for hierarchy "pipelined_processor:cpu|datapath:dp|segment_if_id:seg_if_id" File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/datapath.sv Line: 55
+Info (12128): Elaborating entity "mux2" for hierarchy "pipelined_processor:cpu|datapath:dp|mux2:ra2mux" File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/datapath.sv Line: 67
+Info (12128): Elaborating entity "regfile" for hierarchy "pipelined_processor:cpu|datapath:dp|regfile:rf" File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/datapath.sv Line: 80
+Info (12128): Elaborating entity "extend" for hierarchy "pipelined_processor:cpu|datapath:dp|extend:ext" File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/datapath.sv Line: 87
+Info (12128): Elaborating entity "segment_id_ex" for hierarchy "pipelined_processor:cpu|datapath:dp|segment_id_ex:seg_id_ex" File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/datapath.sv Line: 115
+Info (12128): Elaborating entity "mux2" for hierarchy "pipelined_processor:cpu|datapath:dp|mux2:srcbmux" File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/datapath.sv Line: 126
+Info (12128): Elaborating entity "alu" for hierarchy "pipelined_processor:cpu|datapath:dp|alu:alu" File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/datapath.sv Line: 136
+Warning (10230): Verilog HDL assignment warning at alu.sv(44): truncated value with size 33 to match size of target (32) File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/alu.sv Line: 44
+Info (12128): Elaborating entity "segment_ex_mem" for hierarchy "pipelined_processor:cpu|datapath:dp|segment_ex_mem:seg_ex_mem" File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/datapath.sv Line: 159
+Info (12128): Elaborating entity "segment_mem_wb" for hierarchy "pipelined_processor:cpu|datapath:dp|segment_mem_wb:seg_mem_wb" File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/datapath.sv Line: 182
+Info (12128): Elaborating entity "P_ROM" for hierarchy "P_ROM:instr_mem" File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/top.sv Line: 50
+Warning (10850): Verilog HDL warning at P_ROM.sv(14): number of words (12) in memory file does not match the number of elements in the address range [0:100] File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/P_ROM.sv Line: 14
+Warning (10030): Net "RAM.data_a" at P_ROM.sv(10) has no driver or initial value, using a default initial value '0' File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/P_ROM.sv Line: 10
+Warning (10030): Net "RAM.waddr_a" at P_ROM.sv(10) has no driver or initial value, using a default initial value '0' File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/P_ROM.sv Line: 10
+Warning (10030): Net "RAM.we_a" at P_ROM.sv(10) has no driver or initial value, using a default initial value '0' File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/P_ROM.sv Line: 10
+Info (12128): Elaborating entity "P_RAM" for hierarchy "P_RAM:data_mem" File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/top.sv Line: 62
+Warning (10850): Verilog HDL warning at P_RAM.sv(14): number of words (0) in memory file does not match the number of elements in the address range [0:101] File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/P_RAM.sv Line: 14
+Warning (10175): Verilog HDL warning at P_RAM.sv(19): ignoring unsupported system task File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/P_RAM.sv Line: 19
+Info (12128): Elaborating entity "interpreter_comunication" for hierarchy "interpreter_comunication:ic" File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/top.sv Line: 74
+Warning (10230): Verilog HDL assignment warning at interpreter_comunication.sv(20): truncated value with size 32 to match size of target (15) File: C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/interpreter_comunication.sv Line: 20
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (144001): Generated suppressed messages file C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/output_files/Memory.map.smsg
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 16 warnings
+    Info: Peak virtual memory: 4767 megabytes
+    Info: Processing ended: Fri May 10 13:57:45 2024
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:33
+
+
++--------------------------------------------+
+; Analysis & Elaboration Suppressed Messages ;
++--------------------------------------------+
+The suppressed messages can be found in C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/output_files/Memory.map.smsg.
 
 
