@@ -1,0 +1,116 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/simulation/modelsim
+vflopenr
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1715369222
+!i10b 1
+!s100 JBC3FeblDl3VIV^gTBdZ_3
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Ico^F8LlY=AoeC7PWg@TIf0
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+Z5 w1715147632
+8C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/flopenr.sv
+FC:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/flopenr.sv
+!i122 1
+Z6 L0 1 15
+Z7 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z8 !s108 1715369222.000000
+!s107 C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/flopenr.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules|C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/flopenr.sv|
+!i113 1
+Z9 o-sv -work work
+Z10 !s92 -sv -work work +incdir+C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules
+Z11 tCvgOpt 0
+vflopr
+R1
+R2
+!i10b 1
+!s100 bZ94i^1ECObo]zZK8AEHo2
+R3
+IgbPn]fe?BH0QmO8C?1d^53
+R4
+S1
+R0
+R5
+8C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/flopr.sv
+FC:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/flopr.sv
+!i122 2
+R6
+R7
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/flopr.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules|C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/flopr.sv|
+!i113 1
+R9
+R10
+R11
+vpc_control_unit
+R1
+R2
+!i10b 1
+!s100 8`zGa?lYOGFR6=TSV<Z_20
+R3
+Iz3mBGkn4Z_mkOkDFN;hLB3
+R4
+S1
+R0
+w1715322173
+8C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/pc_control_unit.sv
+FC:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/pc_control_unit.sv
+!i122 0
+L0 1 89
+R7
+r1
+!s85 0
+31
+!s108 1715369221.000000
+!s107 C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/pc_control_unit.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules|C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/pc_control_unit.sv|
+!i113 1
+R9
+R10
+R11
+vTB_PC_CONTROL_UNIT
+R1
+R2
+!i10b 1
+!s100 C9FJNQ@@[ZR1A`ULN:Q6@1
+R3
+Ifn_YCY@z3DKBk]e:^E?[J3
+R4
+S1
+R0
+R5
+8C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_PC_CONTROL_UNIT.sv
+FC:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_PC_CONTROL_UNIT.sv
+!i122 3
+L0 1 59
+R7
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_PC_CONTROL_UNIT.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules|C:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_PC_CONTROL_UNIT.sv|
+!i113 1
+R9
+R10
+R11
+n@t@b_@p@c_@c@o@n@t@r@o@l_@u@n@i@t

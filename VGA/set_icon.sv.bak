@@ -1,0 +1,144 @@
+module set_icon(input logic[3:0] sel, input logic[9:0] x, y, input logic [2:0] x_matrix, y_matrix, input logic visible, output logic icon);
+
+	logic cero, cero_1, cero_2, cero_3, cero_4;
+	logic uno, uno_1, uno_2, uno_3;
+	logic dos, dos_1, dos_2, dos_3, dos_4, dos_5;
+	logic tres, tres_1, tres_2, tres_3, tres_4;
+	logic cuatro, cuatro_1, cuatro_2, cuatro_3;
+	logic cinco, cinco_1, cinco_2, cinco_3, cinco_4, cinco_5;
+	logic seis, seis_1, seis_2, seis_3, seis_4, seis_5;
+	logic siete, siete_1, siete_2;
+	logic ocho, ocho_1, ocho_2, ocho_3, ocho_4, ocho_5;
+	//logic nueve, nueve_1, nueve_2, nueve_3, nueve_4, nueve_5;
+	logic bomba, bomba_1, bomba_2, bomba_3;
+	logic flag, flag_1, flag_2, flag_3, flag_4, flag_5;
+	logic select, select_1;
+	logic ganado, ganado_01, ganado_02, ganado_03, ganado_04, ganado_05, ganado_06, ganado_07, ganado_08, ganado_09, ganado_10, ganado_11, ganado_12, ganado_13; 
+	logic perdido, perdido_01, perdido_02, perdido_03, perdido_04, perdido_05, perdido_06, perdido_07, perdido_08, perdido_09, perdido_10, perdido_11, perdido_12, perdido_13, perdido_14, perdido_15;
+
+	logic [9:0] x_aux, y_aux;
+	
+	//assign x_matrix = (x>=80 && x<= 140) ? 0 : (x>140 && x<= 200) ? 1 : (x>200 && x<= 260) ? 2 :(x>260 && x<= 320) ? 3 :(x>320 && x<= 380) ? 4 :(x>380 && x<= 440) ? 5 :(x>440 && x<= 500) ? 6 :(x>500 && x<= 560) ? 7 : 0;
+	//assign y_matrix = (y>=0  && y<= 60) ? 0  : (y>60 && y<= 120) ? 1  : (y>120 && y<= 180) ? 2 :(y>180 && y<= 240) ? 3 :(y>240 && y<= 300) ? 4 :(y>300 && y<= 360) ? 5 :(y>360 && y<= 420) ? 6 :(y>420 && y<= 480) ? 7 : 0;	
+	
+	assign x_aux = 80 + x_matrix * 60;
+	assign y_aux = y_matrix * 60;
+	
+	rectgen rectCero1   (x, y, x_aux + 15, x_aux + 45, y_aux + 10, y_aux + 20, cero_1);
+	rectgen rectCero2   (x, y, x_aux + 15, x_aux + 45, y_aux + 40, y_aux + 50, cero_2);
+	rectgen rectCero3   (x, y, x_aux + 15, x_aux + 25, y_aux + 20, y_aux + 40, cero_3);
+	rectgen rectCero4   (x, y, x_aux + 35, x_aux + 45, y_aux + 20, y_aux + 40, cero_4);
+	
+	rectgen rectUno1    (x, y, x_aux + 15, x_aux + 45, y_aux + 40, y_aux + 50, uno_1);	
+	rectgen rectUno2    (x, y, x_aux + 25, x_aux + 35, y_aux + 20, y_aux + 40, uno_2);	
+	rectgen rectUno3    (x, y, x_aux + 15, x_aux + 35, y_aux + 10, y_aux + 20, uno_3);
+	
+	rectgen rectDos1    (x, y, x_aux + 15, x_aux + 45, y_aux + 42, y_aux + 50, dos_1);	
+	rectgen rectDos2    (x, y, x_aux + 15, x_aux + 25, y_aux + 34, y_aux + 42, dos_2);	
+	rectgen rectDos3    (x, y, x_aux + 15, x_aux + 45, y_aux + 26, y_aux + 34, dos_3);	
+	rectgen rectDos4    (x, y, x_aux + 35, x_aux + 45, y_aux + 18, y_aux + 26, dos_4);	
+	rectgen rectDos5    (x, y, x_aux + 15, x_aux + 45, y_aux + 10, y_aux + 18, dos_5);	
+	
+	rectgen rectTres1   (x, y, x_aux + 15, x_aux + 35, y_aux + 10, y_aux + 18, tres_1);	
+	rectgen rectTres2   (x, y, x_aux + 25, x_aux + 35, y_aux + 26, y_aux + 34, tres_2);	
+	rectgen rectTres3   (x, y, x_aux + 15, x_aux + 35, y_aux + 42, y_aux + 50, tres_3);	
+	rectgen rectTres4   (x, y, x_aux + 35, x_aux + 45, y_aux + 10, y_aux + 50, tres_4);	
+	
+	rectgen rectCuatro1 (x, y, x_aux + 35, x_aux + 45, y_aux + 10, y_aux + 50, cuatro_1);	
+	rectgen rectCuatro2 (x, y, x_aux + 15, x_aux + 25, y_aux + 10, y_aux + 30, cuatro_2);	
+	rectgen rectCuatro3 (x, y, x_aux + 25, x_aux + 35, y_aux + 20, y_aux + 30, cuatro_3);	
+	
+	rectgen rectCinco1  (x, y, x_aux + 15, x_aux + 45, y_aux + 10, y_aux + 18, cinco_1);	
+	rectgen rectCinco2  (x, y, x_aux + 15, x_aux + 25, y_aux + 18, y_aux + 26, cinco_2);	
+	rectgen rectCinco3  (x, y, x_aux + 15, x_aux + 45, y_aux + 26, y_aux + 34, cinco_3);	
+	rectgen rectCinco4  (x, y, x_aux + 35, x_aux + 45, y_aux + 34, y_aux + 42, cinco_4);	
+	rectgen rectCinco5  (x, y, x_aux + 15, x_aux + 45, y_aux + 42, y_aux + 50, cinco_5);	
+	
+	rectgen rectSeis1   (x, y, x_aux + 15, x_aux + 25, y_aux + 10, y_aux + 50, seis_1);	
+	rectgen rectSeis2   (x, y, x_aux + 25, x_aux + 45, y_aux + 10, y_aux + 18, seis_2);	
+	rectgen rectSeis3   (x, y, x_aux + 25, x_aux + 45, y_aux + 26, y_aux + 34, seis_3);	
+	rectgen rectSeis4   (x, y, x_aux + 25, x_aux + 45, y_aux + 42, y_aux + 50, seis_4);	
+	rectgen rectSeis5   (x, y, x_aux + 35, x_aux + 45, y_aux + 34, y_aux + 42, seis_5);	
+
+  	rectgen rectSiete1  (x, y, x_aux + 15, x_aux + 45, y_aux + 10, y_aux + 20, siete_1);	
+	rectgen rectSiete2  (x, y, x_aux + 35, x_aux + 45, y_aux + 20, y_aux + 50, siete_2);	
+  	 
+	rectgen rectOcho1   (x, y, x_aux + 15, x_aux + 25, y_aux + 10, y_aux + 50, ocho_1);	
+	rectgen rectOcho2   (x, y, x_aux + 35, x_aux + 45, y_aux + 10, y_aux + 50, ocho_2);	
+	rectgen rectOcho3   (x, y, x_aux + 25, x_aux + 35, y_aux + 10, y_aux + 18, ocho_3);	
+	rectgen rectOcho4   (x, y, x_aux + 25, x_aux + 35, y_aux + 26, y_aux + 34, ocho_4);	
+	rectgen rectOcho5   (x, y, x_aux + 25, x_aux + 35, y_aux + 42, y_aux + 50, ocho_5);	
+
+	//rectgen rectNueve1  (x, y, x_aux + 35, x_aux + 45, y_aux + 10, y_aux + 50, nueve_1);	
+	//rectgen rectNueve2  (x, y, x_aux + 15, x_aux + 25, y_aux + 10, y_aux + 34, nueve_2);	
+	//rectgen rectNueve3  (x, y, x_aux + 25, x_aux + 35, y_aux + 10, y_aux + 18, nueve_3);	
+	//rectgen rectNueve4  (x, y, x_aux + 25, x_aux + 35, y_aux + 26, y_aux + 34, nueve_4);	
+	//rectgen rectNueve5  (x, y, x_aux + 15, x_aux + 35, y_aux + 42, y_aux + 50, nueve_5);	
+
+	rectgen rectSelect  (x, y, x_aux + 10, x_aux + 50, y_aux + 52, y_aux + 56, select_1);	
+
+	rectgen rectBomba1  (x, y, x_aux + 15, x_aux + 45, y_aux + 26, y_aux + 34, bomba_1);
+	rectgen rectBomba2  (x, y, x_aux + 25, x_aux + 35, y_aux + 10, y_aux + 50, bomba_2);
+	rectgen rectBomba3  (x, y, x_aux + 20, x_aux + 40, y_aux + 20, y_aux + 40, bomba_3);
+
+	rectgen rectFlag1   (x, y, x_aux + 15, x_aux + 45, y_aux + 40, y_aux + 50, flag_1);	
+	rectgen rectFlag2   (x, y, x_aux + 25, x_aux + 35, y_aux + 25, y_aux + 40, flag_2);	
+	rectgen rectFlag3   (x, y, x_aux + 25, x_aux + 35, y_aux + 10, y_aux + 15, flag_3);
+	rectgen rectFlag4   (x, y, x_aux + 25, x_aux + 40, y_aux + 15, y_aux + 20, flag_4);	
+	rectgen rectFlag5   (x, y, x_aux + 25, x_aux + 45, y_aux + 20, y_aux + 25, flag_5);
+
+	rectgen rectGanado01  (x, y, 10-5, 16-5, 10, 22, ganado_01); // W
+	rectgen rectGanado02  (x, y, 13-5, 19-5, 22, 36, ganado_02); // W
+	rectgen rectGanado03  (x, y, 16-5, 22-5, 36, 50, ganado_03); // W
+	rectgen rectGanado04  (x, y, 22-5, 28-5, 29, 43, ganado_04); // W
+	rectgen rectGanado05  (x, y, 28-5, 34-5, 36, 50, ganado_05); // W
+	rectgen rectGanado06  (x, y, 31-5, 37-5, 22, 36, ganado_06); // W
+	rectgen rectGanado07  (x, y, 34-5, 40-5, 10, 22, ganado_07); // W
+	rectgen rectGanado08  (x, y, 45-5, 50-5, 10, 50, ganado_08); // I
+	rectgen rectGanado09  (x, y, 55-5, 61-5, 10, 50, ganado_09); // N
+	rectgen rectGanado10  (x, y, 61-5, 67-5, 10, 22, ganado_10); // N
+	rectgen rectGanado11  (x, y, 64-5, 70-5, 22, 36, ganado_11); // N
+	rectgen rectGanado12  (x, y, 70-5, 74-5, 36, 50, ganado_12); // N
+	rectgen rectGanado13  (x, y, 74-5, 79-5, 10, 50, ganado_13); // N
+
+	rectgen rectPerdido01 (x, y, 10, 14, 10, 50, perdido_01); //L
+	rectgen rectPerdido02 (x, y, 14, 24, 40, 50, perdido_02); //L
+	rectgen rectPerdido03 (x, y, 17+10, 31+10, 10, 20, perdido_03); //O
+	rectgen rectPerdido04 (x, y, 17+10, 31+10, 40, 50, perdido_04); //O
+	rectgen rectPerdido05 (x, y, 17+10, 21+10, 20, 40, perdido_05); //O
+	rectgen rectPerdido06 (x, y, 27+10, 31+10, 20, 40, perdido_06); //O
+	rectgen rectPerdido07 (x, y, 33+10, 47+10, 10, 18, perdido_07); //S
+	rectgen rectPerdido08 (x, y, 33+10, 37+10, 18, 26, perdido_08); //S
+	rectgen rectPerdido09 (x, y, 33+10, 47+10, 26, 34, perdido_09); //S
+	rectgen rectPerdido10 (x, y, 43+10, 47+10, 34, 42, perdido_10); //S
+	rectgen rectPerdido11 (x, y, 33+10, 47+10, 42, 50, perdido_11); //S
+	rectgen rectPerdido12 (x, y, 50+10, 70, 10, 18, perdido_12); //E
+	rectgen rectPerdido13 (x, y, 50+10, 60, 26, 34, perdido_13); //E
+	rectgen rectPerdido14 (x, y, 50+10, 70, 42, 50, perdido_14); //E
+	rectgen rectPerdido15 (x, y, 50+10, 55+10, 10, 50, perdido_15); //E
+	
+
+	assign cero =   (sel == 4'b0000 & (cero_1   | cero_2    | cero_3  | cero_4               ))? 1 : 0; // 00
+	assign uno =    (sel == 4'b0001 & (uno_1    | uno_2     | uno_3                          ))? 1 : 0; // 01
+	assign dos =    (sel == 4'b0010 & (dos_1    | dos_2     | dos_3   | dos_4   | dos_5      ))? 1 : 0; // 02
+	assign tres =   (sel == 4'b0011 & (tres_1   | tres_2    | tres_3  | tres_4               ))? 1 : 0; // 03
+	assign cuatro = (sel == 4'b0100 & (cuatro_1 | cuatro_2  | cuatro_3                       ))? 1 : 0; // 04
+	assign cinco =  (sel == 4'b0101 & (cinco_1  | cinco_2   | cinco_3 | cinco_4 | cinco_5    ))? 1 : 0; // 05
+	assign seis =   (sel == 4'b0110 & (seis_1   | seis_2    | seis_3  | seis_4  | seis_5     ))? 1 : 0; // 06
+	assign siete =  (sel == 4'b0111 & (siete_1  | siete_2                                    ))? 1 : 0; // 07
+	assign ocho =   (sel == 4'b1000 & (ocho_1   | ocho_2    | ocho_3  | ocho_4  | ocho_5     ))? 1 : 0; // 08
+	//assign nueve =  (sel == 4'b1001 & (nueve_1  | nueve_2   | nueve_3 | nueve_4 | nueve_5  ))? 1 : 0; // 09
+	assign select = (sel == 4'b1001 & (select_1                                              ))? 1 : 0; // 09
+	assign bomba =  (sel == 4'b1010 & (bomba_1  | bomba_2   | bomba_3                        ))? 1 : 0; // 10
+	assign flag =   (sel == 4'b1011 & (flag_1   | flag_2    | flag_3  | flag_4  | flag_5     ))? 1 : 0; // 11
+	assign ganado = (sel == 4'b1100 & (ganado_01|ganado_02|ganado_03|ganado_04|ganado_05|
+									   ganado_06|ganado_07|ganado_08|ganado_09|ganado_10|
+									   ganado_11|ganado_12| ganado_13                        ))? 1 : 0; // 12
+	assign perdido =(sel == 4'b1101 & (perdido_01| perdido_02| perdido_03| perdido_04| 
+	                                   perdido_05| perdido_06| perdido_07| perdido_08| 
+									   perdido_09| perdido_10| perdido_11| perdido_12| 
+									   perdido_13| perdido_14| perdido_15                    ))? 1 : 0; // 13
+	
+	assign icon = (visible & (cero | uno | dos | tres | cuatro | cinco | seis | siete | ocho | select | bomba | flag | ganado | perdido)) ? 1 : 0;
+
+endmodule
