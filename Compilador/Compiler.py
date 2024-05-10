@@ -72,7 +72,7 @@ class Compiler:
 
             ## analize mnemonics
             for key in opcode_dict:
-                if (key.lower() == x[0:5]) or (key.lower() == x[0:4]) or (key.lower() == x[0:3]) or (key.lower() == x[0:2]) or (key.lower() == x[0:1]):
+                if (key.lower() == x[0:5]) or (key.lower() == x[0:4]) or (key.lower() == x[0:3]) or (key.lower() == x[0:2]):
                     # remove garbage
                     x = [x[0:len(key)], x[len(key):], i+1]
                     tmp.append(x)

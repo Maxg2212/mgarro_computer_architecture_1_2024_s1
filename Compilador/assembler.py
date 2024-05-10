@@ -134,7 +134,8 @@ class Binary:
         self.Rs1 = regs_dict[regs[1]]
         if ('#' in regs[2]):
             self.I = '1'
-            self.Imm = getbinary(int(regs[2][1:0]), self.imm_size)
+            self.Imm = getbinary(int(regs[2][1:]), self.imm_size)
+            print(self.Imm)
         else:
             self.I = '0'
             self.Rs2 = regs_dict[regs[2]]
