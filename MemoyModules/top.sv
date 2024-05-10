@@ -1,7 +1,7 @@
 module top
 (
 	// Entradas
-	input logic clk_FPGA, reset, start,
+	input logic clk_FPGA, reset, start, startIO,
 	
 	// Salidas
 	output logic EndFlag, clk_out,
@@ -56,11 +56,10 @@ module top
 							.WE(MemWrite), 
 							.A(DataAdr), 
 							.WD(WriteData),
+							.startIO(startIO),
 							// Salidas
 							.RD(ReadData)
 							);
 	
-	
-
 	
 endmodule 

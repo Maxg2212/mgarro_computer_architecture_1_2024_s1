@@ -3,6 +3,7 @@ module P_RAM
 	// Entradas
 	input logic clk, WE,
 	input logic [31:0] A, WD,
+	input logic startIO,
 	
 	// Salidas
 	output logic [31:0] RD
@@ -14,6 +15,8 @@ module P_RAM
 	
 	logic [31:0] RAM[101:0];
 	
+
+	
 	always_ff @(posedge clk) begin
 	
 		if (WE) begin
@@ -24,8 +27,8 @@ module P_RAM
 			$display("Address (hex):---------- %h", A);
 			$display("Write data (hex):------- %h", WD);
 			$display("Write data (dec):------- %d", WD);
-
-		end
+			$writememh("RAMdata.dat",RAM);
+		end		
 		
 	end
 	

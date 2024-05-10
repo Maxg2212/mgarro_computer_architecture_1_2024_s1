@@ -5,6 +5,7 @@
 clk_FPGA => clk_FPGA.IN1
 reset => reset.IN1
 start => start.IN1
+startIO => startIO.IN1
 EndFlag <= pipelined_processor:cpu.EndFlag
 clk_out <= <GND>
 ReadDataOut[0] <= <GND>
@@ -3150,6 +3151,7 @@ WD[30] => RAM.data_a[30].DATAIN
 WD[30] => RAM.DATAIN30
 WD[31] => RAM.data_a[31].DATAIN
 WD[31] => RAM.DATAIN31
+startIO => ~NO_FANOUT~
 RD[0] <= RAM.DATAOUT
 RD[1] <= RAM.DATAOUT1
 RD[2] <= RAM.DATAOUT2

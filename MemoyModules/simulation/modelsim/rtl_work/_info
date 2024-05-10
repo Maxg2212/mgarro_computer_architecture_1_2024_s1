@@ -12,7 +12,7 @@ Z0 dC:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_202
 valu
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
 DXx4 work 8 alu_defs 0 22 UN8eh@Pk_]cfLOYC5f?oz0
-Z2 !s110 1715320776
+Z2 !s110 1715333836
 !i10b 1
 !s100 8lL3T]bnbfl5^H4OXKA:`2
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -29,7 +29,7 @@ Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1715320776.000000
+Z6 !s108 1715333836.000000
 !s107 C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/alu.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules|C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/alu.sv|
 !i113 1
@@ -38,7 +38,7 @@ Z8 !s92 -sv -work work +incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_
 Z9 tCvgOpt 0
 Xalu_defs
 R1
-Z10 !s110 1715320775
+Z10 !s110 1715333835
 !i10b 1
 !s100 U[UzB?VPeflA4dN;0GOk20
 R3
@@ -55,7 +55,7 @@ R5
 r1
 !s85 0
 31
-Z11 !s108 1715320775.000000
+Z11 !s108 1715333835.000000
 !s107 C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/alu_defs.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules|C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/alu_defs.sv|
 !i113 1
@@ -143,7 +143,7 @@ R8
 R9
 vdatapath
 R1
-R10
+R2
 !i10b 1
 !s100 6OL67kOa<OjKgMSE^P1FQ0
 R3
@@ -160,7 +160,7 @@ R5
 r1
 !s85 0
 31
-R11
+R6
 !s107 C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/datapath.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules|C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/datapath.sv|
 !i113 1
@@ -169,7 +169,7 @@ R8
 R9
 vextend
 R1
-R10
+R2
 !i10b 1
 !s100 6]J>Gm361^6YCE4ZCkc_21
 R3
@@ -186,7 +186,7 @@ R5
 r1
 !s85 0
 31
-R11
+R6
 !s107 C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/extend.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules|C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/extend.sv|
 !i113 1
@@ -195,7 +195,7 @@ R8
 R9
 vflopenr
 R1
-Z15 !s110 1715320774
+R10
 !i10b 1
 !s100 JBC3FeblDl3VIV^gTBdZ_3
 R3
@@ -207,12 +207,12 @@ R12
 8C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/flopenr.sv
 FC:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/flopenr.sv
 !i122 2
-Z16 L0 1 15
+Z15 L0 1 15
 R5
 r1
 !s85 0
 31
-Z17 !s108 1715320774.000000
+R11
 !s107 C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/flopenr.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules|C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/flopenr.sv|
 !i113 1
@@ -221,7 +221,7 @@ R8
 R9
 vflopr
 R1
-R15
+R10
 !i10b 1
 !s100 bZ94i^1ECObo]zZK8AEHo2
 R3
@@ -233,12 +233,12 @@ R12
 8C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/flopr.sv
 FC:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/flopr.sv
 !i122 3
-R16
+R15
 R5
 r1
 !s85 0
 31
-R17
+R11
 !s107 C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/flopr.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules|C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/flopr.sv|
 !i113 1
@@ -275,17 +275,17 @@ vP_RAM
 R1
 R2
 !i10b 1
-!s100 z2[c=naF1NMUk263lN0Y_3
+!s100 ZonKhg]Z3UE@KalPgX>Wd3
 R3
-I35GOR5W]iML>RWd3e0D>H0
+IC1ahC?[eVZligzN`dC8QK0
 R4
 S1
 R0
-Z18 w1715306624
+w1715333791
 8C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/P_RAM.sv
 FC:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/P_RAM.sv
 !i122 19
-L0 1 36
+L0 1 39
 R5
 r1
 !s85 0
@@ -308,7 +308,7 @@ IVCccW9FB]HSTf;<ZgJTGL2
 R4
 S1
 R0
-R18
+w1715306624
 8C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/P_ROM.sv
 FC:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/P_ROM.sv
 !i122 18
@@ -327,7 +327,7 @@ R9
 n@p_@r@o@m
 vpc_control_unit
 R1
-R15
+R10
 !i10b 1
 !s100 8`zGa?lYOGFR6=TSV<Z_20
 R3
@@ -344,7 +344,7 @@ R5
 r1
 !s85 0
 31
-R17
+!s108 1715333834.000000
 !s107 C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/pc_control_unit.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules|C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/pc_control_unit.sv|
 !i113 1
@@ -353,7 +353,7 @@ R8
 R9
 vpipelined_processor
 R1
-R10
+R2
 !i10b 1
 !s100 OV]X6Lj9G[ZNff?LLk8M>2
 R3
@@ -370,7 +370,7 @@ R5
 r1
 !s85 0
 31
-R11
+R6
 !s107 C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/pipelined_processor.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules|C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/pipelined_processor.sv|
 !i113 1
@@ -379,7 +379,7 @@ R8
 R9
 vregfile
 R1
-R15
+R10
 !i10b 1
 !s100 fCUbdbJ@SOOkW78gn`8Mb1
 R3
@@ -396,7 +396,7 @@ R5
 r1
 !s85 0
 31
-R17
+R11
 !s107 C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/regfile.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules|C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/regfile.sv|
 !i113 1
@@ -405,7 +405,7 @@ R8
 R9
 vsegment_ex_mem
 R1
-R10
+R2
 !i10b 1
 !s100 M:W]i_dPM;04UIn;J0Oe92
 R3
@@ -417,12 +417,12 @@ R12
 8C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/segment_ex_mem.sv
 FC:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/segment_ex_mem.sv
 !i122 10
-Z19 L0 1 45
+Z16 L0 1 45
 R5
 r1
 !s85 0
 31
-R11
+R6
 !s107 C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/segment_ex_mem.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules|C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/segment_ex_mem.sv|
 !i113 1
@@ -431,7 +431,7 @@ R8
 R9
 vsegment_id_ex
 R1
-R10
+R2
 !i10b 1
 !s100 g2IZfM48ShWaJSM7<i20l0
 R3
@@ -443,12 +443,12 @@ R12
 8C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/segment_id_ex.sv
 FC:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/segment_id_ex.sv
 !i122 11
-R19
+R16
 R5
 r1
 !s85 0
 31
-R11
+R6
 !s107 C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/segment_id_ex.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules|C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/segment_id_ex.sv|
 !i113 1
@@ -457,7 +457,7 @@ R8
 R9
 vsegment_if_id
 R1
-R10
+R2
 !i10b 1
 !s100 jW_KLJY^aoPbJAb]XDN;f1
 R3
@@ -483,7 +483,7 @@ R8
 R9
 vsegment_mem_wb
 R1
-R10
+R2
 !i10b 1
 !s100 l<gW85]CQ:bz5hJHU[:Pd1
 R3
@@ -500,7 +500,7 @@ R5
 r1
 !s85 0
 31
-R11
+R6
 !s107 C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/segment_mem_wb.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules|C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/segment_mem_wb.sv|
 !i113 1
@@ -511,17 +511,17 @@ vTB_TOP
 R1
 R2
 !i10b 1
-!s100 6KKOacELmmj<nRB66EiC_3
+!s100 5>FH0GQ81b@bc;L?jZ4PY2
 R3
-Imd`1hPQOco^8579J:T_5F3
+IFP]IhMo2]c5QK3@kbDO0P1
 R4
 S1
 R0
-R12
+w1715333818
 8C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_TOP.sv
 FC:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/TB_TOP.sv
 !i122 21
-L0 1 28
+L0 1 33
 R5
 r1
 !s85 0
@@ -538,17 +538,17 @@ vtop
 R1
 R2
 !i10b 1
-!s100 No7VEnk>KohK8g319UWN70
+!s100 77o1hYhDDZg8ZD@BgB<7H1
 R3
-IA]ImEYN=_1gR;amGo]cd02
+I7eTGI1b^QLR]UjkaoKe3X1
 R4
 S1
 R0
-w1715306626
+w1715330016
 8C:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/top.sv
 FC:/Users/jonas/OneDrive/Documentos/GitHub/mgarro_computer_architecture_1_2024_s1/MemoyModules/top.sv
 !i122 16
-L0 1 66
+L0 1 65
 R5
 r1
 !s85 0
