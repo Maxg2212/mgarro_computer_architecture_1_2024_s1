@@ -15,6 +15,8 @@ module P_RAM
 	
 	logic [31:0] RAM[101:0];
 	
+	always@(startIO)
+		$writememh("RAMdata.dat",RAM);
 
 	
 	always_ff @(posedge clk) begin
@@ -27,10 +29,12 @@ module P_RAM
 			$display("Address (hex):---------- %h", A);
 			$display("Write data (hex):------- %h", WD);
 			$display("Write data (dec):------- %d", WD);
-			$writememh("RAMdata.dat",RAM);
+			
 		end		
 		
 	end
+	
+	
 	
 	assign RD = RAM[A[13:2]];
 	

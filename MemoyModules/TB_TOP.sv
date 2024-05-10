@@ -15,15 +15,43 @@ module TB_TOP();
 	// generate clock to sequence tests
 	always
 	begin
-		clk <= 1; # 5; clk <= 0; # 5;
+		//clk <= 1; # 5; clk <= 0; # 5;
+		#10 clk = ~clk;
 	end
 	
 	// initialize test
 	initial begin
-		//startIO = 0;
-		reset <= 1; # 22; reset <= 0;
-		start <= 0; # 3; start <= 1;
+		startIO = 0;
+		
+		
+		//reset = 1;
+		//clk = 0;
+		//#1000;
+		//clk = 1;
+		//#10;
+		//clk = 0;
+		//reset = 0;
+	
+		//#10;
+		
+		
+		//#200;
 		startIO = 1;
+		#200
+		//$stop;
+		reset <= 1; # 22; reset <= 0;
+		
+		
+		#10;
+		start <= 0; # 3; start <= 1;
+		#10;
+		start <= 0;
+		//startIO = 1;
+		
+		#100;
+		startIO <= 1;
+		
+		#1000;
 		
 	end
 	

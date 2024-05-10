@@ -60,6 +60,18 @@ module top
 							// Salidas
 							.RD(ReadData)
 							);
+	// Modulo para comuncacion con interprete
+	interpreter_comunication ic 	(
+											// Entradas
+											.clk(clk), 
+											.reset(reset), 
+											.MemtoReg(MemtoReg),
+											.COM(COMFlag),
+											.ReadData(ReadData),
+											// Salidas
+											.clk_out(clk_out),
+											.ReadDataOut(ReadDataOut)
+											);
 	
 	
 endmodule 

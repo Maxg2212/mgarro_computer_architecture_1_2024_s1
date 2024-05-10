@@ -1,7 +1,7 @@
-Analysis & Elaboration Status : Successful - Fri May 10 12:07:53 2024
+Analysis & Elaboration Status : Successful - Fri May 10 13:57:45 2024
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : Memory
-Top-level Entity Name : alu
+Top-level Entity Name : top
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A until Partition Merge
 Total registers : N/A until Partition Merge

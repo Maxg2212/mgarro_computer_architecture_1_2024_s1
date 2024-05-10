@@ -7,7 +7,7 @@ class Type(Enum):
     Control = '11'
 
 types_dict =	{
-    Type.Sistema : ['nop', 'end'],  
+    Type.Sistema : ['nop', 'com', 'end'],
     Type.Datos : ['sum','res','mul','ce','cr'],
     Type.Memoria : ['tome','deme'],
     Type.Control : ['beto','brin','bmnq','bmq'] 
@@ -16,7 +16,8 @@ types_dict =	{
 
 opcode_dict =	{
     "nop" : '00',
-    "end" : '01',
+    "com" : '01',
+    "end" : '10',
     
     "sum" : '000',
     "res" : '001',

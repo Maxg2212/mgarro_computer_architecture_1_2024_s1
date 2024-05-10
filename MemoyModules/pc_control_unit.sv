@@ -51,8 +51,15 @@ module pc_control_unit
 			4'b0000: begin
 			
 				PC <= PCNext + 4;		 		// NOP
+				
 			end 
-			4'b0001: begin 
+			4'b0001: begin 							// COM
+			
+				PC <= PCNext + 4;							
+				$display("\n\n *** Se inicia la comunicacion con el interprete ***");
+				
+			end
+			4'b0010: begin 
 			
 				PC <= PCNext;							// END
 				$display("\n\n *** El programa ha terminado exitosamente ***");
@@ -84,6 +91,7 @@ module pc_control_unit
 		
 	end
 	
-	assign EndFlag = (Id == 4'b0001);
+	assign EndFlag = (Id == 4'b0010);
+	assign COMFlagTemp = (Id == 4'b0001);
 	
 endmodule
