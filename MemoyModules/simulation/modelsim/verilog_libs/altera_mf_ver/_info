@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules/simulation/modelsim
 va_graycounter
-Z1 !s110 1715132232
+Z1 !s110 1715306343
 !i10b 1
 !s100 dbSQenUhE^>zo5H5zAI>X2
 IB7GNNK5L3:=>31ZRV0P[42
@@ -23,7 +23,7 @@ Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1715132231.000000
+Z7 !s108 1715306342.000000
 Z8 !s107 c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/altera_mf.v|
 Z9 !s90 -reportprogress|300|-vlog01compat|-work|altera_mf_ver|c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/altera_mf.v|
 !i113 1
@@ -366,7 +366,7 @@ R9
 R10
 R11
 vALTERA_DEVICE_FAMILIES
-Z12 !s110 1715132231
+Z12 !s110 1715306342
 !i10b 1
 !s100 Ie0_`X3Yi6=65^n?0c5aN3
 IO1Q^aSdgS@lkiMh9jONl=3
@@ -831,7 +831,7 @@ R9
 R10
 R11
 varm_m_cntr
-R1
+R12
 !i10b 1
 !s100 aE>Dk`dHV;WL1F5DL`IJe0
 IR`7OVA8ZS?IUeTTO[Y6oE1
@@ -852,7 +852,7 @@ R9
 R10
 R11
 varm_n_cntr
-R1
+R12
 !i10b 1
 !s100 XVOhjdU?l`B?8Uf;M45`N2
 I@Ge]102B;akXE@WaTb9P10
@@ -1361,7 +1361,7 @@ R10
 R11
 n@m@f_cycloneiiigl_scale_cntr
 vMF_pll_reg
-R1
+R12
 !i10b 1
 !s100 0HDLA_Ae606hC35WQ6^7]2
 IiSWU0eB>jHbnX64<[E=Sf2
@@ -1383,7 +1383,7 @@ R10
 R11
 n@m@f_pll_reg
 vMF_stratix_pll
-R1
+R12
 !i10b 1
 !s100 kITDCAAk7nE?EU[@=@9Oo1
 IoR9biA^cPW=:>IJ=S1Xlb0
@@ -1785,7 +1785,7 @@ R9
 R10
 R11
 vstx_m_cntr
-R1
+R12
 !i10b 1
 !s100 ?>o7Q<XCBPSD4HoGd5:>A0
 I1S?Q<E1k_mWF<ei<kAjTj2
@@ -1806,7 +1806,7 @@ R9
 R10
 R11
 vstx_n_cntr
-R1
+R12
 !i10b 1
 !s100 ?P@b:4DafJ_^m9ka]DFD53
 I6319hK3gPh4V1ljj9B<E42
@@ -1827,7 +1827,7 @@ R9
 R10
 R11
 vstx_scale_cntr
-R1
+R12
 !i10b 1
 !s100 a@[2eTC]]LIFm0QFl5WUj2
 Ij]Af`A=1OIN[IL0onPHon0

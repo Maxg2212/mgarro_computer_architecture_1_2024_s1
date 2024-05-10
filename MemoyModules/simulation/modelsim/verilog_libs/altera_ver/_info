@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules/simulation/modelsim
 valt_bidir_buf
-Z1 !s110 1715132230
+Z1 !s110 1715306340
 !i10b 1
 !s100 `k9N_NNE[omlCfHHm=PO53
 ID:iD7Z8K2@]7`ebSaEY3@3
@@ -23,7 +23,7 @@ Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1715132230.000000
+Z7 !s108 1715306340.000000
 Z8 !s107 c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/altera_primitives.v|
 Z9 !s90 -reportprogress|300|-vlog01compat|-work|altera_ver|c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/altera_primitives.v|
 !i113 1
@@ -618,7 +618,7 @@ R9
 R10
 R11
 UPRIM_GDFF_HIGH
-Z12 !s110 1715132231
+Z12 !s110 1715306341
 !i10b 1
 !s100 SScBZ?gdYFgRTOVYmj^Jh2
 IS;TWnh1CJ8`9MIWm4RnN_0
@@ -662,7 +662,7 @@ R10
 R11
 n@p@r@i@m_@g@d@f@f_@h@i@g@h_@s@c@l@r_@p@r@i@o@r@i@t@y
 UPRIM_GDFF_LOW
-R1
+R12
 !i10b 1
 !s100 7L1J7:`k0Sb@DRnEAUf5b0
 I9[Ij4g0>V_AQeB0;C2KAc1
@@ -684,7 +684,7 @@ R10
 R11
 n@p@r@i@m_@g@d@f@f_@l@o@w
 UPRIM_GDFF_LOW_SCLR_PRIORITY
-R1
+R12
 !i10b 1
 !s100 `gUo^mjm:1ILUg``]kfOO1
 I;0TWHzA1j]G?4`@LQiDh:0

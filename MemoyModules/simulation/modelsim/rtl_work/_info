@@ -7,4 +7,56 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-dC:/Users/maxga/OneDrive/Documentos/Proyectos_Arqui/mgarro_computer_architecture_1_2024_s1/MemoyModules/simulation/modelsim
+Z0 dC:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules/simulation/modelsim
+vP_ROM
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+!s110 1715306357
+!i10b 1
+!s100 5oKkbk<UOdiRlSXDN?VA23
+IIHeQz>U@nXA7?_J3o494`2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s105 P_ROM_sv_unit
+S1
+R0
+w1715306297
+8C:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules/P_ROM.sv
+FC:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules/P_ROM.sv
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1715306357.000000
+!s107 C:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules/P_ROM.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules|C:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules/P_ROM.sv|
+!i113 1
+Z4 o-sv -work work
+Z5 !s92 -sv -work work {+incdir+C:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules}
+Z6 tCvgOpt 0
+n@p_@r@o@m
+vP_ROM_tb
+R1
+!s110 1715306358
+!i10b 1
+!s100 0ZA574z@kZEffUFQ[6gCO1
+IQh_62S@A3M:Lm4jK:T^G@3
+R2
+!s105 P_ROM_tb_sv_unit
+S1
+R0
+w1715305645
+8C:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules/P_ROM_tb.sv
+FC:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules/P_ROM_tb.sv
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1715306358.000000
+!s107 C:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules/P_ROM_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules|C:/Users/aleji/OneDrive/Escritorio/Trabajos Tec/Semestre 1 2024/Arquitectura de Computadores 1/Proyectos/mgarro_computer_architecture_1_2024_s1/MemoyModules/P_ROM_tb.sv|
+!i113 1
+R4
+R5
+R6
+n@p_@r@o@m_tb
